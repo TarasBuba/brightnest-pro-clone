@@ -1,0 +1,1 @@
+export {ReviewsSection} from '@/src/widgets/reviews-section/ui/reviews-section';

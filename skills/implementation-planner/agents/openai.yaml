@@ -1,0 +1,5 @@
+interface:
+  display_name: "Implementation Planner"
+  short_description: "Створює decision-complete плани реалізації"
+  default_prompt: "Use $implementation-planner to create a decision-complete implementation plan for this task."
+

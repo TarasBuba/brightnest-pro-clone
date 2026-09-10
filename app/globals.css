@@ -1,0 +1,160 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-brand-teal: oklch(72% 0.13 195);
+  --color-brand-teal-hover: oklch(65% 0.15 195);
+  --color-brand-teal-light: oklch(92% 0.06 195);
+  --color-brand-navy: oklch(22% 0.06 240);
+  --color-brand-navy-deep: oklch(14% 0.04 240);
+
+  --color-bg-primary: oklch(99% 0.005 210);
+  --color-bg-secondary: oklch(96% 0.01 195);
+  --color-bg-dark: oklch(22% 0.06 240);
+  --color-bg-card: oklch(100% 0 0);
+
+  --color-text-primary: oklch(18% 0.04 240);
+  --color-text-secondary: oklch(45% 0.04 240);
+  --color-text-on-dark: oklch(98% 0.005 210);
+  --color-text-accent: oklch(55% 0.15 195);
+
+  --color-cta-primary: oklch(52% 0.16 195);
+  --color-cta-primary-hover: oklch(45% 0.17 195);
+  --color-cta-secondary: oklch(22% 0.06 240);
+
+  --color-success: oklch(65% 0.18 150);
+  --color-star: oklch(80% 0.18 75);
+
+  --spacing-section: 5rem;
+  --spacing-component: 2rem;
+  --spacing-element: 1rem;
+
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+
+  --font-heading: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    font-family: var(--font-body);
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-heading);
+  }
+}
+/* ==========================================================================
+   Scroll-Driven Animations (60 FPS with View Timelines & Robust Fallbacks)
+   ========================================================================== */
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-48px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(48px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Base state: Ensure content is 100% visible by default (no hidden content fallback) */
+.slide-in-left,
+.slide-in-right,
+.service-card-odd,
+.service-card-even,
+.reveal-left,
+.reveal-right {
+  opacity: 1;
+  transform: none;
+}
+
+/* Progressive enhancement with CSS Scroll-Driven Animations */
+@supports (animation-timeline: view()) {
+  .slide-in-left,
+  .service-card-odd,
+  .reveal-left {
+    animation-name: slideInFromLeft;
+    animation-timeline: view();
+    animation-range: entry 5% cover 32%;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+  }
+
+  .slide-in-right,
+  .service-card-even,
+  .reveal-right {
+    animation-name: slideInFromRight;
+    animation-timeline: view();
+    animation-range: entry 5% cover 32%;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+  }
+}
+
+/* Fallback for browsers without animation-timeline: view() support */
+@supports not (animation-timeline: view()) {
+  .slide-in-left,
+  .slide-in-right,
+  .service-card-odd,
+  .service-card-even,
+  .reveal-left,
+  .reveal-right {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Accessibility: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .slide-in-left,
+  .slide-in-right,
+  .service-card-odd,
+  .service-card-even,
+  .reveal-left,
+  .reveal-right {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+@supports (interpolate-size: allow-keywords) {
+  :root {
+    interpolate-size: allow-keywords;
+  }
+
+  details::details-content {
+    height: 0;
+    overflow: clip;
+    transition:
+      height 0.3s ease,
+      content-visibility 0.3s ease allow-discrete;
+  }
+
+  details[open]::details-content {
+    height: auto;
+  }
+}
