@@ -1,2 +1,2 @@
-
-export {ServicesSection} from '@/src/widgets/service-section/ui/services-section'
+export { ServicesSection } from './ui/services-section';
+export { ServiceAccordionItem } from './ui/service-accordion-item';

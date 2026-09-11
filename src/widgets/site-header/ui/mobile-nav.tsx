@@ -47,16 +47,18 @@ export function MobileNavToggle({ links, phoneNumber }: MobileNavToggleProps) {
             className="flex flex-col gap-1 p-4"
             aria-label="Mobile navigation"
           >
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="rounded-md px-4 py-3 text-[var(--color-text-primary)] hover:bg-[var(--color-bg-secondary)]"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {links
+              .filter((link) => link.href !== '/book')
+              .map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="rounded-md px-4 py-3 text-[var(--color-text-primary)] hover:bg-[var(--color-bg-secondary)]"
+                >
+                  {link.label}
+                </Link>
+              ))}
             <Link
               href="/book"
               onClick={() => setIsOpen(false)}

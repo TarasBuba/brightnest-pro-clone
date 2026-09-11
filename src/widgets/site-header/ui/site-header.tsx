@@ -9,10 +9,10 @@ import { TrustStrip } from './trust-strip';
 
 const NAV_LINKS = [
   { href: '/#services', label: 'Services' },
+  { href: '/#work', label: 'Our Work' },
   { href: '/about', label: 'About' },
-  { href: '/book', label: 'Book Online' },
   { href: '/#reviews', label: 'Reviews' },
-  { href: '/#contact', label: 'Contact' },
+  { href: '/book', label: 'Book Online' },
 ];
 
 export function SiteHeader() {

@@ -1,7 +1,6 @@
-import Image from 'next/image';
 import { SiGoogle, SiFacebook } from '@icons-pack/react-simple-icons';
 import { StarRating } from './star-rating';
-import { PLATFORM_ACCENT } from './icons';
+import { PLATFORM_ACCENT, HomeStarsIcon } from './icons';
 
 interface PlatformCardProps {
   platform: 'google' | 'homestars' | 'facebook';
@@ -21,15 +20,7 @@ function PlatformIcon({
     return <SiGoogle size={size} color={PLATFORM_ACCENT.google} />;
   if (platform === 'facebook')
     return <SiFacebook size={size} color={PLATFORM_ACCENT.facebook} />;
-  return (
-    <img
-      src="/icons/homestar.svg"
-      width={size}
-      height={size}
-      alt=""
-      className="rounded-sm"
-    />
-  );
+  return <HomeStarsIcon size={size} />;
 }
 
 export function PlatformCard({

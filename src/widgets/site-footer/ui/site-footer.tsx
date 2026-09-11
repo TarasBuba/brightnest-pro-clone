@@ -51,18 +51,18 @@ export const SiteFooter = () => {
               </li>
               <li>
                 <Link
-                  href="/about"
+                  href="/#work"
                   className="hover:text-[var(--color-brand-teal)] transition-colors"
                 >
-                  About Our Family
+                  Our Work
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/book"
-                  className="text-[var(--color-brand-teal)] font-semibold hover:underline transition-colors flex items-center gap-1.5"
+                  href="/about"
+                  className="hover:text-[var(--color-brand-teal)] transition-colors"
                 >
-                  Book Online &rarr;
+                  About Our Family
                 </Link>
               </li>
               <li>
@@ -75,10 +75,10 @@ export const SiteFooter = () => {
               </li>
               <li>
                 <Link
-                  href="/#contact"
-                  className="hover:text-[var(--color-brand-teal)] transition-colors"
+                  href="/book"
+                  className="text-[var(--color-brand-teal)] font-semibold hover:underline transition-colors flex items-center gap-1.5"
                 >
-                  Free Quote Form
+                  Book Online &rarr;
                 </Link>
               </li>
             </ul>
@@ -166,8 +166,11 @@ export const SiteFooter = () => {
             <Link href="/book" className="hover:text-white transition-colors">
               Book Service
             </Link>
-            <Link href="/#contact" className="hover:text-white transition-colors">
-              Contact
+            <Link href="/#work" className="hover:text-white transition-colors">
+              Our Work
+            </Link>
+            <Link href="/about" className="hover:text-white transition-colors">
+              About
             </Link>
             <span>Edmonton, Alberta</span>
           </div>

@@ -1,1 +1,4 @@
-export {ReviewsSection} from '@/src/widgets/reviews-section/ui/reviews-section';
+export { ReviewsSection } from './ui/reviews-section';
+export { ReviewsCarousel } from './ui/reviews-carousel';
+export { PlatformTrustBar } from './ui/platform-trust-bar';
+export { ReviewCard } from './ui/review.card';

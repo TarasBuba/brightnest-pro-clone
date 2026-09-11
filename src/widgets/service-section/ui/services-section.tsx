@@ -1,9 +1,19 @@
+'use client';
+
 // src/widgets/service-section/ui/services-section.tsx
-import Image from "next/image";
-import { Services } from "@/src/shared/lib/utils/services-data";
-import { ServiceAccordionItem } from "./service-accordion-item";
+import Image from 'next/image';
+import { Services } from '@/src/shared/lib/utils/services-data';
+import { useInView } from '@/src/shared/lib/hooks/use-in-view';
+import { ServiceAccordionItem } from './service-accordion-item';
 
 export function ServicesSection() {
+  const { ref: headerRef, isInView: isHeaderInView } =
+    useInView<HTMLDivElement>({
+      rootMargin: '-40px',
+      threshold: 0.1,
+      triggerOnce: true,
+    });
+
   return (
     <section
       id="services"
@@ -26,44 +36,47 @@ export function ServicesSection() {
           className="absolute inset-0 backdrop-blur-sm"
           style={{
             background:
-              "linear-gradient(180deg, oklch(22% 0.06 240 / 90%) 0%, oklch(22% 0.06 240 / 88%) 50%, oklch(18% 0.05 240 / 92%) 100%)",
+              'linear-gradient(180deg, oklch(22% 0.06 240 / 90%) 0%, oklch(22% 0.06 240 / 88%) 50%, oklch(18% 0.05 240 / 92%) 100%)',
           }}
         />
       </div>
 
       <div className="relative z-10 mx-auto max-w-4xl">
-        <p className="text-center text-sm font-bold uppercase tracking-[0.16em] text-cyan-300 drop-shadow-sm">
-          What We Do
-        </p>
-
-        <h2
-          id="services-title"
-          className="mt-2 text-center font-heading text-4xl font-bold text-white drop-shadow-sm md:text-5xl"
+        {/* Section Header with useInView scroll entrance */}
+        <div
+          ref={headerRef}
+          className={`transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100 motion-reduce:transition-none ${
+            isHeaderInView
+              ? 'opacity-100 translate-y-0'
+              : 'opacity-0 translate-y-6'
+          }`}
         >
-          Our Services
-        </h2>
+          <p className="text-center text-sm font-bold uppercase tracking-[0.16em] text-cyan-300 drop-shadow-sm">
+            What We Do
+          </p>
 
-        <p className="mx-auto mt-3 max-w-xl text-center text-base md:text-lg text-slate-200">
-          Reliable, family-run home care in Edmonton — from quick repairs to
-          full-home makeovers.
-        </p>
+          <h2
+            id="services-title"
+            className="mt-2 text-center font-heading text-4xl font-bold text-white drop-shadow-sm md:text-5xl"
+          >
+            Our Services
+          </h2>
 
+          <p className="mx-auto mt-3 max-w-xl text-center text-base md:text-lg text-slate-200">
+            Reliable, family-run home care in Edmonton — from quick repairs to
+            full-home makeovers.
+          </p>
+        </div>
+
+        {/* Guaranteed alternating fly-in animated cards on scroll with deep photo galleries */}
         <div className="mt-10 space-y-4">
-          {Services.map((service, index) => {
-            // Alternating animation: odd (1st, 3rd) slide-in-left, even (2nd, 4th) slide-in-right
-            const isOdd = index % 2 === 0;
-            const animationClass = isOdd
-              ? "slide-in-left service-card-odd"
-              : "slide-in-right service-card-even";
-
-            return (
-              <ServiceAccordionItem
-                key={service.id}
-                service={service}
-                className={animationClass}
-              />
-            );
-          })}
+          {Services.map((service, index) => (
+            <ServiceAccordionItem
+              key={service.id}
+              service={service}
+              index={index}
+            />
+          ))}
         </div>
       </div>
     </section>
