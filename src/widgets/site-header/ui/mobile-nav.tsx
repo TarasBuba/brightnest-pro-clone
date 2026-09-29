@@ -64,7 +64,7 @@ export function MobileNavToggle({ links, phoneNumber }: MobileNavToggleProps) {
               onClick={() => setIsOpen(false)}
               className="mt-2 rounded-[var(--radius-md)] bg-[var(--color-cta-primary)] px-4 py-3 text-center font-semibold text-white transition-colors hover:bg-[var(--color-cta-primary-hover)]"
             >
-              Book Online
+              Book Online / Get Quote
             </Link>
             <a
               href={`tel:${phoneNumber}`}

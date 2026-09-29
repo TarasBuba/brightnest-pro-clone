@@ -7,6 +7,7 @@ import {
   IconClock,
   IconMapPin,
   IconShieldCheck,
+  IconArrowRight,
 } from '@tabler/icons-react';
 import { siteConfig } from '@/src/shared/config/site-config';
 
@@ -19,7 +20,7 @@ export const SiteFooter = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-white/10">
           {/* Brand & Mission */}
           <div className="space-y-3">
-            <Link href="/" className="inline-block">
+            <Link href="/" className="inline-block" aria-label="BrightNest Pro Services Home">
               <span className="text-xl font-bold text-white tracking-tight">
                 BrightNest{' '}
                 <span className="text-[var(--color-brand-teal)]">Pro</span>
@@ -27,7 +28,7 @@ export const SiteFooter = () => {
             </Link>
             <p className="text-sm text-white/75 leading-relaxed">
               Professional home care services in Edmonton and surrounding areas.
-              High quality cleaning, handyman repairs, and painting with care and reliability.
+              High quality handyman repairs and painting with care and reliability.
             </p>
             <div className="flex items-center gap-2 text-xs text-[var(--color-brand-teal)] font-medium pt-1">
               <IconShieldCheck size={16} />
@@ -76,9 +77,18 @@ export const SiteFooter = () => {
               <li>
                 <Link
                   href="/book"
+                  className="hover:text-[var(--color-brand-teal)] transition-colors"
+                >
+                  Get a Free Quote
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/book"
                   className="text-[var(--color-brand-teal)] font-semibold hover:underline transition-colors flex items-center gap-1.5"
                 >
-                  Book Online &rarr;
+                  <span>Book Online</span>
+                  <IconArrowRight size={14} />
                 </Link>
               </li>
             </ul>
@@ -90,15 +100,35 @@ export const SiteFooter = () => {
               Services
             </h3>
             <ul className="space-y-2 text-sm text-white/75">
-              <li>Residential &amp; Deep Cleaning</li>
-              <li>Move-In / Move-Out Cleans</li>
-              <li>Handyman &amp; Home Repairs</li>
-              <li>Interior &amp; Exterior Painting</li>
-              <li>Power Washing Maintenance</li>
+              <li>
+                <Link href="/#services" className="hover:text-[var(--color-brand-teal)] transition-colors">
+                  Handyman &amp; Minor Repairs
+                </Link>
+              </li>
+              <li>
+                <Link href="/#services" className="hover:text-[var(--color-brand-teal)] transition-colors">
+                  Interior &amp; Exterior Painting
+                </Link>
+              </li>
+              <li>
+                <Link href="/#services" className="hover:text-[var(--color-brand-teal)] transition-colors">
+                  Residential &amp; Deep Cleaning
+                </Link>
+              </li>
+              <li>
+                <Link href="/#services" className="hover:text-[var(--color-brand-teal)] transition-colors">
+                  Move-In / Move-Out Cleans
+                </Link>
+              </li>
+              <li>
+                <Link href="/#services" className="hover:text-[var(--color-brand-teal)] transition-colors">
+                  Power Washing Maintenance
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Contact Details */}
+          {/* Contact Details & Direct Booking Action */}
           <div className="space-y-3">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
               Get in Touch
@@ -134,6 +164,16 @@ export const SiteFooter = () => {
               </div>
             </div>
 
+            <div className="pt-2">
+              <Link
+                href="/book"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-[var(--color-brand-teal)] px-4 py-2 text-xs font-semibold text-[var(--color-brand-navy-deep)] transition-colors hover:bg-white"
+              >
+                <span>Contact Us / Book Now</span>
+                <IconArrowRight size={14} />
+              </Link>
+            </div>
+
             <div className="flex gap-3 pt-2">
               <a
                 href="https://facebook.com/brightnestpro"
@@ -157,20 +197,26 @@ export const SiteFooter = () => {
           </div>
         </div>
 
-        {/* Bottom copyright bar */}
+        {/* Bottom copyright bar with all primary routes */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/60">
           <p>
             &copy; {currentYear} BrightNest Pro Services. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
-            <Link href="/book" className="hover:text-white transition-colors">
-              Book Service
+          <div className="flex flex-wrap items-center gap-5 sm:gap-6">
+            <Link href="/book" className="hover:text-white transition-colors font-medium text-[var(--color-brand-teal)]">
+              Book Online / Get Quote
+            </Link>
+            <Link href="/#services" className="hover:text-white transition-colors">
+              Services
             </Link>
             <Link href="/#work" className="hover:text-white transition-colors">
               Our Work
             </Link>
             <Link href="/about" className="hover:text-white transition-colors">
               About
+            </Link>
+            <Link href="/#reviews" className="hover:text-white transition-colors">
+              Reviews
             </Link>
             <span>Edmonton, Alberta</span>
           </div>

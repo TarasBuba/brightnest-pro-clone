@@ -9,25 +9,13 @@ import { SERVICE_GALLERIES } from '../model/service-gallery-data';
 import { getServiceCardAnimationClasses } from '../lib/animation-classes';
 
 const SERVICE_PHOTO_MAP: Record<string, { photo: string; alt: string }> = {
-  cleaning: {
-    photo: '/images/services/cleaning.webp',
-    alt: 'Professional home cleaning services in Edmonton by BrightNest Pro',
-  },
   handyman: {
     photo: '/images/services/handyman.webp',
     alt: 'Handyman and repair services in Edmonton by BrightNest Pro',
   },
-  'yard-work': {
-    photo: '/images/services/yard-care.webp',
-    alt: 'Yard work and exterior care maintenance in Edmonton by BrightNest Pro',
-  },
   painting: {
     photo: '/images/services/painting.webp',
     alt: 'Interior and exterior painting services in Edmonton by BrightNest Pro',
-  },
-  'complete-care': {
-    photo: '/images/services/services-bg.webp',
-    alt: 'Complete home care package in Edmonton by BrightNest Pro',
   },
 };
 

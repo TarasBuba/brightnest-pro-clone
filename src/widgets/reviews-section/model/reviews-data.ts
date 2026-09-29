@@ -15,11 +15,11 @@ export const EXTENDED_REVIEWS: ExtendedReview[] = [
     name: 'Adria Lee',
     rating: 5,
     role: 'Edmonton Homeowner',
-    service: 'Yard Care & 2 Back Decks',
+    service: 'Deck Restoration & Repairs',
     avatarUrl:
       'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=240&h=240&q=80',
     review:
-      'We are so pleased with the work Yuriy and Karina did with our very large yard and two back decks. Not only did they take great care to make sure everything looked fantastic but they also priced their work very reasonably. As new immigrants, English is not their first language but that does not stop them from communicating (using a translator) and getting out there to make a concerted effort in building a business for themselves. We will 100% use them again and recommend to anyone looking for honest hard working helpers.',
+      'We are so pleased with the work Yuriy and Karina did with our two back decks and structural repairs. Not only did they take great care to make sure everything looked fantastic but they also priced their work very reasonably. As new immigrants, English is not their first language but that does not stop them from communicating (using a translator) and getting out there to make a concerted effort in building a business for themselves. We will 100% use them again and recommend to anyone looking for honest hard working helpers.',
     platform: 'google',
   },
   {
@@ -51,11 +51,11 @@ export const EXTENDED_REVIEWS: ExtendedReview[] = [
     name: 'Salina Halabi',
     rating: 5,
     role: 'Edmonton Resident',
-    service: 'Indoor & Outdoor Maintenance',
+    service: 'Interior Painting & Drywall Repair',
     avatarUrl:
       'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=240&h=240&q=80',
     review:
-      'Wonderful team and great work! Highly recommend for both outdoor and indoor home maintenance/cleaning services. Thank you!',
+      'Wonderful team and great work! Highly recommend for both interior painting and drywall repair services. Fast, clean, and top quality. Thank you!',
     platform: 'google',
   },
   {
@@ -63,11 +63,11 @@ export const EXTENDED_REVIEWS: ExtendedReview[] = [
     name: 'Yvonne Reitsma',
     rating: 5,
     role: 'Edmonton Homeowner',
-    service: 'Window & Siding Cleaning',
+    service: 'Window Frame Repair & Trim Painting',
     avatarUrl:
       'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=240&h=240&q=80',
     review:
-      'This team came to clean my windows and siding! Excellent, thorough job. Early, efficient and very polite. Would definitely use them for other jobs needed around the house.',
+      'This team came to repair our sticking window frames and paint the exterior trim! Excellent, thorough job. Early, efficient and very polite. Would definitely use them for other repair jobs needed around the house.',
     platform: 'google',
   },
   {
@@ -75,22 +75,23 @@ export const EXTENDED_REVIEWS: ExtendedReview[] = [
     name: 'Dasha Pugacheva',
     rating: 5,
     role: 'Edmonton Resident',
-    service: 'Residential Cleaning',
+    service: 'Furniture Assembly & TV Mounting',
     avatarUrl:
       'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=240&h=240&q=80',
-    review: 'Great company! Highly recommend',
+    review:
+      'Yuriy assembled our new modular furniture and mounted our TV securely with perfectly hidden cables. Great company and lovely couple! Highly recommend.',
     platform: 'google',
   },
   {
     id: 7,
     name: 'Oleksii Chubko',
     rating: 5,
-    role: 'Move-Out Client',
-    service: 'Moving Cleaning & Painting',
+    role: 'Move-In Client',
+    service: 'Interior Painting & Door Adjustment',
     avatarUrl:
       'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=240&h=240&q=80',
     review:
-      'Great couple! They did cleaning and painting for us when we were moving. We’re very happy with their work and would definitely recommend them. We’ll be happy to use their services again!',
+      'Great couple! They did full interior painting and door adjustments for us when we moved in. We’re very happy with their work and would definitely recommend them. We’ll be happy to use their services again!',
     platform: 'google',
   },
   {

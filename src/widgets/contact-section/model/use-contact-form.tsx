@@ -1,9 +1,8 @@
 import { useState, useTransition } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { contactFormSchema } from '../model/shema';
+import { contactFormSchema, type ContactFormSchema } from '../model/schema';
 import { submitContactForm } from '../api/submit-contact';
-import type { ContactFormSchema } from '../model/shema';
 
 export function useContactForm() {
   const [isPending, startTransition] = useTransition();

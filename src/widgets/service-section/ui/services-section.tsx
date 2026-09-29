@@ -2,9 +2,9 @@
 
 // src/widgets/service-section/ui/services-section.tsx
 import Image from 'next/image';
-import { Services } from '@/src/shared/lib/utils/services-data';
 import { useInView } from '@/src/shared/lib/hooks/use-in-view';
 import { ServiceAccordionItem } from './service-accordion-item';
+import { FOCUSED_SERVICES } from '../model/services-data';
 
 export function ServicesSection() {
   const { ref: headerRef, isInView: isHeaderInView } =
@@ -52,25 +52,25 @@ export function ServicesSection() {
           }`}
         >
           <p className="text-center text-sm font-bold uppercase tracking-[0.16em] text-cyan-300 drop-shadow-sm">
-            What We Do
+            Core Specializations
           </p>
 
           <h2
             id="services-title"
             className="mt-2 text-center font-heading text-4xl font-bold text-white drop-shadow-sm md:text-5xl"
           >
-            Our Services
+            Handyman &amp; Painting Services
           </h2>
 
           <p className="mx-auto mt-3 max-w-xl text-center text-base md:text-lg text-slate-200">
-            Reliable, family-run home care in Edmonton — from quick repairs to
-            full-home makeovers.
+            Specialized handyman repairs, custom carpentry, and professional painting in Edmonton —
+            delivered with personal care and meticulous craftsmanship.
           </p>
         </div>
 
         {/* Guaranteed alternating fly-in animated cards on scroll with deep photo galleries */}
         <div className="mt-10 space-y-4">
-          {Services.map((service, index) => (
+          {FOCUSED_SERVICES.map((service, index) => (
             <ServiceAccordionItem
               key={service.id}
               service={service}

@@ -47,13 +47,13 @@ export function HeroSection() {
               id="hero-title"
               className="font-heading text-4xl font-extrabold tracking-tight text-[var(--color-text-primary)] sm:text-5xl lg:text-5xl xl:text-6xl leading-[1.12]"
             >
-              Home Care That Feels Like Family,{' '}
+              Handyman &amp; Painting That Feels Like Family,{' '}
               <span className="text-[var(--color-cta-primary)]">Not a Job Site</span>
             </h1>
 
             {/* Subtitle */}
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[var(--color-text-secondary)]">
-              From custom carpentry and deck restoration to detailed painting and deep cleaning —
+              From custom carpentry, deck restoration, and home repairs to flawless interior and exterior painting —
               Yuriy &amp; Karina handle every project across Edmonton with personal craftsmanship and honest care.
             </p>
 
@@ -190,7 +190,7 @@ export function HeroSection() {
               <div className="absolute -bottom-2 sm:-bottom-3 left-1/2 -translate-x-1/2 w-[94%] sm:w-auto max-w-md z-10">
                 <div className="flex items-center justify-center gap-2 rounded-full border border-slate-200/80 bg-white/95 px-4 py-2 text-center text-xs sm:text-sm font-semibold text-slate-800 shadow-xl backdrop-blur-md">
                   <MapPin className="h-4 w-4 shrink-0 text-emerald-600" />
-                  <span className="truncate">Real Work in Edmonton • Verified Local Family Team</span>
+                  <span className="truncate">Handyman &amp; Painting • Verified Edmonton Family Team</span>
                 </div>
               </div>
             </div>

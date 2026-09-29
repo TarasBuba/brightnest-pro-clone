@@ -23,7 +23,7 @@ export function ReviewsSection() {
             What Our Customers Say
           </h2>
           <p className="mt-2 text-base text-[var(--color-text-secondary)] max-w-2xl mx-auto">
-            Real experiences from Edmonton homeowners who trust BrightNest Pro for cleaning, repairs, and home care.
+            Real experiences from Edmonton homeowners who trust BrightNest Pro for quality repairs, painting, and home care.
           </p>
         </div>
 
