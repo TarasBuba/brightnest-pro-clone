@@ -10,11 +10,11 @@ import { getServiceCardAnimationClasses } from '../lib/animation-classes';
 
 const SERVICE_PHOTO_MAP: Record<string, { photo: string; alt: string }> = {
   handyman: {
-    photo: '/images/services/handyman.webp',
+    photo: '/images/projects/deck-process.jpg',
     alt: 'Handyman and repair services in Edmonton by BrightNest Pro',
   },
   painting: {
-    photo: '/images/services/painting.webp',
+    photo: '/images/projects/painting-interior.webp',
     alt: 'Interior and exterior painting services in Edmonton by BrightNest Pro',
   },
 };
@@ -108,7 +108,7 @@ export function ServiceAccordionItem({
                     >
                       <span
                         aria-hidden="true"
-                        className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-400 font-bold text-xs"
+                        className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[var(--color-brand-teal)] text-[#041A25] font-bold text-sm"
                       >
                         ✓
                       </span>

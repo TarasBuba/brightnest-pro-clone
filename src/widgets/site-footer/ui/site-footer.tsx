@@ -110,21 +110,6 @@ export const SiteFooter = () => {
                   Interior &amp; Exterior Painting
                 </Link>
               </li>
-              <li>
-                <Link href="/#services" className="hover:text-[var(--color-brand-teal)] transition-colors">
-                  Residential &amp; Deep Cleaning
-                </Link>
-              </li>
-              <li>
-                <Link href="/#services" className="hover:text-[var(--color-brand-teal)] transition-colors">
-                  Move-In / Move-Out Cleans
-                </Link>
-              </li>
-              <li>
-                <Link href="/#services" className="hover:text-[var(--color-brand-teal)] transition-colors">
-                  Power Washing Maintenance
-                </Link>
-              </li>
             </ul>
           </div>
 

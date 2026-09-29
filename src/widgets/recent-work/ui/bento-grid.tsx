@@ -22,7 +22,6 @@ const CATEGORIES: { id: ProjectCategory; label: string; icon: React.ComponentTyp
   { id: 'deck', label: 'Deck & Carpentry', icon: Hammer },
   { id: 'painting', label: 'Precision Painting', icon: Paintbrush },
   { id: 'handyman', label: 'Handyman & Joinery', icon: Wrench },
-  { id: 'cleaning', label: 'Deep Cleaning', icon: Sparkle },
 ];
 
 export function BentoGrid() {
