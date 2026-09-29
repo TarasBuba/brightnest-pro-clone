@@ -88,6 +88,7 @@ export function BentoGrid() {
           <BentoCard
             key={project.id}
             project={project}
+            index={index}
             priority={index === 0}
           />
         ))}

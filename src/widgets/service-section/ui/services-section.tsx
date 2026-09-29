@@ -41,7 +41,7 @@ export function ServicesSection() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-4xl">
+      <div className="relative z-10 mx-auto max-w-6xl">
         {/* Section Header with useInView scroll entrance */}
         <div
           ref={headerRef}
@@ -68,13 +68,14 @@ export function ServicesSection() {
           </p>
         </div>
 
-        {/* Guaranteed alternating fly-in animated cards on scroll with deep photo galleries */}
-        <div className="mt-10 space-y-4">
+        {/* Guaranteed alternating fly-in animated cards on scroll */}
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
           {FOCUSED_SERVICES.map((service, index) => (
             <ServiceAccordionItem
               key={service.id}
               service={service}
               index={index}
+              className="h-full"
             />
           ))}
         </div>

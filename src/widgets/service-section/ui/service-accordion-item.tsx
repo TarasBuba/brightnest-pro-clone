@@ -31,85 +31,67 @@ export function ServiceAccordionItem({
   return (
     <div
       ref={ref}
-      className={`group rounded-[var(--radius-lg)] border border-slate-200/60 bg-white shadow-sm transition-all duration-300 hover:shadow-md ${animationClasses} ${className}`}
+      className={`group flex flex-col justify-between rounded-[var(--radius-lg)] border border-slate-200/60 bg-white p-6 md:p-8 shadow-sm transition-all duration-500 hover:shadow-lg ${animationClasses} ${className}`}
     >
-      <details className="p-6 md:p-8" open={index === 0}>
-        <summary className="flex cursor-pointer list-none items-center justify-between outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-cta-primary)] focus-visible:ring-offset-2">
-          <div className="flex items-center gap-3">
-            <span aria-hidden="true" className="text-3xl">
-              <IconComponent
-                aria-hidden="true"
-                size={28}
-                strokeWidth={2}
-                className="text-[var(--color-cta-primary)]"
-              />
-            </span>
-            <div>
-              {service.featured && (
-                <span className="mb-1 inline-block rounded-full bg-[var(--color-cta-primary)] px-2 py-0.5 text-xs font-semibold text-white">
-                  Most Popular
-                </span>
-              )}
-              <h3 className="font-heading text-xl font-bold text-[var(--color-text-primary)]">
-                {service.title}
-              </h3>
-              <p className="text-lg text-[var(--color-text-secondary)]">
-                {service.summary}
-              </p>
-            </div>
-          </div>
-
-          <span
-            aria-hidden="true"
-            className="shrink-0 text-3xl text-[var(--color-text-secondary)] transition-transform duration-300 group-open:rotate-45"
-          >
-            +
+      <div>
+        <div className="flex items-start gap-4 border-b border-slate-100 pb-5">
+          <span aria-hidden="true" className="shrink-0 rounded-xl bg-slate-50 p-3 text-[var(--color-cta-primary)] ring-1 ring-slate-100">
+            <IconComponent aria-hidden="true" size={32} strokeWidth={2} />
           </span>
-        </summary>
-
-        <div className="mt-6 space-y-6 border-t border-slate-200/70 pt-6">
-          <div className="flex flex-col justify-between h-full">
-            <div>
-              <p className="text-base text-[var(--color-text-secondary)] leading-relaxed max-w-4xl">
-                {service.description}
-              </p>
-
-              <ul className="mt-4 space-y-2.5">
-                {service.bullets.map((bullet) => (
-                  <li
-                    key={bullet}
-                    className="flex items-start gap-2.5 text-base text-[var(--color-text-secondary)]"
-                  >
-                    <CheckCircle2
-                      aria-hidden="true"
-                      className="mt-0.5 h-5 w-5 shrink-0 text-[var(--color-brand-teal)]"
-                    />
-                    <span className="leading-snug">{bullet}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-5 inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-[var(--color-text-accent)]">
-                <Clock
-                  aria-hidden="true"
-                  className="h-4 w-4 shrink-0 text-[var(--color-brand-teal)]"
-                />
-                <span>{service.timeline}</span>
-              </div>
-            </div>
-
-            <div className="mt-6">
-              <Link
-                href="/book"
-                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-[var(--radius-md)] bg-[var(--color-cta-primary)] px-6 py-2.5 font-semibold text-white shadow-sm transition-all hover:bg-[var(--color-cta-primary-hover)] hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-cta-primary)]"
-              >
-                <span>Book This Service</span>
-                <ArrowRight aria-hidden="true" className="h-4 w-4" />
-              </Link>
-            </div>
+          <div>
+            {service.featured && (
+              <span className="mb-2 inline-block rounded-full bg-[var(--color-cta-primary)] px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider text-white shadow-sm">
+                Most Popular
+              </span>
+            )}
+            <h3 className="font-heading text-2xl font-bold text-[var(--color-text-primary)] leading-tight">
+              {service.title}
+            </h3>
+            <p className="mt-1 text-sm font-medium text-[var(--color-brand-teal)]">
+              {service.summary}
+            </p>
           </div>
         </div>
-      </details>
+
+        <div className="mt-5">
+          <p className="text-base text-[var(--color-text-secondary)] leading-relaxed">
+            {service.description}
+          </p>
+
+          <ul className="mt-6 space-y-3">
+            {service.bullets.map((bullet) => (
+              <li
+                key={bullet}
+                className="flex items-start gap-3 text-base text-[var(--color-text-secondary)]"
+              >
+                <CheckCircle2
+                  aria-hidden="true"
+                  className="mt-0.5 h-5 w-5 shrink-0 text-[var(--color-brand-teal)]"
+                />
+                <span className="leading-snug">{bullet}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <div className="mt-8 pt-6 border-t border-slate-100">
+        <div className="mb-4 inline-flex items-center gap-2 text-sm font-medium text-[var(--color-text-accent)]">
+          <Clock
+            aria-hidden="true"
+            className="h-4 w-4 shrink-0 text-[var(--color-brand-teal)]"
+          />
+          <span>{service.timeline}</span>
+        </div>
+
+        <Link
+          href="/book"
+          className="group/btn inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[var(--radius-md)] bg-[var(--color-cta-primary)] px-6 py-3 font-bold text-white shadow-sm transition-all hover:bg-[var(--color-cta-primary-hover)] hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-cta-primary)]"
+        >
+          <span>Book This Service</span>
+          <ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
+        </Link>
+      </div>
     </div>
   );
 }

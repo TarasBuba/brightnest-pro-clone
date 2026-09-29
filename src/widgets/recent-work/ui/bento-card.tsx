@@ -16,15 +16,26 @@ import {
   ShieldCheck,
 } from 'lucide-react';
 import { BentoProject } from '../model/recent-work-data';
+import { useInView } from '@/src/shared/lib/hooks/use-in-view';
+import { getServiceCardAnimationClasses } from '@/src/widgets/service-section/lib/animation-classes';
 
 interface BentoCardProps {
   project: BentoProject;
+  index?: number;
   priority?: boolean;
 }
 
-export function BentoCard({ project, priority = false }: BentoCardProps) {
+export function BentoCard({ project, index = 0, priority = false }: BentoCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [isTapped, setIsTapped] = useState(false);
+
+  const { ref, isInView } = useInView<HTMLDivElement>({
+    rootMargin: '-50px',
+    threshold: 0.15,
+    triggerOnce: true,
+  });
+
+  const animationClasses = getServiceCardAnimationClasses(index, isInView);
 
   // Active revealed state triggered by either desktop hover or mobile tap
   const isRevealed = isHovered || isTapped;
@@ -44,13 +55,15 @@ export function BentoCard({ project, priority = false }: BentoCardProps) {
 
   return (
     <article
+      ref={ref}
       tabIndex={0}
       role="region"
       aria-label={`${project.title}. ${isRevealed ? 'Showing completed after result' : 'Showing project before or in-progress'}`}
       onKeyDown={handleKeyDown}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/90 bg-white shadow-md transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-[var(--color-cta-primary)] focus:ring-offset-2 ${project.gridClasses.container}`}
+      onClick={toggleReveal}
+      className={`group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/90 bg-white shadow-md transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-[var(--color-cta-primary)] focus:ring-offset-2 ${project.gridClasses.container} ${animationClasses}`}
     >
       {/* Top Visual Area with Hover Reveal */}
       <div
