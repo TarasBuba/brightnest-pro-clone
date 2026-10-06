@@ -11,7 +11,7 @@ import {
   Wrench,
   Paintbrush,
 } from 'lucide-react';
-import { BookingForm } from '@/src/features/booking';
+import { ContactForm } from '@/src/widgets/contact-section';
 import { siteConfig } from '@/src/shared/config/site';
 
 export const metadata: Metadata = {
@@ -103,7 +103,7 @@ export default function BookPage() {
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
             {/* Form Column */}
             <div className="lg:col-span-8">
-              <BookingForm />
+              <ContactForm />
             </div>
 
             {/* Quick Contact & Info Sidebar */}
