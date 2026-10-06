@@ -4,7 +4,7 @@
 import Image from 'next/image';
 import { useInView } from '@/src/shared/lib/hooks/use-in-view';
 import { ServiceAccordionItem } from './service-accordion-item';
-import { FOCUSED_SERVICES } from '../model/services-data';
+import { SERVICES } from '@/src/entities/service/model';
 
 export function ServicesSection() {
   const { ref: headerRef, isInView: isHeaderInView } =
@@ -70,7 +70,7 @@ export function ServicesSection() {
 
         {/* Guaranteed alternating fly-in animated cards on scroll */}
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
-          {FOCUSED_SERVICES.map((service, index) => (
+          {SERVICES.map((service, index) => (
             <ServiceAccordionItem
               key={service.id}
               service={service}

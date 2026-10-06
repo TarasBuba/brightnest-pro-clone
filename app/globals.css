@@ -158,3 +158,34 @@
     height: auto;
   }
 }
+/* Intersection Observer Fallback Animations */
+.reveal-on-scroll {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-on-scroll.reveal-left {
+  transform: translate3d(-48px, 0, 0);
+}
+
+.reveal-on-scroll.reveal-right {
+  transform: translate3d(48px, 0, 0);
+}
+
+.reveal-on-scroll.reveal-up {
+  transform: translate3d(0, 48px, 0);
+}
+
+.reveal-on-scroll[data-revealed="true"] {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* For browsers with scroll-driven animations, disable the observer styles */
+@supports (animation-timeline: view()) {
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

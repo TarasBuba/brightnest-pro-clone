@@ -4,7 +4,7 @@ import { StarRating } from './star-rating';
 import { AvatarWithFallback } from './avatar-with-fallback';
 import type { ExtendedReview } from '../model/reviews-data';
 import { CheckCircle2, Quote } from 'lucide-react';
-import { SiGoogle } from '@icons-pack/react-simple-icons';
+import { GoogleIcon } from '@/src/shared/ui/brand-icons';
 import { PLATFORM_ACCENT } from './icons';
 
 interface ReviewCardProps {
@@ -66,7 +66,7 @@ export function ReviewCard({ review, isPaused = false, onClick }: ReviewCardProp
             className="flex items-center gap-1 rounded-md bg-[var(--color-bg-secondary)] px-2 py-1 text-[11px] font-medium text-[var(--color-text-secondary)] shrink-0"
             title="Verified Google Review"
           >
-            <SiGoogle size={12} color={PLATFORM_ACCENT.google} />
+            <GoogleIcon width={12} height={12} color={PLATFORM_ACCENT.google} />
             <span>Google</span>
           </div>
         </div>

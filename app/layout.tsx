@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans, Inter } from 'next/font/google';
 import { SiteHeader } from '@/src/widgets/site-header';
 import { SiteFooter } from '@/src/widgets/site-footer';
+import { RevealObserver } from '@/src/shared/ui/reveal-observer';
 import './globals.css';
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -33,6 +34,7 @@ export default function RootLayout({
       className={`${plusJakartaSans.variable} ${inter.variable}`}
     >
       <body className="flex min-h-screen flex-col font-body antialiased">
+        <RevealObserver />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:rounded-md focus:bg-brand-teal focus:px-4 focus:py-2 focus:text-white"

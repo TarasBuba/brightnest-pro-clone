@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { MobileNavToggle } from '@/src/widgets/site-header/ui/mobile-nav';
-import { siteConfig } from '@/src/shared/config/site-config';
+import { siteConfig } from '@/src/shared/config/site';
 import { Phone } from '../lib/icons';
 import { TrustStrip } from './trust-strip';
 

@@ -1,15 +1,14 @@
 import Link from 'next/link';
 import {
-  IconBrandFacebook,
-  IconBrandInstagram,
-  IconPhone,
-  IconMail,
-  IconClock,
-  IconMapPin,
-  IconShieldCheck,
-  IconArrowRight,
-} from '@tabler/icons-react';
-import { siteConfig } from '@/src/shared/config/site-config';
+  Phone as IconPhone,
+  Mail as IconMail,
+  Clock as IconClock,
+  MapPin as IconMapPin,
+  ShieldCheck as IconShieldCheck,
+  ArrowRight as IconArrowRight,
+} from 'lucide-react';
+import { FacebookIcon as IconBrandFacebook, InstagramIcon as IconBrandInstagram } from '@/src/shared/ui/brand-icons';
+import { siteConfig } from '@/src/shared/config/site';
 
 export const SiteFooter = () => {
   const currentYear = new Date().getFullYear();
@@ -161,22 +160,22 @@ export const SiteFooter = () => {
 
             <div className="flex gap-3 pt-2">
               <a
-                href="https://facebook.com/brightnestpro"
+                href={siteConfig.social.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="BrightNest Pro on Facebook"
                 className="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-white/80 hover:text-white transition-colors"
               >
-                <IconBrandFacebook size={20} />
+                <IconBrandFacebook width={20} height={20} />
               </a>
               <a
-                href="https://instagram.com/brightnestpro"
+                href={siteConfig.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="BrightNest Pro on Instagram"
                 className="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-white/80 hover:text-white transition-colors"
               >
-                <IconBrandInstagram size={20} />
+                <IconBrandInstagram width={20} height={20} />
               </a>
             </div>
           </div>

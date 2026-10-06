@@ -1,26 +1,11 @@
-import { SiGoogle, SiFacebook } from '@icons-pack/react-simple-icons';
 import { StarRating } from './star-rating';
-import { PLATFORM_ACCENT, HomeStarsIcon } from './icons';
+import { PLATFORM_ACCENT, PlatformIcon } from './icons';
 
 interface PlatformCardProps {
   platform: 'google' | 'homestars' | 'facebook';
   rating?: number;
   reviewCount?: number;
   url: string;
-}
-
-function PlatformIcon({
-  platform,
-  size = 28,
-}: {
-  platform: PlatformCardProps['platform'];
-  size?: number;
-}) {
-  if (platform === 'google')
-    return <SiGoogle size={size} color={PLATFORM_ACCENT.google} />;
-  if (platform === 'facebook')
-    return <SiFacebook size={size} color={PLATFORM_ACCENT.facebook} />;
-  return <HomeStarsIcon size={size} />;
 }
 
 export function PlatformCard({

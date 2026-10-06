@@ -12,7 +12,7 @@ import {
   Paintbrush,
 } from 'lucide-react';
 import { BookingForm } from '@/src/features/booking';
-import { siteConfig } from '@/src/shared/config/site-config';
+import { siteConfig } from '@/src/shared/config/site';
 
 export const metadata: Metadata = {
   title: 'Book Handyman & Painting Services | BrightNest Pro Edmonton',

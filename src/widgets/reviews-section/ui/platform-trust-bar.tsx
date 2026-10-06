@@ -1,7 +1,8 @@
-import { SiGoogle, SiFacebook } from '@icons-pack/react-simple-icons';
+import { GoogleIcon, FacebookIcon } from '@/src/shared/ui/brand-icons';
 import { HomeStarsIcon, PLATFORM_ACCENT } from './icons';
 import { StarRating } from './star-rating';
 import { ShieldCheck, ThumbsUp, ExternalLink } from 'lucide-react';
+import { siteConfig } from '@/src/shared/config/site';
 
 interface PlatformTrustBarProps {
   className?: string;
@@ -15,8 +16,8 @@ export function PlatformTrustBar({ className = '' }: PlatformTrustBarProps) {
       badge: '5.0 (8 reviews)',
       description: '100% 5-Star Verified Ratings',
       accent: PLATFORM_ACCENT.google,
-      href: 'https://www.google.com/maps/search/?api=1&query=BrightNest+Pro+Services+Edmonton',
-      icon: <SiGoogle size={26} color={PLATFORM_ACCENT.google} />,
+      href: siteConfig.social.google,
+      icon: <GoogleIcon width={26} height={26} color={PLATFORM_ACCENT.google} />,
       customBadge: (
         <div className="flex items-center gap-1.5">
           <StarRating rating={5} size={15} color="#FFB800" />
@@ -32,7 +33,7 @@ export function PlatformTrustBar({ className = '' }: PlatformTrustBarProps) {
       badge: 'HomeStars Verified',
       description: 'Licensed & Background Checked',
       accent: PLATFORM_ACCENT.homestars,
-      href: 'https://homestars.com/companies/search?query=BrightNest+Pro+Services',
+      href: 'https://homestars.com/companies/search?query=BrightNest+Pro+Services', // Note: User said they don't have homestars yet, so leave generic search link for now
       icon: <HomeStarsIcon size={28} />,
       customBadge: (
         <div className="flex items-center gap-1 text-xs font-semibold text-[#00897B]">
@@ -47,8 +48,8 @@ export function PlatformTrustBar({ className = '' }: PlatformTrustBarProps) {
       badge: '100% Recommended',
       description: 'Edmonton Family Business',
       accent: PLATFORM_ACCENT.facebook,
-      href: 'https://facebook.com/brightnestpro',
-      icon: <SiFacebook size={26} color={PLATFORM_ACCENT.facebook} />,
+      href: siteConfig.social.facebook,
+      icon: <FacebookIcon width={26} height={26} color={PLATFORM_ACCENT.facebook} />,
       customBadge: (
         <div className="flex items-center gap-1 text-xs font-semibold text-[#1877F2]">
           <ThumbsUp className="h-3.5 w-3.5 text-[#1877F2]" />

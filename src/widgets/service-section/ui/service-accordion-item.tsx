@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { Clock, ArrowRight, CheckCircle2 } from 'lucide-react';
-import type { Service } from '@/src/shared/lib/utils/services-data';
+import { Clock, ArrowRight, Check } from 'lucide-react';
+import type { Service } from '@/src/entities/service/model';
 import { useInView } from '@/src/shared/lib/hooks/use-in-view';
 import { getServiceCardAnimationClasses } from '../lib/animation-classes';
 
@@ -64,10 +64,9 @@ export function ServiceAccordionItem({
                 key={bullet}
                 className="flex items-start gap-3 text-base text-[var(--color-text-secondary)]"
               >
-                <CheckCircle2
-                  aria-hidden="true"
-                  className="mt-0.5 h-5 w-5 shrink-0 text-[var(--color-brand-teal)]"
-                />
+                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-slate-100 border border-slate-200 text-[var(--color-brand-teal)]">
+                  <Check aria-hidden="true" className="h-3 w-3 stroke-[3]" />
+                </span>
                 <span className="leading-snug">{bullet}</span>
               </li>
             ))}

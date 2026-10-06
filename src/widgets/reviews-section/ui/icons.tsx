@@ -1,4 +1,4 @@
-import { SiFacebook, SiGoogle } from '@icons-pack/react-simple-icons';
+import { GoogleIcon, FacebookIcon, HomeStarsIcon as SharedHomeStarsIcon } from '@/src/shared/ui/brand-icons';
 
 export const PLATFORM_ACCENT = {
   google: '#4285F4',
@@ -47,10 +47,10 @@ export function PlatformIcon({
   className?: string;
 }) {
   if (platform === 'google') {
-    return <SiGoogle size={size} color={PLATFORM_ACCENT.google} className={className} />;
+    return <GoogleIcon width={size} height={size} color={PLATFORM_ACCENT.google} className={className} />;
   }
   if (platform === 'facebook') {
-    return <SiFacebook size={size} color={PLATFORM_ACCENT.facebook} className={className} />;
+    return <FacebookIcon width={size} height={size} color={PLATFORM_ACCENT.facebook} className={className} />;
   }
   return <HomeStarsIcon size={size} className={className} />;
 }

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Star, CheckCircle2, Phone, ArrowRight, ShieldCheck, MapPin } from 'lucide-react';
-import { siteConfig } from '@/src/shared/config/site-config';
+import { siteConfig } from '@/src/shared/config/site';
 
 const HERO_HIGHLIGHTS = [
   'Family-owned & operated by Yuriy & Karina',

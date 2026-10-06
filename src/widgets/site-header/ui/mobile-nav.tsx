@@ -8,7 +8,7 @@ import {
   Star,
   ShieldCheck,
 } from 'lucide-react';
-import { siteConfig } from '@/src/shared/config/site-config';
+import { siteConfig } from '@/src/shared/config/site';
 
 interface MobileNavToggleProps {
   links: { href: string; label: string }[];
