@@ -1,6 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod';
 import { siteConfig } from '@/src/shared/config/site';
 
 const BOOKING_SERVICES = [
@@ -8,17 +11,35 @@ const BOOKING_SERVICES = [
   { value: 'painting', label: 'Interior & Exterior Painting' },
 ];
 
+const bookingSchema = z.object({
+  firstName: z.string().min(2, 'First name is required').max(50),
+  lastName: z.string().min(2, 'Last name is required').max(50),
+  phone: z.string().min(10, 'Valid phone number is required'),
+  email: z.string().email('Valid email address is required'),
+  service: z.enum(['handyman', 'painting'], {
+    message: 'Please select a service',
+  }),
+  message: z.string().optional(),
+});
+
+type BookingFormData = z.infer<typeof bookingSchema>;
+
 export function BookingForm() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<BookingFormData>({
+    resolver: zodResolver(bookingSchema),
+  });
+
+  async function onSubmit(data: BookingFormData) {
     setStatus('loading');
     setErrorMessage('');
-    
-    const formData = new FormData(e.currentTarget);
-    const data = Object.fromEntries(formData.entries());
 
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
@@ -29,26 +50,39 @@ export function BookingForm() {
         },
         body: JSON.stringify({
           access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || 'YOUR_ACCESS_KEY_HERE',
-          ...data,
           subject: `New Booking Request from ${data.firstName} ${data.lastName}`,
+          from_name: 'BrightNest Pro Website',
+          ...data,
         }),
       });
 
       const result = await response.json();
-      if (result.success) {
+      if (response.ok) {
         setStatus('success');
+        reset();
       } else {
-        setStatus('error');
-        setErrorMessage(result.message || 'Something went wrong.');
+        throw new Error(result.message || 'Something went wrong');
       }
-    } catch (err) {
+    } catch (error) {
+      console.error('Booking submission error:', error);
       setStatus('error');
-      setErrorMessage('Failed to submit form. Please check your connection and try again.');
+      setErrorMessage(
+        error instanceof Error ? error.message : 'An unexpected error occurred. Please try again or call us.'
+      );
     }
   }
 
   return (
-    <div className="w-full max-w-2xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
+    <div className="mx-auto w-full max-w-3xl overflow-hidden rounded-[var(--radius-xl)] bg-white shadow-xl ring-1 ring-slate-200">
+      <div className="bg-[var(--color-bg-dark)] px-6 py-8 text-center sm:px-10">
+        <h2 className="font-heading text-2xl font-bold text-white sm:text-3xl">
+          Request a Free Quote
+        </h2>
+        <p className="mt-2 text-sm text-slate-300">
+          Fill out the form below and we will get back to you within {siteConfig.responseMinutes} minutes.
+        </p>
+      </div>
+
       <div className="p-6 sm:p-10">
         {status === 'success' ? (
           <div className="text-center py-10" role="alert">
@@ -69,7 +103,7 @@ export function BookingForm() {
             </button>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-6" noValidate={false}>
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6" noValidate>
             {status === 'error' && (
               <div className="p-4 bg-red-50 text-red-600 rounded-lg text-sm border border-red-100" role="alert">
                 {errorMessage}
@@ -83,11 +117,11 @@ export function BookingForm() {
                 </label>
                 <input
                   id="firstName"
-                  name="firstName"
                   type="text"
-                  required
-                  className="w-full rounded-[var(--radius-md)] border border-slate-300 bg-white px-4 py-2.5 text-sm text-[var(--color-text-primary)] placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-cta-primary)] hover:border-slate-400"
+                  {...register('firstName')}
+                  className={`w-full rounded-[var(--radius-md)] border ${errors.firstName ? 'border-red-500 ring-red-500' : 'border-slate-300'} bg-white px-4 py-2.5 text-sm text-[var(--color-text-primary)] placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-cta-primary)] hover:border-slate-400`}
                 />
+                {errors.firstName && <p className="mt-1 text-xs text-red-500">{errors.firstName.message}</p>}
               </div>
               <div>
                 <label htmlFor="lastName" className="mb-1.5 block text-sm font-semibold text-[var(--color-text-primary)]">
@@ -95,11 +129,11 @@ export function BookingForm() {
                 </label>
                 <input
                   id="lastName"
-                  name="lastName"
                   type="text"
-                  required
-                  className="w-full rounded-[var(--radius-md)] border border-slate-300 bg-white px-4 py-2.5 text-sm text-[var(--color-text-primary)] placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-cta-primary)] hover:border-slate-400"
+                  {...register('lastName')}
+                  className={`w-full rounded-[var(--radius-md)] border ${errors.lastName ? 'border-red-500 ring-red-500' : 'border-slate-300'} bg-white px-4 py-2.5 text-sm text-[var(--color-text-primary)] placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-cta-primary)] hover:border-slate-400`}
                 />
+                {errors.lastName && <p className="mt-1 text-xs text-red-500">{errors.lastName.message}</p>}
               </div>
             </div>
 
@@ -110,11 +144,11 @@ export function BookingForm() {
                 </label>
                 <input
                   id="phone"
-                  name="phone"
                   type="tel"
-                  required
-                  className="w-full rounded-[var(--radius-md)] border border-slate-300 bg-white px-4 py-2.5 text-sm text-[var(--color-text-primary)] placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-cta-primary)] hover:border-slate-400"
+                  {...register('phone')}
+                  className={`w-full rounded-[var(--radius-md)] border ${errors.phone ? 'border-red-500 ring-red-500' : 'border-slate-300'} bg-white px-4 py-2.5 text-sm text-[var(--color-text-primary)] placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-cta-primary)] hover:border-slate-400`}
                 />
+                {errors.phone && <p className="mt-1 text-xs text-red-500">{errors.phone.message}</p>}
               </div>
               <div>
                 <label htmlFor="email" className="mb-1.5 block text-sm font-semibold text-[var(--color-text-primary)]">
@@ -122,11 +156,11 @@ export function BookingForm() {
                 </label>
                 <input
                   id="email"
-                  name="email"
                   type="email"
-                  required
-                  className="w-full rounded-[var(--radius-md)] border border-slate-300 bg-white px-4 py-2.5 text-sm text-[var(--color-text-primary)] placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-cta-primary)] hover:border-slate-400"
+                  {...register('email')}
+                  className={`w-full rounded-[var(--radius-md)] border ${errors.email ? 'border-red-500 ring-red-500' : 'border-slate-300'} bg-white px-4 py-2.5 text-sm text-[var(--color-text-primary)] placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-cta-primary)] hover:border-slate-400`}
                 />
+                {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email.message}</p>}
               </div>
             </div>
 
@@ -136,16 +170,16 @@ export function BookingForm() {
               </label>
               <select
                 id="service"
-                name="service"
-                required
                 defaultValue=""
-                className="w-full appearance-none rounded-[var(--radius-md)] border border-slate-300 bg-white px-4 py-2.5 text-sm text-[var(--color-text-primary)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-cta-primary)] hover:border-slate-400"
+                {...register('service')}
+                className={`w-full appearance-none rounded-[var(--radius-md)] border ${errors.service ? 'border-red-500 ring-red-500' : 'border-slate-300'} bg-white px-4 py-2.5 text-sm text-[var(--color-text-primary)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-cta-primary)] hover:border-slate-400`}
               >
                 <option value="" disabled>Choose a service (Handyman / Painting)...</option>
                 {BOOKING_SERVICES.map(srv => (
                   <option key={srv.value} value={srv.value}>{srv.label}</option>
                 ))}
               </select>
+              {errors.service && <p className="mt-1 text-xs text-red-500">{errors.service.message}</p>}
             </div>
 
             <div>
@@ -154,8 +188,8 @@ export function BookingForm() {
               </label>
               <textarea
                 id="message"
-                name="message"
                 rows={4}
+                {...register('message')}
                 placeholder="Describe what repairs or painting you need..."
                 className="w-full rounded-[var(--radius-md)] border border-slate-300 bg-white px-4 py-2.5 text-sm text-[var(--color-text-primary)] placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-cta-primary)] hover:border-slate-400"
               />
