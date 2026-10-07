@@ -1,4 +1,4 @@
-﻿import Link from 'next/link';
+import Link from 'next/link';
 import {
   Phone as IconPhone,
   Mail as IconMail,
@@ -22,7 +22,7 @@ export const SiteFooter = () => {
             <Link href="/" className="inline-block" aria-label="BrightNest Pro Service Home">
               <span className="text-xl font-bold text-white tracking-tight">
                 BrightNest{' '}
-                <span className="text-[var(--color-brand-teal)]">Pro</span>
+                <span className="text-[var(--color-brand-teal)]">Pro Service</span>
               </span>
             </Link>
             <p className="text-sm text-white/75 leading-relaxed">
