@@ -17,7 +17,6 @@ export function ReviewCard({ review, isPaused = false, onClick }: ReviewCardProp
   return (
     <article
       onClick={onClick}
-      role="button"
       tabIndex={0}
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {

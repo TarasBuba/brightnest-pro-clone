@@ -29,12 +29,12 @@ const securityHeaders = [
     key: 'Content-Security-Policy',
     value: [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.bookingkoala.com https://challenges.cloudflare.com",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.bookingkoala.com https://challenges.cloudflare.com https://www.googletagmanager.com",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-      "img-src 'self' data: blob: https://*.bookingkoala.com https://images.unsplash.com",
+      "img-src 'self' data: blob: https://*.bookingkoala.com https://images.unsplash.com https://www.googletagmanager.com https://www.google-analytics.com",
       "font-src 'self' data: https://fonts.gstatic.com",
       "frame-src 'self' https://*.bookingkoala.com https://*.stripe.com",
-      "connect-src 'self' https://*.bookingkoala.com https://api.web3forms.com",
+      "connect-src 'self' https://*.bookingkoala.com https://api.web3forms.com https://www.googletagmanager.com https://www.google-analytics.com",
     ].join('; '),
   },
 ];

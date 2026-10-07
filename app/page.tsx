@@ -6,7 +6,7 @@ import { localBusinessSchema } from '@/src/shared/lib/schema/local-business-sche
 
 export default function HomePage() {
   return (
-    <>
+    <main id="main-content">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
@@ -15,7 +15,7 @@ export default function HomePage() {
       <RecentWorkSection />
       <ServicesSection />
       <ReviewsSection />
-    </>
+    </main>
   );
 }
 
