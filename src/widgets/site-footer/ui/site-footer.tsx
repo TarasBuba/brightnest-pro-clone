@@ -8,7 +8,7 @@ import {
   ArrowRight as IconArrowRight,
 } from 'lucide-react';
 import { FacebookIcon as IconBrandFacebook, InstagramIcon as IconBrandInstagram } from '@/src/shared/ui/brand-icons';
-import { BrandLogo } from '@/src/shared/ui/brand-logo';
+import Image from 'next/image';
 import { siteConfig } from '@/src/shared/config/site';
 
 export const SiteFooter = () => {
@@ -21,7 +21,7 @@ export const SiteFooter = () => {
           {/* Brand & Mission */}
           <div className="space-y-3">
             <Link href="/" className="inline-flex items-center gap-2" aria-label="BrightNest Pro Service Home">
-              <BrandLogo className="h-8 w-auto text-white" aria-hidden="true" />
+              <Image src="/logo-white.svg" alt="BrightNest Pro Service Logo" width={160} height={120} className="h-9 w-auto" />
               <span className="text-xl font-bold text-white tracking-tight">
                 BrightNest{' '}
                 <span className="text-[var(--color-brand-teal)]">Pro Service</span>

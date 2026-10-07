@@ -7,7 +7,7 @@ import { siteConfig } from '@/src/shared/config/site';
 import { Phone } from '../lib/icons';
 import { TrustStrip } from './trust-strip';
 
-import { BrandLogo } from '@/src/shared/ui/brand-logo';
+import Image from 'next/image';
 
 const NAV_LINKS = [
   { href: '/#services', label: 'Services' },
@@ -42,7 +42,14 @@ export function SiteHeader() {
             className="flex items-center gap-2 group"
             aria-label="BrightNest Pro Service home"
           >
-            <BrandLogo className="h-8 sm:h-10 w-auto text-[var(--color-brand-navy)] transition-transform group-hover:scale-105" aria-hidden="true" />
+            <Image 
+              src="/logo.svg" 
+              alt="BrightNest Pro Service Logo" 
+              width={160} 
+              height={120} 
+              className="h-10 sm:h-12 w-auto transition-transform group-hover:scale-105" 
+              priority
+            />
             <span className="text-xl sm:text-2xl font-heading font-extrabold text-[var(--color-brand-navy)] tracking-tight">
               BrightNest{' '}
               <span className="text-[var(--color-cta-primary)]">Pro Service</span>
