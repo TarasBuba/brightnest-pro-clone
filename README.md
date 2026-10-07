@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BrightNest Pro Services
 
-## Getting Started
+This is the source code for the official website of **BrightNest Pro Services**, an Edmonton-based family business providing professional handyman, deck restoration, and interior/exterior painting services.
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The site is a fast, responsive, and SEO-optimized landing page built with modern web technologies:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Framework:** [Next.js](https://nextjs.org/) (App Router)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Forms:** [Web3Forms](https://web3forms.com/) (Serverless email forwarding)
+- **Validation:** [Zod](https://zod.dev/) & React Hook Form
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **Deployment:** [Vercel](https://vercel.com)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Local Development
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-## Learn More
+2. Set up environment variables:
+   Create a `.env.local` file in the root directory and add your Web3Forms access key:
+   ```env
+   NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=your_access_key_here
+   ```
+   *(You can generate a free key at [Web3Forms](https://web3forms.com/).)*
 
-To learn more about Next.js, take a look at the following resources:
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Commands & Checks
 
-## Deploy on Vercel
+Before committing code or deploying, run these checks to ensure code quality:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Type Checking:**
+  ```bash
+  npm run type-check
+  ```
+- **Linting:**
+  ```bash
+  npm run lint
+  ```
+- **Production Build:**
+  ```bash
+  npm run build
+  ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contact Form (Web3Forms)
+
+The `/book` page features a serverless contact form. It uses Web3Forms to email submissions directly to the business owners without needing a backend database. 
+
+- It includes a `botcheck` honeypot field to block simple spam bots.
+- Client-side validation is handled via Zod and React Hook Form.
+
+## License & Copyright
+
+&copy; 2026 BrightNest Pro Services. All rights reserved. 
+Design and development by the BrightNest Pro team.

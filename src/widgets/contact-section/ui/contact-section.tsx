@@ -62,8 +62,6 @@ export function ContactForm() {
           />
         </div>
 
-        <input type="checkbox" className="hidden" style={{ display: 'none' }} {...register('botcheck')} />
-
         <SelectFields
           name="service"
           label="Service Needed"
@@ -111,7 +109,7 @@ export function ContactForm() {
 
         <input
           type="checkbox"
-          name="botcheck"
+          {...register('botcheck')}
           tabIndex={-1}
           autoComplete="off"
           style={{ display: 'none' }}
