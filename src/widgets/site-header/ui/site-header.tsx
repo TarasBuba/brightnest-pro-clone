@@ -25,7 +25,7 @@ export function SiteHeader() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full">
+    <header className="reveal-on-scroll sticky top-0 z-50 w-full">
       <TrustStrip />
 
       <div

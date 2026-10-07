@@ -14,7 +14,7 @@ export const SiteFooter = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[var(--color-bg-dark)] text-[var(--color-text-on-dark)] pt-14 pb-8 px-4">
+    <footer className="reveal-on-scroll bg-[var(--color-bg-dark)] text-[var(--color-text-on-dark)] pt-14 pb-8 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-white/10">
           {/* Brand & Mission */}

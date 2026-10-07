@@ -52,91 +52,47 @@
   }
 }
 /* ==========================================================================
-   Scroll-Driven Animations (60 FPS with View Timelines & Robust Fallbacks)
+   Global Scroll Animations (Robust IntersectionObserver Pattern)
    ========================================================================== */
 
-@keyframes slideInFromLeft {
-  0% {
-    opacity: 0;
-    transform: translate3d(-48px, 0, 0);
-  }
-  100% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
+.reveal-on-scroll {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@keyframes slideInFromRight {
-  0% {
-    opacity: 0;
-    transform: translate3d(48px, 0, 0);
-  }
-  100% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
+/* Base Transform Directions */
+.reveal-on-scroll.reveal-left {
+  transform: translate3d(-40px, 0, 0);
+}
+.reveal-on-scroll.reveal-right {
+  transform: translate3d(40px, 0, 0);
+}
+.reveal-on-scroll.reveal-up {
+  transform: translate3d(0, 40px, 0);
+}
+.reveal-on-scroll.reveal-scale {
+  transform: scale(0.95);
 }
 
-/* Base state: Ensure content is 100% visible by default (no hidden content fallback) */
-.slide-in-left,
-.slide-in-right,
-.service-card-odd,
-.service-card-even,
-.reveal-left,
-.reveal-right {
+/* Staggering delays for lists and grids */
+.reveal-on-scroll.delay-100 { transition-delay: 100ms; }
+.reveal-on-scroll.delay-200 { transition-delay: 200ms; }
+.reveal-on-scroll.delay-300 { transition-delay: 300ms; }
+.reveal-on-scroll.delay-400 { transition-delay: 400ms; }
+.reveal-on-scroll.delay-500 { transition-delay: 500ms; }
+
+/* Trigger State */
+.reveal-on-scroll[data-revealed="true"] {
   opacity: 1;
-  transform: none;
-}
-
-/* Progressive enhancement with CSS Scroll-Driven Animations */
-@supports (animation-timeline: view()) {
-  .slide-in-left,
-  .service-card-odd,
-  .reveal-left {
-    animation-name: slideInFromLeft;
-    animation-timeline: view();
-    animation-range: entry 5% cover 32%;
-    animation-fill-mode: both;
-    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: transform, opacity;
-  }
-
-  .slide-in-right,
-  .service-card-even,
-  .reveal-right {
-    animation-name: slideInFromRight;
-    animation-timeline: view();
-    animation-range: entry 5% cover 32%;
-    animation-fill-mode: both;
-    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: transform, opacity;
-  }
-}
-
-/* Fallback for browsers without animation-timeline: view() support */
-@supports not (animation-timeline: view()) {
-  .slide-in-left,
-  .slide-in-right,
-  .service-card-odd,
-  .service-card-even,
-  .reveal-left,
-  .reveal-right {
-    animation: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-  }
+  transform: translate3d(0, 0, 0) scale(1);
 }
 
 /* Accessibility: Respect prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
-  .slide-in-left,
-  .slide-in-right,
-  .service-card-odd,
-  .service-card-even,
-  .reveal-left,
-  .reveal-right {
-    animation: none !important;
-    opacity: 1 !important;
+  .reveal-on-scroll {
+    transition: opacity 0.5s ease;
     transform: none !important;
   }
 }
@@ -156,36 +112,5 @@
 
   details[open]::details-content {
     height: auto;
-  }
-}
-/* Intersection Observer Fallback Animations */
-.reveal-on-scroll {
-  opacity: 0;
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.reveal-on-scroll.reveal-left {
-  transform: translate3d(-48px, 0, 0);
-}
-
-.reveal-on-scroll.reveal-right {
-  transform: translate3d(48px, 0, 0);
-}
-
-.reveal-on-scroll.reveal-up {
-  transform: translate3d(0, 48px, 0);
-}
-
-.reveal-on-scroll[data-revealed="true"] {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
-}
-
-/* For browsers with scroll-driven animations, disable the observer styles */
-@supports (animation-timeline: view()) {
-  .reveal-on-scroll {
-    opacity: 1;
-    transform: none;
-    transition: none;
   }
 }

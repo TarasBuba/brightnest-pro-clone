@@ -4,40 +4,60 @@ import { useEffect } from 'react';
 
 export function RevealObserver() {
   useEffect(() => {
-    // Only run on the client
     if (typeof window === 'undefined') return;
-    
-    // Check if the user prefers reduced motion
+
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) {
-      // Mark all elements as revealed immediately
-      document.querySelectorAll('.reveal-on-scroll').forEach(el => {
-        el.setAttribute('data-revealed', 'true');
-      });
-      return;
-    }
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.setAttribute('data-revealed', 'true');
-          // Optionally stop observing once revealed
+          // Unobserve to trigger only once
           observer.unobserve(entry.target);
         }
       });
     }, {
       root: null,
-      rootMargin: '0px 0px -10% 0px', // Trigger slightly before it comes into view
+      rootMargin: '0px 0px -10% 0px',
       threshold: 0.1
     });
 
-    const elements = document.querySelectorAll('.reveal-on-scroll');
-    elements.forEach(el => observer.observe(el));
+    // Function to observe new elements
+    const observeElements = () => {
+      document.querySelectorAll('.reveal-on-scroll:not([data-revealed])').forEach(el => {
+        if (prefersReducedMotion) {
+          el.setAttribute('data-revealed', 'true');
+        } else {
+          observer.observe(el);
+        }
+      });
+    };
 
-    // Cleanup
+    // Initial check
+    observeElements();
+
+    // Observe future DOM mutations (for client-side navigation or dynamic rendering)
+    const mutationObserver = new MutationObserver((mutations) => {
+      let shouldScan = false;
+      for (const mutation of mutations) {
+        if (mutation.addedNodes.length > 0) {
+          shouldScan = true;
+          break;
+        }
+      }
+      if (shouldScan) {
+        observeElements();
+      }
+    });
+
+    mutationObserver.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+
     return () => {
-      elements.forEach(el => observer.unobserve(el));
       observer.disconnect();
+      mutationObserver.disconnect();
     };
   }, []);
 

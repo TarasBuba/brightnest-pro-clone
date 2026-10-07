@@ -7,13 +7,6 @@ import { ServiceAccordionItem } from './service-accordion-item';
 import { SERVICES } from '@/src/entities/service/model';
 
 export function ServicesSection() {
-  const { ref: headerRef, isInView: isHeaderInView } =
-    useInView<HTMLDivElement>({
-      rootMargin: '-40px',
-      threshold: 0.1,
-      triggerOnce: true,
-    });
-
   return (
     <section
       id="services"
@@ -42,27 +35,20 @@ export function ServicesSection() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-6xl">
-        {/* Section Header with useInView scroll entrance */}
-        <div
-          ref={headerRef}
-          className={`transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:opacity-100 motion-reduce:transition-none ${
-            isHeaderInView
-              ? 'opacity-100 translate-y-0'
-              : 'opacity-0 translate-y-6'
-          }`}
-        >
+        {/* Section Header with reveal-on-scroll */}
+        <div className="reveal-on-scroll reveal-up flex flex-col items-center">
           <p className="text-center text-sm font-bold uppercase tracking-[0.16em] text-cyan-300 drop-shadow-sm">
             Core Specializations
           </p>
 
           <h2
             id="services-title"
-            className="mt-2 text-center font-heading text-4xl font-bold text-white drop-shadow-sm md:text-5xl"
+            className="reveal-on-scroll reveal-up delay-100 mt-2 text-center font-heading text-4xl font-bold text-white drop-shadow-sm md:text-5xl"
           >
             Handyman &amp; Painting Services
           </h2>
 
-          <p className="mx-auto mt-3 max-w-xl text-center text-base md:text-lg text-slate-200">
+          <p className="reveal-on-scroll reveal-up delay-200 mx-auto mt-3 max-w-xl text-center text-base md:text-lg text-slate-200">
             Specialized handyman repairs, custom carpentry, and professional painting in Edmonton —
             delivered with personal care and meticulous craftsmanship.
           </p>

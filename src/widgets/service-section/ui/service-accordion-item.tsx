@@ -3,8 +3,6 @@
 import Link from 'next/link';
 import { Clock, ArrowRight, Check } from 'lucide-react';
 import type { Service } from '@/src/entities/service/model';
-import { useInView } from '@/src/shared/lib/hooks/use-in-view';
-import { getServiceCardAnimationClasses } from '../lib/animation-classes';
 
 export type ServiceAccordionItemProps = {
   service: Service;
@@ -17,21 +15,13 @@ export function ServiceAccordionItem({
   index = 0,
   className = '',
 }: ServiceAccordionItemProps) {
-  const { ref, isInView } = useInView<HTMLDivElement>({
-    rootMargin: '-50px',
-    threshold: 0.15,
-    triggerOnce: true,
-  });
-
   const IconComponent = service.icon;
 
-  // Determine guaranteed entrance animation class based on index and viewport intersection
-  const animationClasses = getServiceCardAnimationClasses(index, isInView);
+  const delayClass = index % 2 === 0 ? 'delay-100' : 'delay-300';
 
   return (
     <div
-      ref={ref}
-      className={`group flex flex-col justify-between rounded-[var(--radius-lg)] border border-slate-200/60 bg-white p-6 md:p-8 shadow-sm transition-all duration-500 hover:shadow-lg ${animationClasses} ${className}`}
+      className={`reveal-on-scroll reveal-up ${delayClass} group flex flex-col justify-between rounded-[var(--radius-lg)] border border-slate-200/60 bg-white p-6 md:p-8 shadow-sm transition-all duration-500 hover:shadow-lg ${className}`}
     >
       <div>
         <div className="flex items-start gap-4 border-b border-slate-100 pb-5">

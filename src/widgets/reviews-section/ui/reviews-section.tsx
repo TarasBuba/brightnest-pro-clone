@@ -12,17 +12,17 @@ export function ReviewsSection() {
     >
       <div className="mx-auto max-w-6xl">
         {/* Section Header */}
-        <div className="mb-8 text-center">
-          <div className="inline-flex items-center gap-1.5 rounded-full bg-[var(--color-brand-teal)]/10 px-3 py-1 text-xs font-semibold text-[var(--color-brand-teal)] mb-3">
+        <div className="mb-8 flex flex-col items-center text-center">
+          <div className="reveal-on-scroll reveal-up inline-flex items-center gap-1.5 rounded-full bg-[var(--color-brand-teal)]/10 px-3 py-1 text-xs font-semibold text-[var(--color-brand-teal)] mb-3">
             <span>Verified Customer Reviews</span>
           </div>
           <h2
             id="reviews-title"
-            className="text-3xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-4xl"
+            className="reveal-on-scroll reveal-up delay-100 text-3xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-4xl"
           >
             What Our Customers Say
           </h2>
-          <p className="mt-2 text-base text-[var(--color-text-secondary)] max-w-2xl mx-auto">
+          <p className="reveal-on-scroll reveal-up delay-200 mt-2 text-base text-[var(--color-text-secondary)] max-w-2xl mx-auto">
             Real experiences from Edmonton homeowners who trust BrightNest Pro for quality repairs, painting, and home care.
           </p>
         </div>
@@ -34,7 +34,7 @@ export function ReviewsSection() {
         <ReviewsCarousel />
 
         {/* Local Guarantee Bar */}
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-xl border border-[var(--color-border)]/60 bg-[var(--color-bg-card)] p-5 shadow-xs">
+        <div className="reveal-on-scroll reveal-up mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-xl border border-[var(--color-border)]/60 bg-[var(--color-bg-card)] p-5 shadow-xs">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
               <CheckCircle2 className="h-5 w-5" />

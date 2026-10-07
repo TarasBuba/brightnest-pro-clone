@@ -27,8 +27,7 @@ export function HeroSection() {
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-8">
           {/* Left Column: Value Proposition & CTAs */}
           <div className="lg:col-span-6 xl:col-span-6">
-            {/* Rating Pill */}
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-amber-200/80 bg-amber-50/80 px-3.5 py-1.5 text-xs font-semibold text-amber-900 backdrop-blur-sm">
+            <div className="reveal-on-scroll reveal-up mb-5 inline-flex items-center gap-2 rounded-full border border-amber-200/80 bg-amber-50/80 px-3.5 py-1.5 text-xs font-semibold text-amber-900 backdrop-blur-sm">
               <div className="flex items-center text-amber-500" aria-hidden="true">
                 <Star className="h-3.5 w-3.5 fill-current" />
                 <Star className="h-3.5 w-3.5 fill-current" />
@@ -45,20 +44,20 @@ export function HeroSection() {
             {/* Main Headline */}
             <h1
               id="hero-title"
-              className="font-heading text-4xl font-extrabold tracking-tight text-[var(--color-text-primary)] sm:text-5xl lg:text-5xl xl:text-6xl leading-[1.12]"
+              className="reveal-on-scroll reveal-up delay-100 font-heading text-4xl font-extrabold tracking-tight text-[var(--color-text-primary)] sm:text-5xl lg:text-5xl xl:text-6xl leading-[1.12]"
             >
               Handyman &amp; Painting That Feels Like Family,{' '}
               <span className="text-[var(--color-cta-primary)]">Not a Job Site</span>
             </h1>
 
             {/* Subtitle */}
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-[var(--color-text-secondary)]">
+            <p className="reveal-on-scroll reveal-up delay-200 mt-5 max-w-xl text-lg leading-relaxed text-[var(--color-text-secondary)]">
               From custom carpentry, deck restoration, and home repairs to flawless interior and exterior painting —
               Yuriy &amp; Karina handle every project across Edmonton with personal craftsmanship and honest care.
             </p>
 
             {/* Checklist of highlights */}
-            <ul className="mt-6 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+            <ul className="reveal-on-scroll reveal-up delay-300 mt-6 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
               {HERO_HIGHLIGHTS.map((item) => (
                 <li
                   key={item}
@@ -71,7 +70,7 @@ export function HeroSection() {
             </ul>
 
             {/* CTAs */}
-            <div className="mt-8 flex flex-wrap items-center gap-3.5 sm:gap-4">
+            <div className="reveal-on-scroll reveal-up delay-400 mt-8 flex flex-wrap items-center gap-3.5 sm:gap-4">
               <Link
                 href="/book"
                 className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-[var(--radius-md)] bg-[var(--color-cta-primary)] px-7 text-base font-semibold text-white shadow-md shadow-[var(--color-cta-primary)]/20 transition-all duration-200 hover:bg-[var(--color-cta-primary-hover)] hover:shadow-lg hover:shadow-[var(--color-cta-primary)]/30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-cta-primary)] active:scale-[0.98]"
@@ -96,7 +95,7 @@ export function HeroSection() {
           </div>
 
           {/* Right Column: 4-Photo Collage / Mosaic Grid */}
-          <div className="lg:col-span-6 xl:col-span-6">
+          <div className="reveal-on-scroll reveal-right delay-300 lg:col-span-6 xl:col-span-6">
             <div className="relative mx-auto max-w-xl pb-6 sm:pb-8 lg:max-w-none">
               {/* Soft decorative backdrop glow */}
               <div
