@@ -83,7 +83,6 @@ export default function RootLayout({
         <SiteHeader />
         <div className="flex-1">{children}</div>
         <SiteFooter />
-        <GoogleAnalytics gaId="G-XXXXXX" />
       </body>
     </html>
   );

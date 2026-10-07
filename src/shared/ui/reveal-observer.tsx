@@ -36,28 +36,8 @@ export function RevealObserver() {
     // Initial check
     observeElements();
 
-    // Observe future DOM mutations (for client-side navigation or dynamic rendering)
-    const mutationObserver = new MutationObserver((mutations) => {
-      let shouldScan = false;
-      for (const mutation of mutations) {
-        if (mutation.addedNodes.length > 0) {
-          shouldScan = true;
-          break;
-        }
-      }
-      if (shouldScan) {
-        observeElements();
-      }
-    });
-
-    mutationObserver.observe(document.body, {
-      childList: true,
-      subtree: true,
-    });
-
     return () => {
       observer.disconnect();
-      mutationObserver.disconnect();
     };
   }, []);
 
