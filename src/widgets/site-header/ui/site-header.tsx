@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -25,14 +25,14 @@ export function SiteHeader() {
   }, []);
 
   return (
-    <header className="reveal-on-scroll sticky top-0 z-50 w-full">
+    <header className="sticky top-0 z-50 w-full">
       <TrustStrip />
 
       <div
         className={`w-full transition-shadow duration-300 ${
           isScrolled
-            ? 'bg-[var(--color-bg-primary)] shadow-md'
-            : 'bg-[var(--color-bg-primary)]/95 backdrop-blur-sm'
+            ? 'bg-white shadow-md'
+            : 'bg-white/95 backdrop-blur-sm'
         }`}
       >
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">

@@ -39,7 +39,7 @@ export function MobileNavToggle({ links, phoneNumber }: MobileNavToggleProps) {
       {/* Backdrop */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm transition-opacity duration-300"
+          className="fixed inset-0 z-40 bg-slate-900/60 backdrop-blur-sm transition-opacity duration-300"
           onClick={() => setIsOpen(false)}
           aria-hidden="true"
         />
@@ -47,7 +47,7 @@ export function MobileNavToggle({ links, phoneNumber }: MobileNavToggleProps) {
 
       {/* Drawer */}
       <div
-        className={`fixed inset-y-0 right-0 z-50 w-[85%] max-w-sm flex-col bg-[var(--color-bg-primary)] shadow-2xl transition-transform duration-300 ease-in-out ${
+        className={`fixed inset-y-0 right-0 z-50 flex h-full w-[85%] max-w-sm flex-col bg-white shadow-2xl transition-transform duration-300 ease-in-out ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
