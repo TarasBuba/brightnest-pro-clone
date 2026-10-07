@@ -1,4 +1,4 @@
-﻿import { GoogleIcon, FacebookIcon } from '@/src/shared/ui/brand-icons';
+import { GoogleIcon, FacebookIcon } from '@/src/shared/ui/brand-icons';
 import { HomeStarsIcon, PLATFORM_ACCENT } from './icons';
 import { StarRating } from './star-rating';
 import { ShieldCheck, ThumbsUp, ExternalLink } from 'lucide-react';

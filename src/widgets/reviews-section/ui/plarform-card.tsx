@@ -1,4 +1,4 @@
-﻿import { StarRating } from './star-rating';
+import { StarRating } from './star-rating';
 import { PLATFORM_ACCENT, PlatformIcon } from './icons';
 
 interface PlatformCardProps {

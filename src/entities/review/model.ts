@@ -1,4 +1,4 @@
-﻿export interface Review {
+export interface Review {
   id: number;
   name: string;
   rating: 1 | 2 | 3 | 4 | 5;
@@ -56,14 +56,14 @@ export const REVIEWS: readonly Review[] = [
     name: 'Oleksii Chubko',
     rating: 5,
     avatar: '/images/avatars/oleksii-chubko.webp',
-    text: 'Great couple! They did cleaning and painting for us when we were moving. Weâ€™re very happy with their work and would definitely recommend them. Weâ€™ll be happy to use their services again!',
+    text: 'Great couple! They did cleaning and painting for us when we were moving. We’re very happy with their work and would definitely recommend them. We’ll be happy to use their services again!',
   },
   {
     id: 8,
     name: 'P L',
     rating: 5,
     avatar: '/images/avatars/p-l.webp',
-    text: 'Quality, customized work with attention paid to detail and per homeownerâ€™s instructions - happy to support a local, family-run business.',
+    text: 'Quality, customized work with attention paid to detail and per homeowner’s instructions - happy to support a local, family-run business.',
   },
 ];
 

@@ -1,4 +1,4 @@
-﻿ export type Review = {
+ export type Review = {
     id: number;
     name: string;
     rating: number;
@@ -54,14 +54,14 @@ export const reviews: Review[] = [
     name: 'Oleksii Chubko',
     rating: 5,
     review:
-      'Great couple! They did cleaning and painting for us when we were moving. Weâ€™re very happy with their work and would definitely recommend them. Weâ€™ll be happy to use their services again!',
+      'Great couple! They did cleaning and painting for us when we were moving. We’re very happy with their work and would definitely recommend them. We’ll be happy to use their services again!',
   },
   {
     id:8,
     name: 'P L',
     rating: 5,
     review:
-      'Quality, customized work with attention paid to detail and per homeownerâ€™s instructions - happy to support a local, family-run business.',
+      'Quality, customized work with attention paid to detail and per homeowner’s instructions - happy to support a local, family-run business.',
   }
 ];
 

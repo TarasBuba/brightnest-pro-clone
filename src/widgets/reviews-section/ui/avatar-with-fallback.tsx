@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import { getInitials } from '@/src/shared/lib/utils/avatar';

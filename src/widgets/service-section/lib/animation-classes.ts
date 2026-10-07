@@ -1,4 +1,4 @@
-﻿// src/widgets/service-section/lib/animation-classes.ts
+// src/widgets/service-section/lib/animation-classes.ts
 
 /**
  * Generates scroll-triggered entrance animation classes for service cards.

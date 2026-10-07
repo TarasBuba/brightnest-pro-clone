@@ -1,4 +1,4 @@
-﻿import Image from 'next/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Star, CheckCircle2, Phone, ArrowRight, ShieldCheck, MapPin } from 'lucide-react';
 import { siteConfig } from '@/src/shared/config/site';
@@ -52,7 +52,7 @@ export function HeroSection() {
 
             {/* Subtitle */}
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[var(--color-text-secondary)]">
-              From custom carpentry, deck restoration, and home repairs to flawless interior and exterior painting â€”
+              From custom carpentry, deck restoration, and home repairs to flawless interior and exterior painting —
               Yuriy &amp; Karina handle every project across Edmonton with personal craftsmanship and honest care.
             </p>
 
@@ -90,7 +90,7 @@ export function HeroSection() {
             {/* Guarantee note */}
             <div className="mt-5 flex items-center gap-2 text-xs font-medium text-[var(--color-text-secondary)]">
               <ShieldCheck className="h-4 w-4 shrink-0 text-[var(--color-success)]" />
-              <span>100% Satisfaction Guarantee â€¢ Direct communication with the owners</span>
+              <span>100% Satisfaction Guarantee • Direct communication with the owners</span>
             </div>
           </div>
 
@@ -120,7 +120,7 @@ export function HeroSection() {
                     />
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-2.5 sm:p-3">
                       <span className="inline-block rounded-md bg-black/50 px-2 py-0.5 text-[10px] sm:text-xs font-medium text-white backdrop-blur-sm">
-                        Board Assembly â€¢ Yuriy
+                        Board Assembly • Yuriy
                       </span>
                     </div>
                   </div>
@@ -137,7 +137,7 @@ export function HeroSection() {
                     />
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-2.5 sm:p-3">
                       <span className="inline-block rounded-md bg-black/50 px-2 py-0.5 text-[10px] sm:text-xs font-medium text-white backdrop-blur-sm">
-                        Protective Sealing â€¢ Karina
+                        Protective Sealing • Karina
                       </span>
                     </div>
                   </div>
@@ -163,7 +163,7 @@ export function HeroSection() {
                     </div>
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-2.5 sm:p-3">
                       <span className="inline-block rounded-md bg-black/50 px-2 py-0.5 text-[10px] sm:text-xs font-medium text-white backdrop-blur-sm">
-                        Finished Project â€¢ Yuriy
+                        Finished Project • Yuriy
                       </span>
                     </div>
                   </div>
@@ -180,7 +180,7 @@ export function HeroSection() {
                     />
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-2.5 sm:p-3">
                       <span className="inline-block rounded-md bg-black/50 px-2 py-0.5 text-[10px] sm:text-xs font-medium text-white backdrop-blur-sm">
-                        Structural Coating â€¢ Karina
+                        Structural Coating • Karina
                       </span>
                     </div>
                   </div>
@@ -191,7 +191,7 @@ export function HeroSection() {
               <div className="absolute -bottom-2 sm:-bottom-3 left-1/2 -translate-x-1/2 w-[94%] sm:w-auto max-w-md z-10">
                 <div className="flex items-center justify-center gap-2 rounded-full border border-slate-200/80 bg-white/95 px-4 py-2 text-center text-xs sm:text-sm font-semibold text-slate-800 shadow-xl backdrop-blur-md">
                   <MapPin className="h-4 w-4 shrink-0 text-emerald-600" />
-                  <span className="truncate">Handyman &amp; Painting â€¢ Verified Edmonton Family Team</span>
+                  <span className="truncate">Handyman &amp; Painting • Verified Edmonton Family Team</span>
                 </div>
               </div>
             </div>

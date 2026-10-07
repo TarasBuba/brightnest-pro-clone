@@ -1,4 +1,4 @@
-﻿import type { ServiceId } from '@/src/entities/service/model';
+import type { ServiceId } from '@/src/entities/service/model';
 
 export interface ProjectImage {
   src: string;
@@ -27,7 +27,7 @@ export interface Project {
 }
 
 /**
- * Real jobs by Yuriy & Karina. Every photo is matched to the text next to it â€”
+ * Real jobs by Yuriy & Karina. Every photo is matched to the text next to it —
  * keep it that way when adding projects.
  */
 export const PROJECTS: readonly Project[] = [
@@ -37,7 +37,7 @@ export const PROJECTS: readonly Project[] = [
     categoryLabel: 'Deck rebuild',
     title: 'Backyard deck rebuilt from the joists up',
     description:
-      'Bare framing, new boards, and a fresh finish â€” from an open frame to a deck ready for the swing chair.',
+      'Bare framing, new boards, and a fresh finish — from an open frame to a deck ready for the swing chair.',
     size: 'feature',
     before: {
       src: '/images/work/deck-before.webp',

@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans, Inter } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { SiteHeader } from '@/src/widgets/site-header';

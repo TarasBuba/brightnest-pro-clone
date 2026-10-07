@@ -1,4 +1,4 @@
-﻿import { Star, ShieldCheck, Clock, MapPin } from 'lucide-react';
+import { Star, ShieldCheck, Clock, MapPin } from 'lucide-react';
 import { siteConfig } from '@/src/shared/config/site';
 
 export function TrustStrip() {

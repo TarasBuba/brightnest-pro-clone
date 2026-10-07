@@ -1,4 +1,4 @@
-﻿// src/widgets/service-section/model/service-gallery-data.ts
+// src/widgets/service-section/model/service-gallery-data.ts
 
 export interface ServiceGalleryItem {
   src: string;

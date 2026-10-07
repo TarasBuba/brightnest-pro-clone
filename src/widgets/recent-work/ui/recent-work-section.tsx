@@ -1,4 +1,4 @@
-﻿import { Sparkles, Hammer, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { Sparkles, Hammer, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { BentoGrid } from './bento-grid';
 
 export function RecentWorkSection() {
@@ -23,7 +23,7 @@ export function RecentWorkSection() {
         <div className="mx-auto max-w-3xl text-center">
           <div className="reveal-on-scroll reveal-up inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-1.5 text-xs font-semibold text-emerald-800 backdrop-blur-sm shadow-xs">
             <Sparkles className="h-3.5 w-3.5 text-emerald-600" />
-            <span>Master Craftsmanship â€¢ Edmonton &amp; Surrounding Areas</span>
+            <span>Master Craftsmanship • Edmonton &amp; Surrounding Areas</span>
           </div>
 
           <h2
@@ -37,7 +37,7 @@ export function RecentWorkSection() {
           </h2>
 
           <p className="reveal-on-scroll reveal-up delay-200 mt-4 text-base sm:text-lg leading-relaxed text-[var(--color-text-secondary)]">
-            From raw structural framework to showroom finish â€” explore how Yuriy &amp; Karina restore,
+            From raw structural framework to showroom finish — explore how Yuriy &amp; Karina restore,
             build, and beautify homes across Edmonton with dedicated family care.
           </p>
 

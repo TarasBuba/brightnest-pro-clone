@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Single source of truth for business facts used across the site
  * (header, footer, booking page, SEO metadata, JSON-LD).
  * Change a value here and every consumer stays in sync.

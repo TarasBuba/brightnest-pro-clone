@@ -1,4 +1,4 @@
-﻿import Link from 'next/link';
+import Link from 'next/link';
 import { PlatformTrustBar } from './platform-trust-bar';
 import { ReviewsCarousel } from './reviews-carousel';
 import { CheckCircle2 } from 'lucide-react';
