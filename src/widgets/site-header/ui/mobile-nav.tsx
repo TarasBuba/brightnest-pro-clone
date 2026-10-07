@@ -5,6 +5,8 @@ import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 
+import { BrandLogo } from '@/src/shared/ui/brand-logo';
+
 interface MobileNavToggleProps {
   links: { href: string; label: string }[];
   phoneNumber: string;
@@ -48,9 +50,12 @@ export function MobileNavToggle({ links, phoneNumber }: MobileNavToggleProps) {
         }`}
       >
         <div className="flex h-20 items-center justify-between px-6 border-b border-slate-100">
-          <span className="font-heading text-xl font-bold text-[var(--color-brand-navy)]">
-            BrightNest <span className="text-[var(--color-cta-primary)]">Pro Service</span>
-          </span>
+          <div className="flex items-center gap-1.5">
+            <BrandLogo className="h-8 w-auto text-[var(--color-brand-navy)]" aria-hidden="true" />
+            <span className="font-heading text-xl font-bold text-[var(--color-brand-navy)]">
+              BrightNest <span className="text-[var(--color-cta-primary)]">Pro Service</span>
+            </span>
+          </div>
           <button
             onClick={() => setIsOpen(false)}
             aria-label="Close menu"

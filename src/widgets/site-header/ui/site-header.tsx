@@ -7,6 +7,8 @@ import { siteConfig } from '@/src/shared/config/site';
 import { Phone } from '../lib/icons';
 import { TrustStrip } from './trust-strip';
 
+import { BrandLogo } from '@/src/shared/ui/brand-logo';
+
 const NAV_LINKS = [
   { href: '/#services', label: 'Services' },
   { href: '/#work', label: 'Our Work' },
@@ -37,10 +39,11 @@ export function SiteHeader() {
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <Link
             href="/"
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 group"
             aria-label="BrightNest Pro Service home"
           >
-            <span className="text-xl font-bold text-[var(--color-text-primary)]">
+            <BrandLogo className="h-8 sm:h-10 w-auto text-[var(--color-brand-navy)] transition-transform group-hover:scale-105" aria-hidden="true" />
+            <span className="text-xl sm:text-2xl font-heading font-extrabold text-[var(--color-brand-navy)] tracking-tight">
               BrightNest{' '}
               <span className="text-[var(--color-cta-primary)]">Pro Service</span>
             </span>
