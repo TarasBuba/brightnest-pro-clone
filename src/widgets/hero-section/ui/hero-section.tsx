@@ -19,7 +19,7 @@ export function HeroSection() {
     >
       {/* Background ambient lighting */}
       <div
-        className="pointer-events-none absolute -top-24 left-1/2 h-96 w-[700px] -translate-x-1/2 rounded-full bg-gradient-to-tr from-[var(--color-brand-teal)]/10 via-amber-200/15 to-transparent blur-3xl"
+        className="pointer-events-none absolute -top-24 left-1/2 h-96 w-[700px] -translate-x-1/2 rounded-full bg-gradient-to-tr from-[var(--color-brand-teal)]/10 via-sky-100/10 to-transparent blur-3xl"
         aria-hidden="true"
       />
 
@@ -99,7 +99,7 @@ export function HeroSection() {
             <div className="relative mx-auto max-w-xl pb-6 sm:pb-8 lg:max-w-none">
               {/* Soft decorative backdrop glow */}
               <div
-                className="pointer-events-none absolute -inset-3 rounded-3xl bg-gradient-to-tr from-[var(--color-brand-teal)]/20 via-sky-100/30 to-amber-100/30 blur-2xl -z-10"
+                className="pointer-events-none absolute -inset-3 rounded-3xl bg-gradient-to-tr from-[var(--color-brand-teal)]/20 via-sky-100/10 to-transparent blur-2xl -z-10"
                 aria-hidden="true"
               />
 
