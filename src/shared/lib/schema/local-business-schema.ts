@@ -8,8 +8,10 @@ export const localBusinessSchema = {
   priceRange: '$$',
   address: {
     '@type': 'PostalAddress',
+    streetAddress: 'Edmonton Area',
     addressLocality: 'Edmonton',
     addressRegion: 'AB',
+    postalCode: 'T5J 2R4',
     addressCountry: 'CA',
   },
   geo: {
