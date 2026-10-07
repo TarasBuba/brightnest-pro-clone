@@ -1,1 +1,1 @@
-export * from '../schema/local-business-schema';
+﻿export * from '../schema/local-business-schema';

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useRef, useCallback } from 'react';
 import Image from 'next/image';
@@ -216,8 +216,8 @@ export function BeforeAfterSlider({
             {/* Center Drag Handle Button */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border-2 border-white bg-slate-900/90 text-white shadow-2xl backdrop-blur-sm group-hover:scale-110 transition-transform">
               <div className="flex items-center gap-1 text-[11px] sm:text-xs font-black tracking-tighter select-none">
-                <span>◀</span>
-                <span>▶</span>
+                <span>â—€</span>
+                <span>â–¶</span>
               </div>
             </div>
           </div>

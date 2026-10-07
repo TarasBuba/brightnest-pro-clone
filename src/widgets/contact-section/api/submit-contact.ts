@@ -1,4 +1,4 @@
-import type { ContactFormSchema } from '../model/schema';
+﻿import type { ContactFormSchema } from '../model/schema';
 
 export async function submitContactForm(data: ContactFormSchema): Promise<boolean> {
   const accessKey =

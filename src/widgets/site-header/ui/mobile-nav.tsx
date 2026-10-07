@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
@@ -53,7 +53,7 @@ export function MobileNavToggle({ links, phoneNumber }: MobileNavToggleProps) {
           <div className="flex items-center gap-1.5">
             <Image src="/logo.svg" alt="BrightNest Logo" width={160} height={120} className="h-9 w-auto" />
             <span className="font-heading text-xl font-bold text-[var(--color-brand-navy)]">
-              BrightNest <span className="text-[var(--color-cta-primary)]">Pro Service</span>
+              BrightNest <span className="text-[var(--color-cta-primary)]">Pro Services</span>
             </span>
           </div>
           <button

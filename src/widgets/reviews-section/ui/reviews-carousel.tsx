@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
@@ -146,7 +146,7 @@ export function ReviewsCarousel() {
           {isPaused ? (
             <>
               <Play className="h-3 w-3 text-amber-500 fill-amber-500" />
-              <span>Paused · Click to play</span>
+              <span>Paused Â· Click to play</span>
             </>
           ) : (
             <>

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import Image from 'next/image';
@@ -123,7 +123,7 @@ export function BentoCard({ project, index = 0, priority = false }: BentoCardPro
 
             {project.featured && (
               <span className="hidden sm:inline-flex items-center gap-1 rounded-full border border-amber-300/30 bg-amber-500/90 px-2.5 py-0.5 text-[11px] font-bold text-slate-950 shadow-sm backdrop-blur-md">
-                ★ Signature Transformation
+                â˜… Signature Transformation
               </span>
             )}
           </div>

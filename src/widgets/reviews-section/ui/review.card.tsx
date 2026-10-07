@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { StarRating } from './star-rating';
 import { AvatarWithFallback } from './avatar-with-fallback';

@@ -1,4 +1,4 @@
-import { Paintbrush, Wrench, type LucideIcon } from 'lucide-react';
+﻿import { Paintbrush, Wrench, type LucideIcon } from 'lucide-react';
 
 export type ServiceId = 'handyman' | 'painting';
 
@@ -25,7 +25,7 @@ export const SERVICES: readonly Service[] = [
     featured: true,
     summary: 'Precision home repairs, structural fixes, carpentry, and fixture installations.',
     description:
-      'From sticky doors and window hardware adjustments to custom carpentry, drywall patching, and deck restoration, we provide dependable, meticulous craftsmanship across Edmonton. No job is too small — we treat your home with the care and precision of our own.',
+      'From sticky doors and window hardware adjustments to custom carpentry, drywall patching, and deck restoration, we provide dependable, meticulous craftsmanship across Edmonton. No job is too small â€” we treat your home with the care and precision of our own.',
     bullets: [
       'Door and window repairs, weatherstripping, and hardware replacement',
       'Fence and gate structural repair (posts, panels, hinges, latches)',
@@ -35,7 +35,7 @@ export const SERVICES: readonly Service[] = [
       'Comprehensive home repair punch lists and fixture adjustments',
     ],
     timeline:
-      'Most repairs are completed same-day or within 24–48 hours. Flexible scheduling across Edmonton.',
+      'Most repairs are completed same-day or within 24â€“48 hours. Flexible scheduling across Edmonton.',
   },
   {
     id: 'painting',
@@ -54,7 +54,7 @@ export const SERVICES: readonly Service[] = [
       'Spotless cleanup and detailed final walkthrough on every project',
     ],
     timeline:
-      'Single rooms typically completed in 1 day; exterior deck or full interior projects scheduled in 2–4 days.',
+      'Single rooms typically completed in 1 day; exterior deck or full interior projects scheduled in 2â€“4 days.',
   },
 ];
 

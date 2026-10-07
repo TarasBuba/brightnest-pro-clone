@@ -1,4 +1,4 @@
-import { StarRating } from './star-rating';
+﻿import { StarRating } from './star-rating';
 
 interface HeroRatingCardProps {
   rating: number;

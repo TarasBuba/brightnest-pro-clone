@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans, Inter } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { SiteHeader } from '@/src/widgets/site-header';
@@ -33,13 +33,13 @@ export const metadata: Metadata = {
     title: 'BrightNest Pro | Edmonton Handyman & Painting',
     description: 'Professional handyman, deck building, and expert painting services in Edmonton.',
     url: 'https://brightnestpro.ca',
-    siteName: 'BrightNest Pro Service',
+    siteName: 'BrightNest Pro Services',
     images: [
       {
         url: '/images/hero/collage/hero-1.jpg',
         width: 1200,
         height: 630,
-        alt: 'Yuriy and Karina - BrightNest Pro Service',
+        alt: 'Yuriy and Karina - BrightNest Pro Services',
       },
     ],
     locale: 'en_CA',

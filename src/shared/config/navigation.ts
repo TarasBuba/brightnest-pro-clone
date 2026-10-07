@@ -1,4 +1,4 @@
-import type { ServiceId } from '@/src/entities/service/model';
+﻿import type { ServiceId } from '@/src/entities/service/model';
 
 /** Anchor ids of the home-page sections. Used by both sections and every link to them. */
 export const SECTION_IDS = {

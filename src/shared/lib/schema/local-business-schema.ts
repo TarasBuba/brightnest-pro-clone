@@ -1,4 +1,4 @@
-export const localBusinessSchema = {
+﻿export const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': ['LocalBusiness', 'HomeAndConstructionBusiness'],
   '@id': 'https://brightnestpro.ca/#business',

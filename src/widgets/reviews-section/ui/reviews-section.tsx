@@ -1,4 +1,4 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 import { PlatformTrustBar } from './platform-trust-bar';
 import { ReviewsCarousel } from './reviews-carousel';
 import { CheckCircle2 } from 'lucide-react';
@@ -44,7 +44,7 @@ export function ReviewsSection() {
                 100% Satisfaction &amp; Quality Guarantee
               </p>
               <p className="text-xs text-[var(--color-text-secondary)]">
-                Locally owned in Edmonton · Licensed &amp; Insured in Alberta · Free estimates
+                Locally owned in Edmonton Â· Licensed &amp; Insured in Alberta Â· Free estimates
               </p>
             </div>
           </div>

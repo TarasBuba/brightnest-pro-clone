@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 // src/widgets/service-section/ui/services-section.tsx
 import Image from 'next/image';
@@ -49,7 +49,7 @@ export function ServicesSection() {
           </h2>
 
           <p className="reveal-on-scroll reveal-up delay-200 mx-auto mt-3 max-w-xl text-center text-base md:text-lg text-slate-200">
-            Specialized handyman repairs, custom carpentry, and professional painting in Edmonton —
+            Specialized handyman repairs, custom carpentry, and professional painting in Edmonton â€”
             delivered with personal care and meticulous craftsmanship.
           </p>
         </div>

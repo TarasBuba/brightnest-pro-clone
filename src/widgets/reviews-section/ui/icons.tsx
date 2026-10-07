@@ -1,4 +1,4 @@
-import { GoogleIcon, FacebookIcon, HomeStarsIcon as SharedHomeStarsIcon } from '@/src/shared/ui/brand-icons';
+﻿import { GoogleIcon, FacebookIcon, HomeStarsIcon as SharedHomeStarsIcon } from '@/src/shared/ui/brand-icons';
 
 export const PLATFORM_ACCENT = {
   google: '#4285F4',

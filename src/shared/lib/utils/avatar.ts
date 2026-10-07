@@ -1,4 +1,4 @@
-const AVATAR_COLORS = [
+﻿const AVATAR_COLORS = [
   'var(--color-brand-teal)',
   'var(--color-brand-navy)',
   'var(--color-cta-primary)',

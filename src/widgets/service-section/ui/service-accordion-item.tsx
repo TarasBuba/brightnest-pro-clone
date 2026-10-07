@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from 'next/link';
 import { Clock, ArrowRight, Check } from 'lucide-react';

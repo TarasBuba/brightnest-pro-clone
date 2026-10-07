@@ -1,4 +1,4 @@
-export interface ExtendedReview {
+﻿export interface ExtendedReview {
   id: number;
   name: string;
   rating: number;
@@ -77,7 +77,7 @@ export const EXTENDED_REVIEWS: ExtendedReview[] = [
     role: 'Google Review',
     service: 'Cleaning & Painting',
     avatarUrl: '/images/avatars/oleksii-chubko.webp',
-    review: 'Great couple! They did cleaning and painting for us when we were moving. We’re very happy with their work and would definitely recommend them. We’ll be happy to use their services again!',
+    review: 'Great couple! They did cleaning and painting for us when we were moving. Weâ€™re very happy with their work and would definitely recommend them. Weâ€™ll be happy to use their services again!',
     platform: 'google',
   },
   {
@@ -87,7 +87,7 @@ export const EXTENDED_REVIEWS: ExtendedReview[] = [
     role: 'Google Review',
     service: 'Custom Work',
     avatarUrl: '/images/avatars/p-l.webp',
-    review: 'Quality, customized work with attention paid to detail and per homeowner’s instructions - happy to support a local, family-run business.',
+    review: 'Quality, customized work with attention paid to detail and per homeownerâ€™s instructions - happy to support a local, family-run business.',
     platform: 'google',
   },
 ];

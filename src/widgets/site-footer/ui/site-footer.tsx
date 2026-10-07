@@ -1,4 +1,4 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 import {
   Phone as IconPhone,
   Mail as IconMail,
@@ -20,11 +20,11 @@ export const SiteFooter = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-white/10">
           {/* Brand & Mission */}
           <div className="space-y-3">
-            <Link href="/" className="inline-flex items-center gap-2" aria-label="BrightNest Pro Service Home">
-              <Image src="/logo-white.svg" alt="BrightNest Pro Service Logo" width={160} height={120} className="h-9 w-auto" />
+            <Link href="/" className="inline-flex items-center gap-2" aria-label="BrightNest Pro Services Home">
+              <Image src="/logo-white.svg" alt="BrightNest Pro Services Logo" width={160} height={120} className="h-9 w-auto" />
               <span className="text-xl font-bold text-white tracking-tight">
                 BrightNest{' '}
-                <span className="text-[var(--color-brand-teal)]">Pro Service</span>
+                <span className="text-[var(--color-brand-teal)]">Pro Services</span>
               </span>
             </Link>
             <p className="text-sm text-white/75 leading-relaxed">
@@ -186,7 +186,7 @@ export const SiteFooter = () => {
         {/* Bottom copyright bar with all primary routes */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/60">
           <p>
-            &copy; {currentYear} BrightNest Pro Service. All rights reserved.
+            &copy; {currentYear} BrightNest Pro Services. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center gap-5 sm:gap-6">
             <Link href="/book" className="hover:text-white transition-colors font-medium text-[var(--color-brand-teal)]">

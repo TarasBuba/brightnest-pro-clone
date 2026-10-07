@@ -1,4 +1,4 @@
-import { StarRating } from './star-rating';
+﻿import { StarRating } from './star-rating';
 import { PLATFORM_ACCENT, PlatformIcon } from './icons';
 
 interface PlatformCardProps {
@@ -40,7 +40,7 @@ export function PlatformCard({
         <>
           <StarRating rating={rating} size={14} />
           <p className="text-xs text-[var(--color-text-secondary)]">
-            {rating.toFixed(1)} · {reviewCount} reviews
+            {rating.toFixed(1)} Â· {reviewCount} reviews
           </p>
         </>
       ) : (

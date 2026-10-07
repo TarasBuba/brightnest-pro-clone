@@ -1,4 +1,4 @@
-const MAP_EMBED_URL = `https://www.google.com/maps/embed/v1/place?key=AIzaSyDf2Yw6Vj1c0s1tJcHs3xPzv8vBzQ2Zqoq&center=53.5447,-113.4909&zoom=13`;
+﻿const MAP_EMBED_URL = `https://www.google.com/maps/embed/v1/place?key=AIzaSyDf2Yw6Vj1c0s1tJcHs3xPzv8vBzQ2Zqoq&center=53.5447,-113.4909&zoom=13`;
 export function LocationMapCard() {
   return (
     <div className="group flex h-full flex-col overflow-hidden rounded-[var(--radius-lg)] bg-[var(--color-bg-card)] shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">

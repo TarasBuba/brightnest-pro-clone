@@ -1,4 +1,4 @@
-export type ProjectCategory = 'all' | 'deck' | 'painting' | 'handyman';
+﻿export type ProjectCategory = 'all' | 'deck' | 'painting' | 'handyman';
 
 export interface BentoProject {
   id: string;

@@ -1,4 +1,4 @@
-import { Star, ShieldCheck, Clock, MapPin } from 'lucide-react';
+﻿import { Star, ShieldCheck, Clock, MapPin } from 'lucide-react';
 import { siteConfig } from '@/src/shared/config/site';
 
 export function TrustStrip() {
@@ -38,7 +38,7 @@ export function TrustStrip() {
 function Divider() {
   return (
     <span aria-hidden="true" className="text-[var(--color-border)]">
-      ·
+      Â·
     </span>
   );
 }

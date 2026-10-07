@@ -4,7 +4,7 @@
  * Change a value here and every consumer stays in sync.
  */
 export const siteConfig = {
-  name: 'BrightNest Pro Service',
+  name: 'BrightNest Pro Services',
   shortName: 'BrightNest Pro',
   url: 'https://brightnestpro.ca',
   locale: 'en_CA',

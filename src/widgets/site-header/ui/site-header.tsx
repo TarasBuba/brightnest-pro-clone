@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -40,11 +40,11 @@ export function SiteHeader() {
           <Link
             href="/"
             className="flex items-center gap-2 group"
-            aria-label="BrightNest Pro Service home"
+            aria-label="BrightNest Pro Services home"
           >
             <Image 
               src="/logo.svg" 
-              alt="BrightNest Pro Service Logo" 
+              alt="BrightNest Pro Services Logo" 
               width={160} 
               height={120} 
               className="h-10 sm:h-12 w-auto transition-transform group-hover:scale-105" 
@@ -52,7 +52,7 @@ export function SiteHeader() {
             />
             <span className="text-xl sm:text-2xl font-heading font-extrabold text-[var(--color-brand-navy)] tracking-tight">
               BrightNest{' '}
-              <span className="text-[var(--color-cta-primary)]">Pro Service</span>
+              <span className="text-[var(--color-cta-primary)]">Pro Services</span>
             </span>
           </Link>
 
