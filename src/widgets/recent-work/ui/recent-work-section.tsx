@@ -6,7 +6,7 @@ export function RecentWorkSection() {
     <section
       id="work"
       aria-labelledby="recent-work-heading"
-      className="relative overflow-hidden bg-slate-50/80 py-16 sm:py-20 lg:py-28"
+      className="relative overflow-hidden bg-slate-50/80 py-12 md:py-16"
     >
       {/* Background ambient lighting accents */}
       <div

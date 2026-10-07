@@ -49,7 +49,7 @@ export function MobileNavToggle({ links, phoneNumber }: MobileNavToggleProps) {
       >
         <div className="flex h-20 items-center justify-between px-6 border-b border-slate-100">
           <span className="font-heading text-xl font-bold text-[var(--color-brand-navy)]">
-            BrightNest <span className="text-[var(--color-cta-primary)]">Pro</span>
+            BrightNest <span className="text-[var(--color-cta-primary)]">Pro Service</span>
           </span>
           <button
             onClick={() => setIsOpen(false)}

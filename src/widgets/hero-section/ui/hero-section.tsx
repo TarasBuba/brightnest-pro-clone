@@ -15,7 +15,7 @@ export function HeroSection() {
     <section
       id="hero"
       aria-labelledby="hero-title"
-      className="relative overflow-hidden bg-[var(--color-bg-primary)] py-12 sm:py-16 lg:py-20"
+      className="relative overflow-hidden bg-[var(--color-bg-primary)] py-10 sm:py-12 lg:py-16"
     >
       {/* Background ambient lighting */}
       <div

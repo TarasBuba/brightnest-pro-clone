@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -26,8 +26,6 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 w-full">
-      <TrustStrip />
-
       <div
         className={`w-full transition-shadow duration-300 ${
           isScrolled
@@ -39,11 +37,11 @@ export function SiteHeader() {
           <Link
             href="/"
             className="flex items-center gap-2"
-            aria-label="BrightNest Pro Services home"
+            aria-label="BrightNest Pro Service home"
           >
             <span className="text-xl font-bold text-[var(--color-text-primary)]">
               BrightNest{' '}
-              <span className="text-[var(--color-cta-primary)]">Pro</span>
+              <span className="text-[var(--color-cta-primary)]">Pro Service</span>
             </span>
           </Link>
 
