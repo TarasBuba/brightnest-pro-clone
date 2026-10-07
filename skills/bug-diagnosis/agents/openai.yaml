@@ -1,5 +1,0 @@
-interface:
-  display_name: "Bug Diagnosis"
-  short_description: "Діагностує першопричину без зміни коду"
-  default_prompt: "Use $bug-diagnosis to determine the evidenced root cause of this bug."
-

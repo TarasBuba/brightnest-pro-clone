@@ -14,6 +14,7 @@ export const contactFormSchema = z.object({
     message: 'Please select a service (Handyman or Painting)',
   }),
   message: z.string().trim().max(2000).optional().or(z.literal('')),
+  botcheck: z.boolean().optional(),
 });
 
 export type ContactFormSchema = z.infer<typeof contactFormSchema>;

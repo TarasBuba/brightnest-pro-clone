@@ -1,10 +1,12 @@
 import type { ContactFormSchema } from '../model/schema';
 
 export async function submitContactForm(data: ContactFormSchema): Promise<boolean> {
-  const accessKey =
-    process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ||
-    process.env.NEXT_PUBLIC_WEB3FORMS_KEY ||
-    'YOUR_ACCESS_KEY_HERE';
+  const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+
+  if (!accessKey) {
+    console.error('Web3Forms access key is missing');
+    return false;
+  }
 
   const formData = new FormData();
   formData.append('access_key', accessKey);
@@ -14,6 +16,13 @@ export async function submitContactForm(data: ContactFormSchema): Promise<boolea
   formData.append('email', data.email);
   formData.append('phone', data.phone);
   formData.append('service', data.service);
+  
+  // Honeypot field for bot protection
+  if (data.botcheck) {
+    return false; // A real user wouldn't check this
+  }
+  formData.append('botcheck', '');
+
   if (data.message) {
     formData.append('message', data.message);
   }
@@ -24,9 +33,16 @@ export async function submitContactForm(data: ContactFormSchema): Promise<boolea
       body: formData,
     });
 
-    const json = await res.json().catch(() => null);
-    return res.ok && json?.success !== false;
-  } catch {
+    let json;
+    try {
+      json = await res.json();
+    } catch {
+      return false; // Failed to parse JSON, assume failure
+    }
+    
+    return res.ok && json.success === true;
+  } catch (error) {
+    console.error('Failed to submit form', error);
     return false;
   }
 }
