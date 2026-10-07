@@ -1,9 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
-import { siteConfig } from '@/src/shared/config/site';
 
 interface MobileNavToggleProps {
   links: { href: string; label: string }[];
@@ -12,6 +12,11 @@ interface MobileNavToggleProps {
 
 export function MobileNavToggle({ links, phoneNumber }: MobileNavToggleProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Prevent background scrolling when menu is open
   useEffect(() => {
@@ -25,29 +30,20 @@ export function MobileNavToggle({ links, phoneNumber }: MobileNavToggleProps) {
     };
   }, [isOpen]);
 
-  return (
-    <div className="lg:hidden">
-      <button
-        onClick={() => setIsOpen(true)}
-        aria-label="Open menu"
-        aria-expanded={isOpen}
-        className="flex h-11 w-11 items-center justify-center text-[var(--color-text-primary)] transition-colors hover:text-[var(--color-cta-primary)]"
-      >
-        <Menu className="h-6 w-6" />
-      </button>
-
+  const drawerContent = mounted ? (
+    <>
       {/* Backdrop */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 z-40 bg-slate-900/60 backdrop-blur-sm transition-opacity duration-300"
-          onClick={() => setIsOpen(false)}
-          aria-hidden="true"
-        />
-      )}
+      <div
+        className={`fixed inset-0 z-[100] bg-slate-900/60 backdrop-blur-sm transition-opacity duration-300 ${
+          isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={() => setIsOpen(false)}
+        aria-hidden="true"
+      />
 
       {/* Drawer */}
       <div
-        className={`fixed inset-y-0 right-0 z-50 flex h-full w-[85%] max-w-sm flex-col bg-white shadow-2xl transition-transform duration-300 ease-in-out ${
+        className={`fixed inset-y-0 right-0 z-[101] flex h-[100dvh] w-[85%] max-w-sm flex-col bg-white shadow-2xl transition-transform duration-300 ease-in-out ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
@@ -98,6 +94,21 @@ export function MobileNavToggle({ links, phoneNumber }: MobileNavToggleProps) {
           </div>
         </nav>
       </div>
+    </>
+  ) : null;
+
+  return (
+    <div className="lg:hidden">
+      <button
+        onClick={() => setIsOpen(true)}
+        aria-label="Open menu"
+        aria-expanded={isOpen}
+        className="flex h-11 w-11 items-center justify-center text-[var(--color-text-primary)] transition-colors hover:text-[var(--color-cta-primary)]"
+      >
+        <Menu className="h-6 w-6" />
+      </button>
+
+      {mounted ? createPortal(drawerContent, document.body) : null}
     </div>
   );
 }
