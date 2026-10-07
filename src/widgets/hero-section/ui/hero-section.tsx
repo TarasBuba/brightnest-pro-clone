@@ -111,9 +111,10 @@ export function HeroSection() {
                   <div className="group relative aspect-[3/4] overflow-hidden rounded-2xl border border-white/80 bg-slate-100 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5">
                     <Image
                       src="/images/hero/collage/hero-2.jpg"
+                      priority
                       alt="Yuriy securing deck boards with a power drill during an Edmonton deck build"
                       fill
-                      priority
+                      
                       sizes="(min-width: 1024px) 25vw, (min-width: 640px) 40vw, 50vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
@@ -130,7 +131,7 @@ export function HeroSection() {
                       src="/images/hero/collage/hero-3.jpg"
                       alt="Karina applying protective deck stain with a roller in Edmonton"
                       fill
-                      priority
+                      
                       sizes="(min-width: 1024px) 25vw, (min-width: 640px) 40vw, 50vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
@@ -148,9 +149,10 @@ export function HeroSection() {
                   <div className="group relative aspect-[3/4] overflow-hidden rounded-2xl border-2 border-emerald-400/40 bg-slate-100 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5">
                     <Image
                       src="/images/hero/collage/hero-1.jpg"
+                      priority
                       alt="Yuriy relaxing on the completed custom cedar deck with hanging swing chair in Edmonton"
                       fill
-                      priority
+                      
                       sizes="(min-width: 1024px) 25vw, (min-width: 640px) 40vw, 50vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
@@ -172,7 +174,7 @@ export function HeroSection() {
                       src="/images/hero/collage/hero-4.jpg"
                       alt="Karina painting the deck support framework in Edmonton"
                       fill
-                      priority
+                      
                       sizes="(min-width: 1024px) 25vw, (min-width: 640px) 40vw, 50vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
