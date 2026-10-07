@@ -1,10 +1,10 @@
-/**
+﻿/**
  * Single source of truth for business facts used across the site
  * (header, footer, booking page, SEO metadata, JSON-LD).
  * Change a value here and every consumer stays in sync.
  */
 export const siteConfig = {
-  name: 'BrightNest Pro Services',
+  name: 'BrightNest Pro Service',
   shortName: 'BrightNest Pro',
   url: 'https://brightnestpro.ca',
   locale: 'en_CA',

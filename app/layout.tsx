@@ -33,13 +33,13 @@ export const metadata: Metadata = {
     title: 'BrightNest Pro | Edmonton Handyman & Painting',
     description: 'Professional handyman, deck building, and expert painting services in Edmonton.',
     url: 'https://brightnestpro.ca',
-    siteName: 'BrightNest Pro Services',
+    siteName: 'BrightNest Pro Service',
     images: [
       {
         url: '/images/hero/collage/hero-1.jpg',
         width: 1200,
         height: 630,
-        alt: 'Yuriy and Karina - BrightNest Pro Services',
+        alt: 'Yuriy and Karina - BrightNest Pro Service',
       },
     ],
     locale: 'en_CA',

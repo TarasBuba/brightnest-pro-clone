@@ -1,4 +1,4 @@
-import { GoogleIcon, FacebookIcon } from '@/src/shared/ui/brand-icons';
+﻿import { GoogleIcon, FacebookIcon } from '@/src/shared/ui/brand-icons';
 import { HomeStarsIcon, PLATFORM_ACCENT } from './icons';
 import { StarRating } from './star-rating';
 import { ShieldCheck, ThumbsUp, ExternalLink } from 'lucide-react';
@@ -33,7 +33,7 @@ export function PlatformTrustBar({ className = '' }: PlatformTrustBarProps) {
       badge: 'HomeStars Verified',
       description: 'Licensed & Background Checked',
       accent: PLATFORM_ACCENT.homestars,
-      href: 'https://homestars.com/companies/search?query=BrightNest+Pro+Services', // Note: User said they don't have homestars yet, so leave generic search link for now
+      href: 'https://homestars.com/companies/search?query=BrightNest+Pro+Service', // Note: User said they don't have homestars yet, so leave generic search link for now
       icon: <HomeStarsIcon size={28} />,
       customBadge: (
         <div className="flex items-center gap-1 text-xs font-semibold text-[#00897B]">

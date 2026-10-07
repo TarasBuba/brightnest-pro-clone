@@ -1,10 +1,10 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Our Story | BrightNest Pro Services Edmonton',
+  title: 'Our Story | BrightNest Pro Service Edmonton',
   description:
-    'Meet Yuriy and Karina, the family behind BrightNest Pro Services. Learn how compassion, craftsmanship, and care shape our home services in Edmonton.',
+    'Meet Yuriy and Karina, the family behind BrightNest Pro Service. Learn how compassion, craftsmanship, and care shape our home services in Edmonton.',
 };
 
 export default function AboutPage() {
@@ -21,7 +21,7 @@ export default function AboutPage() {
           </h1>
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/85">
-            BrightNest Pro Services is more than a home-services business. It is
+            BrightNest Pro Service is more than a home-services business. It is
             the work of a family committed to making Edmonton homes safer, more
             comfortable, and more welcoming.
           </p>
@@ -69,7 +69,7 @@ export default function AboutPage() {
             <p>
               Over time, we realized we wanted to build something of our own: a
               business that combines professional skills with the values that
-              shaped our family. That is how BrightNest Pro Services was born.
+              shaped our family. That is how BrightNest Pro Service was born.
             </p>
           </div>
 
