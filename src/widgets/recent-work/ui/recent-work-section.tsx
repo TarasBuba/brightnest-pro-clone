@@ -4,7 +4,7 @@ import { BentoGrid } from './bento-grid';
 export function RecentWorkSection() {
   return (
     <section
-      id="recent-work"
+      id="work"
       aria-labelledby="recent-work-heading"
       className="relative overflow-hidden bg-slate-50/80 py-16 sm:py-20 lg:py-28"
     >

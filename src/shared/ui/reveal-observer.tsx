@@ -1,8 +1,11 @@
 'use client';
 
 import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 export function RevealObserver() {
+  const pathname = usePathname();
+
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
@@ -12,7 +15,6 @@ export function RevealObserver() {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.setAttribute('data-revealed', 'true');
-          // Unobserve to trigger only once
           observer.unobserve(entry.target);
         }
       });
@@ -22,7 +24,6 @@ export function RevealObserver() {
       threshold: 0.1
     });
 
-    // Function to observe new elements
     const observeElements = () => {
       document.querySelectorAll('.reveal-on-scroll:not([data-revealed])').forEach(el => {
         if (prefersReducedMotion) {
@@ -33,13 +34,14 @@ export function RevealObserver() {
       });
     };
 
-    // Initial check
-    observeElements();
+    // Delay slightly to let Next.js render the new route
+    const timeoutId = setTimeout(observeElements, 100);
 
     return () => {
+      clearTimeout(timeoutId);
       observer.disconnect();
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 }
