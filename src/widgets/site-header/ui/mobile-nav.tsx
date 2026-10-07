@@ -1,13 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import {
-  Menu,
-  X,
-  Star,
-  ShieldCheck,
-} from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { siteConfig } from '@/src/shared/config/site';
 
 interface MobileNavToggleProps {
@@ -18,63 +13,91 @@ interface MobileNavToggleProps {
 export function MobileNavToggle({ links, phoneNumber }: MobileNavToggleProps) {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Prevent background scrolling when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
   return (
     <div className="lg:hidden">
       <button
-        onClick={() => setIsOpen(!isOpen)}
-        aria-label={isOpen ? 'Close menu' : 'Open menu'}
+        onClick={() => setIsOpen(true)}
+        aria-label="Open menu"
         aria-expanded={isOpen}
         className="flex h-11 w-11 items-center justify-center text-[var(--color-text-primary)] transition-colors hover:text-[var(--color-cta-primary)]"
       >
-        {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        <Menu className="h-6 w-6" />
       </button>
 
+      {/* Backdrop */}
       {isOpen && (
-        <div className="absolute left-0 top-full w-full bg-[var(--color-bg-primary)] shadow-lg">
-          <div className="flex items-center gap-3 border-b border-[var(--color-border)] px-4 py-2 text-xs text-[var(--color-text-secondary)]">
-            <span className="flex items-center gap-1">
-              <Star className="h-4 w-4 fill-amber-400 text-amber-400" /> {siteConfig.rating.value.toFixed(1)} (
-              {siteConfig.rating.count})
-            </span>
-            {siteConfig.isLicensedInsured && (
-              <span className="flex items-center gap-1">
-                <ShieldCheck className="h-4 w-4 text-emerald-500" /> Licensed &amp; Insured
-              </span>
-            )}
-          </div>
+        <div
+          className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm transition-opacity duration-300"
+          onClick={() => setIsOpen(false)}
+          aria-hidden="true"
+        />
+      )}
 
-          <nav
-            className="flex flex-col gap-1 p-4"
-            aria-label="Mobile navigation"
+      {/* Drawer */}
+      <div
+        className={`fixed inset-y-0 right-0 z-50 w-[85%] max-w-sm flex-col bg-[var(--color-bg-primary)] shadow-2xl transition-transform duration-300 ease-in-out ${
+          isOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <div className="flex h-20 items-center justify-between px-6 border-b border-slate-100">
+          <span className="font-heading text-xl font-bold text-[var(--color-brand-navy)]">
+            BrightNest <span className="text-[var(--color-cta-primary)]">Pro</span>
+          </span>
+          <button
+            onClick={() => setIsOpen(false)}
+            aria-label="Close menu"
+            className="flex h-11 w-11 items-center justify-center text-[var(--color-text-secondary)] transition-colors hover:text-[var(--color-cta-primary)]"
           >
-            {links
-              .filter((link) => link.href !== '/book')
-              .map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="rounded-md px-4 py-3 text-[var(--color-text-primary)] hover:bg-[var(--color-bg-secondary)]"
-                >
-                  {link.label}
-                </Link>
-              ))}
+            <X className="h-6 w-6" />
+          </button>
+        </div>
+
+        <nav
+          className="flex flex-col gap-2 p-6"
+          aria-label="Mobile navigation"
+        >
+          {links
+            .filter((link) => link.href !== '/book')
+            .map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="rounded-md px-4 py-3 text-lg font-medium text-[var(--color-text-primary)] hover:bg-[var(--color-bg-secondary)] hover:text-[var(--color-cta-primary)] transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+            
+          <div className="mt-6 flex flex-col gap-3">
             <Link
               href="/book"
               onClick={() => setIsOpen(false)}
-              className="mt-2 rounded-[var(--radius-md)] bg-[var(--color-cta-primary)] px-4 py-3 text-center font-semibold text-white transition-colors hover:bg-[var(--color-cta-primary-hover)]"
+              className="rounded-[var(--radius-md)] bg-[var(--color-cta-primary)] px-4 py-3.5 text-center text-base font-semibold text-white shadow-md transition-all hover:bg-[var(--color-cta-primary-hover)] active:scale-[0.98]"
             >
               Book Online / Get Quote
             </Link>
             <a
               href={`tel:${phoneNumber}`}
-              className="mt-1 rounded-[var(--radius-md)] border border-[var(--color-cta-primary)] px-4 py-3 text-center font-semibold text-[var(--color-cta-primary)]"
+              className="rounded-[var(--radius-md)] border-2 border-[var(--color-cta-primary)] bg-white px-4 py-3.5 text-center text-base font-semibold text-[var(--color-cta-primary)] transition-all hover:bg-[var(--color-bg-secondary)] active:scale-[0.98]"
             >
               Call Now
             </a>
-          </nav>
-        </div>
-      )}
+          </div>
+        </nav>
+      </div>
     </div>
   );
 }

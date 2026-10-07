@@ -29,11 +29,6 @@ export function ServiceAccordionItem({
             <IconComponent aria-hidden="true" size={32} strokeWidth={2} />
           </span>
           <div>
-            {service.featured && (
-              <span className="mb-2 inline-block rounded-full bg-[var(--color-cta-primary)] px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider text-white shadow-sm">
-                Most Popular
-              </span>
-            )}
             <h3 className="font-heading text-2xl font-bold text-[var(--color-text-primary)] leading-tight">
               {service.title}
             </h3>
