@@ -27,7 +27,7 @@ export function BentoCard({ project, index = 0, priority = false }: BentoCardPro
   const [isHovered, setIsHovered] = useState(false);
   const [isTapped, setIsTapped] = useState(false);
 
-  // Active revealed state triggered by either desktop hover or mobile tap
+  
   const isRevealed = isHovered || isTapped;
 
   const hasBeforeImage = Boolean(project.beforeImage);

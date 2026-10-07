@@ -85,7 +85,7 @@ export default function AboutPage() {
 
             <p>
               We genuinely enjoy seeing a home transform after painting,
-              repairs, deep cleaning, or yard work. Every project is an
+              repairs, custom carpentry, or reliable handyman repairs. Every project is an
               opportunity to bring the same warmth, attentiveness, and respect
               into a customer’s home that shaped our own journey.
             </p>
@@ -93,7 +93,7 @@ export default function AboutPage() {
 
           <div className="mt-12">
             <Link
-              href="/#contact"
+              href="/book"
               className="inline-flex min-h-11 items-center rounded-[var(--radius-md)] bg-[var(--color-cta-primary)] px-5 py-3 font-semibold text-white transition-colors hover:bg-[var(--color-cta-primary-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-cta-primary)]"
             >
               Request a Free Quote

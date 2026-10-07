@@ -3,7 +3,7 @@ export const localBusinessSchema = {
   '@type': ['LocalBusiness', 'HomeAndConstructionBusiness'],
   '@id': 'https://brightnestpro.ca/#business',
   name: 'BrightNest Pro Services',
-  image: 'https://brightnestpro.ca/images/hero/yuriy-karina-edmonton-home-care.webp',
+  image: 'https://brightnestpro.ca/images/hero/collage/hero-1.jpg',
   telephone: '+17809840190',
   priceRange: '$$',
   address: {
@@ -30,56 +30,28 @@ export const localBusinessSchema = {
     itemListElement: [
       {
         '@type': 'OfferCatalog',
-        name: 'Home Cleaning',
-        itemListElement: [
-          {
-            '@type': 'Offer',
-            itemOffered: {
-              '@type': 'Service',
-              name: 'Home Cleaning',
-              description: 'Professional residential and deep cleaning services.',
-            },
-          },
-        ],
-      },
-      {
-        '@type': 'OfferCatalog',
         name: 'Handyman & Home Repairs',
         itemListElement: [
           {
             '@type': 'Offer',
             itemOffered: {
               '@type': 'Service',
-              name: 'Handyman & Home Repairs',
-              description: 'Reliable handyman fixes and minor home repair services.',
+              name: 'Handyman & Custom Carpentry',
+              description: 'Reliable handyman fixes, deck building, and custom home repair services.',
             },
           },
         ],
       },
       {
         '@type': 'OfferCatalog',
-        name: 'Interior Painting',
+        name: 'Professional Painting',
         itemListElement: [
           {
             '@type': 'Offer',
             itemOffered: {
               '@type': 'Service',
-              name: 'Interior Painting',
-              description: 'Quality interior painting and wall finishing.',
-            },
-          },
-        ],
-      },
-      {
-        '@type': 'OfferCatalog',
-        name: 'Yard & Exterior Care',
-        itemListElement: [
-          {
-            '@type': 'Offer',
-            itemOffered: {
-              '@type': 'Service',
-              name: 'Yard & Exterior Care',
-              description: 'Yard maintenance, lawn care, and power washing.',
+              name: 'Interior & Exterior Painting',
+              description: 'Quality interior painting, exterior finishing, and deck staining.',
             },
           },
         ],
