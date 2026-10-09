@@ -54,100 +54,47 @@
   }
 }
 /* ==========================================================================
-   CSS Scroll-Driven Animations (with fallback)
+   Global Scroll Animations (IntersectionObserver Pattern)
    ========================================================================== */
 
-/* 
-   By default (fallback for Safari/Firefox/Old Chrome), elements are FULLY VISIBLE.
-   No JS needed, no opacity: 0 traps.
-*/
-.reveal-on-scroll,
-.reveal-left,
-.reveal-right,
-.reveal-up,
-.reveal-scale {
-  opacity: 1;
-  transform: none;
+.reveal-on-scroll {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* 
-   Only if the browser SUPPORTS animation-timeline, apply the scroll animations.
-*/
-@supports (animation-timeline: view()) {
-  .reveal-on-scroll {
-    animation-timeline: view();
-    animation-range: entry 5% cover 25%;
-    animation-fill-mode: both;
-    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-  }
+/* Base Transform Directions */
+.reveal-on-scroll.reveal-left {
+  transform: translate3d(-40px, 0, 0);
+}
+.reveal-on-scroll.reveal-right {
+  transform: translate3d(40px, 0, 0);
+}
+.reveal-on-scroll.reveal-up {
+  transform: translate3d(0, 40px, 0);
+}
+.reveal-on-scroll.reveal-scale {
+  transform: scale(0.95);
+}
 
-  .reveal-left {
-    animation-name: reveal-slide-left;
-  }
-  .reveal-right {
-    animation-name: reveal-slide-right;
-  }
-  .reveal-up {
-    animation-name: reveal-fade-up;
-  }
-  .reveal-scale {
-    animation-name: reveal-scale-in;
-  }
+/* Staggering delays for lists and grids */
+.reveal-on-scroll.delay-100 { transition-delay: 100ms; }
+.reveal-on-scroll.delay-200 { transition-delay: 200ms; }
+.reveal-on-scroll.delay-300 { transition-delay: 300ms; }
+.reveal-on-scroll.delay-400 { transition-delay: 400ms; }
+.reveal-on-scroll.delay-500 { transition-delay: 500ms; }
 
-  @keyframes reveal-slide-left {
-    from {
-      opacity: 0;
-      transform: translate3d(-40px, 0, 0);
-    }
-    to {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-    }
-  }
-
-  @keyframes reveal-slide-right {
-    from {
-      opacity: 0;
-      transform: translate3d(40px, 0, 0);
-    }
-    to {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-    }
-  }
-
-  @keyframes reveal-fade-up {
-    from {
-      opacity: 0;
-      transform: translate3d(0, 40px, 0);
-    }
-    to {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-    }
-  }
-
-  @keyframes reveal-scale-in {
-    from {
-      opacity: 0;
-      transform: scale(0.95);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
+/* Trigger State */
+.reveal-on-scroll[data-revealed="true"] {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
 }
 
 /* Accessibility: Respect prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
-  .reveal-on-scroll,
-  .reveal-left,
-  .reveal-right,
-  .reveal-up,
-  .reveal-scale {
-    animation: none !important;
-    opacity: 1 !important;
+  .reveal-on-scroll {
+    transition: opacity 0.5s ease;
     transform: none !important;
   }
 }
