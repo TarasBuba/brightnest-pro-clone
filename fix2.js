@@ -1,0 +1,1 @@
+const fs = require('fs'); let f = 'src/widgets/hero-section/ui/hero-section.tsx'; let c = fs.readFileSync(f, 'utf8'); c = c.replace(/&#10004; Completed Deck/, '&#10004; Deck Staining'); fs.writeFileSync(f, c);

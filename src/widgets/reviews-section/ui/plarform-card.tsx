@@ -40,7 +40,7 @@ export function PlatformCard({
         <>
           <StarRating rating={rating} size={14} />
           <p className="text-xs text-[var(--color-text-secondary)]">
-            {rating.toFixed(1)} Â· {reviewCount} reviews
+            {rating.toFixed(1)} &middot; {reviewCount} reviews
           </p>
         </>
       ) : (

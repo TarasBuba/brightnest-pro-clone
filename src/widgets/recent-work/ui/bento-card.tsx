@@ -122,8 +122,7 @@ export function BentoCard({ project, index = 0, priority = false }: BentoCardPro
             </span>
 
             {project.featured && (
-              <span className="hidden sm:inline-flex items-center gap-1 rounded-full border border-amber-300/30 bg-amber-500/90 px-2.5 py-0.5 text-[11px] font-bold text-slate-950 shadow-sm backdrop-blur-md">
-                â˜… Signature Transformation
+              <span className="hidden sm:inline-flex items-center gap-1 rounded-full border border-amber-300/30 bg-amber-500/90 px-2.5 py-0.5 text-[11px] font-bold text-slate-950 shadow-sm backdrop-blur-md">&#10024; Signature Transformation
               </span>
             )}
           </div>

@@ -146,7 +146,7 @@ export function ReviewsCarousel() {
           {isPaused ? (
             <>
               <Play className="h-3 w-3 text-amber-500 fill-amber-500" />
-              <span>Paused Â· Click to play</span>
+              <span>Paused &middot; Click to play</span>
             </>
           ) : (
             <>

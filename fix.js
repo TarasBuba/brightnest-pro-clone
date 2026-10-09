@@ -1,0 +1,1 @@
+const fs = require('fs'); let f = 'src/widgets/site-header/ui/trust-strip.tsx'; let c = fs.readFileSync(f, 'utf8'); c = c.replace(/function Divider\(\) \{[\s\S]*?\}/, 'function Divider() {\n  return (\n    <span aria-hidden=\"true\" className=\"text-[var(--color-border)]\">\n      &middot;\n    </span>\n  );\n}'); fs.writeFileSync(f, c);

@@ -44,7 +44,7 @@ export function ReviewsSection() {
                 100% Satisfaction &amp; Quality Guarantee
               </p>
               <p className="text-xs text-[var(--color-text-secondary)]">
-                Locally owned in Edmonton Â· Licensed &amp; Insured in Alberta Â· Free estimates
+                Locally owned in Edmonton &middot; Licensed &amp; Insured in Alberta &middot; Free estimates
               </p>
             </div>
           </div>
