@@ -38,7 +38,7 @@ export function TrustStrip() {
 function Divider() {
   return (
     <span aria-hidden="true" className="text-[var(--color-border)]">
-      Â·
+      &middot;
     </span>
   );
 }

@@ -157,8 +157,7 @@ export function HeroSection() {
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute top-2 right-2 sm:top-2.5 sm:right-2.5">
-                      <span className="inline-flex items-center gap-1 rounded-full bg-emerald-600/90 px-2 py-0.5 text-[9px] sm:text-[11px] font-semibold text-white shadow-sm backdrop-blur-sm">
-                        âœ“ Completed Deck
+                      <span className="inline-flex items-center gap-1 rounded-full bg-emerald-600/90 px-2 py-0.5 text-[9px] sm:text-[11px] font-semibold text-white shadow-sm backdrop-blur-sm">&#10004; Deck Staining
                       </span>
                     </div>
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-2.5 sm:p-3">
