@@ -68,6 +68,7 @@ export function useInView<T extends HTMLElement = HTMLElement>(
     if (typeof window === 'undefined') return;
 
     if (!isSupported) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsInView(true);
       return;
     }
