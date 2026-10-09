@@ -1,26 +1,23 @@
 export const dynamic = 'force-static';
 import type { MetadataRoute } from 'next';
+import { siteConfig } from '@/src/shared/config/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://brightnestpro.ca';
-  const lastModified = new Date();
+  const baseUrl = siteConfig.url;
 
   return [
     {
-      url: `${baseUrl}`,
-      lastModified,
+      url: `${baseUrl}/`,
       changeFrequency: 'weekly',
       priority: 1.0,
     },
     {
-      url: `/book/`,
-      lastModified,
+      url: `${baseUrl}/book/`,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: `/about/`,
-      lastModified,
+      url: `${baseUrl}/about/`,
       changeFrequency: 'monthly',
       priority: 0.8,
     },

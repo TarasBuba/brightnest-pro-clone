@@ -38,7 +38,7 @@ export const RECENT_WORK_PROJECTS: BentoProject[] = [
     location: 'Southwest Edmonton',
     duration: '2 Days',
     satisfaction: '100% Satisfaction',
-    afterImage: '/images/projects/deck-staining-split.jpg',
+    afterImage: '/images/projects/deck-staining-split.webp',
     afterAlt: 'Before and after of a restored outdoor patio deck',
     afterLabel: 'Before & After: Complete Restoration',
     description:
@@ -66,7 +66,7 @@ export const RECENT_WORK_PROJECTS: BentoProject[] = [
     location: 'Glenora, Central Edmonton',
     duration: '2 Days',
     satisfaction: 'Flawless Finish',
-    afterImage: '/images/projects/painting-interior-split.jpg',
+    afterImage: '/images/projects/painting-interior-split.webp',
     afterAlt: 'Before and after of a painted interior wall',
     afterLabel: 'Before & After: Flawless Finish',
     description:
@@ -93,7 +93,7 @@ export const RECENT_WORK_PROJECTS: BentoProject[] = [
     location: 'Sherwood Park',
     duration: '1 Day',
     satisfaction: 'Solid & Safe',
-    afterImage: '/images/projects/handyman-stairs-split.jpg',
+    afterImage: '/images/projects/handyman-stairs-split.webp',
     afterAlt: 'Before and after of deck stairs repair',
     afterLabel: 'Before & After: Structural Repair',
     description:
@@ -120,7 +120,7 @@ export const RECENT_WORK_PROJECTS: BentoProject[] = [
     location: 'Windermere',
     duration: 'Half Day',
     satisfaction: 'Smooth Operation',
-    afterImage: '/images/projects/handyman-door-split.jpg',
+    afterImage: '/images/projects/handyman-door-split.webp',
     afterAlt: 'Before and after of a door handle replacement and frame repair',
     afterLabel: 'Before & After: Hardware Upgrade',
     description:
@@ -147,7 +147,7 @@ export const RECENT_WORK_PROJECTS: BentoProject[] = [
     location: 'St. Albert',
     duration: '1 Day',
     satisfaction: 'Crisp & Clean',
-    afterImage: '/images/projects/painting-trim-split.jpg',
+    afterImage: '/images/projects/painting-trim-split.webp',
     afterAlt: 'Before and after of baseboard painting',
     afterLabel: 'Before & After: Trim Refinishing',
     description:
@@ -174,7 +174,7 @@ export const RECENT_WORK_PROJECTS: BentoProject[] = [
     location: 'North Edmonton',
     duration: '1 Day',
     satisfaction: 'Weather Protected',
-    afterImage: '/images/projects/painting-shed-split.jpg',
+    afterImage: '/images/projects/painting-shed-split.webp',
     afterAlt: 'Before and after of a painted backyard shed',
     afterLabel: 'Before & After: Exterior Painting',
     description:

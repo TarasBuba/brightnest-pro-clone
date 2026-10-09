@@ -1,64 +1,53 @@
 # BrightNest Pro Services
 
-This is the source code for the official website of **BrightNest Pro Services**, an Edmonton-based family business providing professional handyman, deck restoration, and interior/exterior painting services.
+Local family-owned handyman and painting services in Edmonton, Canada.
+This is a modern Next.js 15 application statically exported for Cloudflare Pages.
 
-## Overview
+## 🚀 Quick Start
 
-The site is a fast, responsive, and SEO-optimized landing page built with modern web technologies:
-
-- **Framework:** [Next.js](https://nextjs.org/) (App Router)
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **Forms:** [Web3Forms](https://web3forms.com/) (Serverless email forwarding)
-- **Validation:** [Zod](https://zod.dev/) & React Hook Form
-- **Icons:** [Lucide React](https://lucide.dev/)
-- **Deployment:** [Vercel](https://vercel.com)
-
-## Local Development
-
-1. Install dependencies:
+1. **Install dependencies:**
    ```bash
    npm install
    ```
 
-2. Set up environment variables:
-   Create a `.env.local` file in the root directory and add your Web3Forms access key:
+2. **Set up Environment Variables:**
+   Create a `.env.local` file in the root directory:
    ```env
-   NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=your_access_key_here
+   NEXT_PUBLIC_WEB3FORMS_KEY=your_web3forms_key_here
    ```
-   *(You can generate a free key at [Web3Forms](https://web3forms.com/).)*
 
-3. Run the development server:
+3. **Run the development server:**
    ```bash
    npm run dev
    ```
+   Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+## 🛠️ Verification & Building
 
-## Commands & Checks
+To ensure code quality before pushing, run the standard checks:
 
-Before committing code or deploying, run these checks to ensure code quality:
+```bash
+# Check TypeScript types
+npm run type-check
 
-- **Type Checking:**
-  ```bash
-  npm run type-check
-  ```
-- **Linting:**
-  ```bash
-  npm run lint
-  ```
-- **Production Build:**
-  ```bash
-  npm run build
-  ```
+# Lint the code
+npm run lint
 
-## Contact Form (Web3Forms)
+# Build for production (Static Export)
+npm run build
+```
 
-The `/book` page features a serverless contact form. It uses Web3Forms to email submissions directly to the business owners without needing a backend database. 
+The output will be placed in the `/out` directory, which is configured to be automatically deployed by Cloudflare Pages.
 
-- It includes a `botcheck` honeypot field to block simple spam bots.
-- Client-side validation is handled via Zod and React Hook Form.
+## 📦 Cloudflare Pages Deployment
 
-## License & Copyright
+This project is configured for **Static Export** (`output: 'export'`).
+When setting up the project in Cloudflare Pages:
 
-&copy; 2026 BrightNest Pro Services. All rights reserved. 
-Design and development by the BrightNest Pro team.
+- **Framework preset:** Next.js (Static HTML Export)
+- **Build command:** `npm run build`
+- **Build output directory:** `out`
+- **Node.js version:** The `.nvmrc` file specifies Node 20. Make sure your Cloudflare environment uses `NODE_VERSION=20`.
+
+### Security & Headers
+The `public/_headers` file contains the strict Content Security Policy (CSP), cache rules, and security headers required for production. Cloudflare Pages automatically applies these headers to the deployed site.

@@ -1,5 +1,5 @@
 import { GoogleIcon, FacebookIcon } from '@/src/shared/ui/brand-icons';
-import { HomeStarsIcon, PLATFORM_ACCENT } from './icons';
+import { PLATFORM_ACCENT } from './icons';
 import { StarRating } from './star-rating';
 import { ShieldCheck, ThumbsUp, ExternalLink } from 'lucide-react';
 import { siteConfig } from '@/src/shared/config/site';
@@ -28,24 +28,9 @@ export function PlatformTrustBar({ className = '' }: PlatformTrustBarProps) {
       ),
     },
     {
-      id: 'homestars',
-      name: 'HomeStars',
-      badge: 'HomeStars Verified',
-      description: 'Licensed & Background Checked',
-      accent: PLATFORM_ACCENT.homestars,
-      href: 'https://homestars.com/companies/search?query=BrightNest+Pro+Service', // Note: User said they don't have homestars yet, so leave generic search link for now
-      icon: <HomeStarsIcon size={28} />,
-      customBadge: (
-        <div className="flex items-center gap-1 text-xs font-semibold text-[#00897B]">
-          <ShieldCheck className="h-4 w-4 text-[#00A99D]" />
-          <span>HomeStars Verified</span>
-        </div>
-      ),
-    },
-    {
       id: 'facebook',
       name: 'Facebook',
-      badge: '100% Recommended',
+      badge: 'Community Rated',
       description: 'Edmonton Family Business',
       accent: PLATFORM_ACCENT.facebook,
       href: siteConfig.social.facebook,
@@ -53,7 +38,7 @@ export function PlatformTrustBar({ className = '' }: PlatformTrustBarProps) {
       customBadge: (
         <div className="flex items-center gap-1 text-xs font-semibold text-[#1877F2]">
           <ThumbsUp className="h-3.5 w-3.5 text-[#1877F2]" />
-          <span>100% Recommended</span>
+          <span>Community Rated</span>
         </div>
       ),
     },
@@ -61,7 +46,7 @@ export function PlatformTrustBar({ className = '' }: PlatformTrustBarProps) {
 
   return (
     <div
-      className={`grid grid-cols-1 gap-4 sm:grid-cols-3 ${className}`}
+      className={`grid grid-cols-1 gap-4 sm:grid-cols-2 max-w-2xl mx-auto ${className}`}
       aria-label="Verified Review Platforms"
     >
       {platforms.map((platform) => (

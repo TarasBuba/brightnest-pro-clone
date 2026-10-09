@@ -1,7 +1,7 @@
 import type { ContactFormSchema } from '../model/schema';
 
 export async function submitContactForm(data: ContactFormSchema): Promise<boolean> {
-  const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+  const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
 
   if (!accessKey) {
     console.error('Web3Forms access key is missing');

@@ -33,6 +33,16 @@ export function MobileNavToggle({ links, phoneNumber }: MobileNavToggleProps) {
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (isOpen && e.key === 'Escape') {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen]);
+
   const drawerContent = mounted ? (
     <>
       {/* Backdrop */}

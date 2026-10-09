@@ -35,7 +35,7 @@ export function TextField<T extends FieldValues>({
           autoComplete={autoComplete}
           {...register(name)}
           {...ariaProps}
-          className="w-full rounded-var(--radius-md) border border-gray-300 px-3 py-2"
+          className="w-full rounded-[var(--radius-md)] border border-slate-300 px-3 py-2 focus:border-[var(--color-brand-teal)] focus:outline-none focus:ring-1 focus:ring-[var(--color-brand-teal)]"
         />
       )}
     </FormField>

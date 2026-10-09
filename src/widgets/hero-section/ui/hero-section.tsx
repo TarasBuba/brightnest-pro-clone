@@ -110,7 +110,7 @@ export function HeroSection() {
                   {/* Photo 2: Yuriy drilling boards */}
                   <div className="group relative aspect-[3/4] overflow-hidden rounded-2xl border border-white/80 bg-slate-100 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5">
                     <Image
-                      src="/images/hero/collage/hero-2.jpg"
+                      src="/images/hero/collage/hero-2.webp"
                       priority
                       alt="Yuriy securing deck boards with a power drill during an Edmonton deck build"
                       fill
@@ -128,7 +128,7 @@ export function HeroSection() {
                   {/* Photo 3: Karina staining deck */}
                   <div className="group relative aspect-[3/4] overflow-hidden rounded-2xl border border-white/80 bg-slate-100 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5">
                     <Image
-                      src="/images/hero/collage/hero-3.jpg"
+                      src="/images/hero/collage/hero-3.webp"
                       alt="Karina applying protective deck stain with a roller in Edmonton"
                       fill
                       
@@ -148,7 +148,7 @@ export function HeroSection() {
                   {/* Photo 1: Yuriy on completed deck with swing chair */}
                   <div className="group relative aspect-[3/4] overflow-hidden rounded-2xl border-2 border-emerald-400/40 bg-slate-100 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5">
                     <Image
-                      src="/images/hero/collage/hero-1.jpg"
+                      src="/images/hero/collage/hero-1.webp"
                       priority
                       alt="Yuriy relaxing on the completed custom cedar deck with hanging swing chair in Edmonton"
                       fill
@@ -170,7 +170,7 @@ export function HeroSection() {
                   {/* Photo 4: Karina painting frame */}
                   <div className="group relative aspect-[3/4] overflow-hidden rounded-2xl border border-white/80 bg-slate-100 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5">
                     <Image
-                      src="/images/hero/collage/hero-4.jpg"
+                      src="/images/hero/collage/hero-4.webp"
                       alt="Karina painting the deck support framework in Edmonton"
                       fill
                       
@@ -190,7 +190,7 @@ export function HeroSection() {
               <div className="absolute -bottom-2 sm:-bottom-3 left-1/2 -translate-x-1/2 w-[94%] sm:w-auto max-w-md z-10">
                 <div className="flex items-center justify-center gap-2 rounded-full border border-slate-200/80 bg-white/95 px-4 py-2 text-center text-xs sm:text-sm font-semibold text-slate-800 shadow-xl backdrop-blur-md">
                   <MapPin className="h-4 w-4 shrink-0 text-emerald-600" />
-                  <span className="truncate">Handyman &amp; Painting • Verified Edmonton Family Team</span>
+                  <span className="truncate">Handyman &amp; Painting • Local Edmonton Family Team</span>
                 </div>
               </div>
             </div>

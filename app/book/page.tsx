@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
@@ -103,7 +104,9 @@ export default function BookPage() {
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
             {/* Form Column */}
             <div className="lg:col-span-8">
-              <ContactForm />
+              <Suspense fallback={<div className="h-96 w-full animate-pulse rounded-2xl bg-slate-100"></div>}>
+                <ContactForm />
+              </Suspense>
             </div>
 
             {/* Quick Contact & Info Sidebar */}

@@ -88,7 +88,7 @@ export function ReviewCard({ review, isPaused = false, onClick }: ReviewCardProp
       <div className="mt-5 flex items-center justify-between border-t border-[var(--color-border)]/40 pt-3 text-[11px] text-[var(--color-text-tertiary)]">
         <span className="flex items-center gap-1 text-emerald-600 font-medium">
           <CheckCircle2 className="h-3.5 w-3.5" />
-          Verified Edmonton Homeowner
+          Local Edmonton Resident
         </span>
         <span className="opacity-60 group-hover:opacity-100 transition-opacity">
           {isPaused ? 'Click to resume' : 'Click to hold'}

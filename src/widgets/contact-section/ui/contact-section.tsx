@@ -3,6 +3,8 @@
 import { useContactForm } from '../model/use-contact-form';
 import { TextField } from './text-field';
 import { SelectFields } from './service-select-field';
+import { FormField } from './form-field';
+import { siteConfig } from '@/src/shared/config/site';
 
 export function ContactForm() {
   const { form, isPending, result, onSubmit } = useContactForm();
@@ -18,7 +20,7 @@ export function ContactForm() {
         Get in Touch
       </h2>
       <p className="mb-8 text-center text-sm text-[var(--color-text-secondary)]">
-        Have a question or need a quote? Send us a message and we will respond within 15 minutes.
+        Have a question or need a quote? Send us a message and we will respond within {siteConfig.responseMinutes} minutes.
       </p>
 
       <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-4">
@@ -69,23 +71,18 @@ export function ContactForm() {
           error={errors.service}
         />
 
-        <div className="space-y-1">
-          <label htmlFor="contact-message" className="block text-sm font-semibold text-[var(--color-text-primary)]">
-            Message
-          </label>
-          <textarea
-            id="contact-message"
-            rows={4}
-            placeholder="Tell us about your project..."
-            {...register('message')}
-            className="w-full rounded-[var(--radius-md)] border border-gray-300 bg-white px-3 py-2 text-sm text-[var(--color-text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-cta-primary)]"
-          />
-          {errors.message && (
-            <span role="alert" className="text-xs font-medium text-red-500">
-              {errors.message.message}
-            </span>
+        <FormField id="contact-message" label="Message" error={errors.message}>
+          {(a11y) => (
+            <textarea
+              id="contact-message"
+              rows={4}
+              placeholder="Tell us about your project..."
+              {...register('message')}
+              {...a11y}
+              className="w-full rounded-[var(--radius-md)] border border-gray-300 bg-white px-3 py-2 text-sm text-[var(--color-text-primary)] focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[var(--color-cta-primary)] transition-shadow"
+            />
           )}
-        </div>
+        </FormField>
 
         <button
           type="submit"
@@ -103,7 +100,7 @@ export function ContactForm() {
         )}
         {result === 'error' && (
           <p role="alert" aria-live="assertive" className="rounded-lg bg-red-50 p-3 text-center text-sm font-medium text-red-700">
-            There was an error sending your message. Please try again or call us at (780) 984-0190.
+            There was an error sending your message. Please try again or call us at {siteConfig.phoneDisplay}.
           </p>
         )}
 
