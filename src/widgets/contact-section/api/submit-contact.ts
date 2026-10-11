@@ -1,11 +1,10 @@
 import type { ContactFormSchema } from '../model/schema';
 
 export async function submitContactForm(data: ContactFormSchema): Promise<boolean> {
-  const accessKey =
-    process.env.NEXT_PUBLIC_WEB3FORMS_KEY || 'f26e82a7-28c9-4921-a2e3-4762a175ea81';
+  const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
 
   if (!accessKey) {
-    console.error('Web3Forms access key is missing');
+    console.error('Web3Forms access key is missing. Please set NEXT_PUBLIC_WEB3FORMS_KEY in your environment variables.');
     return false;
   }
 
@@ -15,14 +14,15 @@ export async function submitContactForm(data: ContactFormSchema): Promise<boolea
   formData.append('last_name', data.lastName);
   formData.append('name', `${data.firstName} ${data.lastName}`.trim());
   formData.append('email', data.email);
+  formData.append('replyto', data.email);
   formData.append('phone', data.phone);
   formData.append('service', data.service);
+  formData.append('subject', `New Quote Request: ${data.service} - ${data.firstName} ${data.lastName}`);
   
-  // Honeypot field for bot protection
+  // Honeypot field for bot protection (if checked, reject immediately)
   if (data.botcheck) {
-    return false; // A real user wouldn't check this
+    return false;
   }
-  formData.append('botcheck', '');
 
   if (data.message) {
     formData.append('message', data.message);
@@ -38,10 +38,15 @@ export async function submitContactForm(data: ContactFormSchema): Promise<boolea
     try {
       json = await res.json();
     } catch {
-      return false; // Failed to parse JSON, assume failure
+      return false;
     }
     
-    return res.ok && json.success === true;
+    if (!res.ok || json.success !== true) {
+      console.error('Web3Forms submission error:', json?.message || res.statusText);
+      return false;
+    }
+
+    return true;
   } catch (error) {
     console.error('Failed to submit form', error);
     return false;
