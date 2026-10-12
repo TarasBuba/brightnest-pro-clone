@@ -130,8 +130,8 @@ export function BentoCard({ project, index = 0, priority = false }: BentoCardPro
             <button
               type="button"
               onClick={toggleReveal}
-              aria-label={isRevealed ? 'Switch to Before / Process view' : 'Switch to After completed view'}
-              className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold tracking-wide shadow-lg backdrop-blur-md transition-all duration-300 ${
+              aria-label={isRevealed ? 'Viewing AFTER result. Click to view BEFORE.' : 'Viewing BEFORE condition. Hover or click to view AFTER.'}
+              className={`inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-bold tracking-wide shadow-lg backdrop-blur-md transition-all duration-300 ${
                 isRevealed
                   ? 'border border-emerald-400/50 bg-emerald-500/95 text-white ring-2 ring-emerald-300/40'
                   : 'border border-amber-300/50 bg-amber-500/95 text-slate-950 hover:bg-amber-400'
@@ -145,11 +145,11 @@ export function BentoCard({ project, index = 0, priority = false }: BentoCardPro
               ) : (
                 <>
                   <Hammer className="h-3.5 w-3.5 text-slate-950" aria-hidden="true" />
-                  <span>BEFORE / PROCESS</span>
+                  <span>BEFORE</span>
                 </>
               )}
-              <span className="hidden xs:inline-block ml-0.5 text-[10px] opacity-80">
-                (Tap to toggle)
+              <span className="hidden xs:inline-block ml-0.5 text-[10px] opacity-80 font-medium">
+                {isRevealed ? '(Hover to switch)' : '(Hover for after)'}
               </span>
             </button>
           )}
