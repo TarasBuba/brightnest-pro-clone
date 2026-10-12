@@ -7,7 +7,7 @@ import { ROUTES } from '@/src/shared/config/navigation';
 const HERO_HIGHLIGHTS = [
   'Family-owned & operated by Yuriy & Karina',
   'Free, no-obligation quotes',
-  'Same-week availability in Edmonton',
+  '24/7 availability (Mon–Sun) in Edmonton',
   'Licensed & insured in Alberta',
 ];
 

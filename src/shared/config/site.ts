@@ -16,12 +16,20 @@ export const siteConfig = {
   phoneRaw: '+17809840190',
   phoneDisplay: '(780) 984-0190',
   email: 'info@brightnestpro.ca',
-  hours: 'Mon–Sat 8am–6pm',
+  hours: 'Mon–Sun 24/7',
   /** Schema.org opening hours equivalent of `hours`. */
   openingHours: {
-    days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-    opens: '08:00',
-    closes: '18:00',
+    days: [
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+      'Sunday',
+    ],
+    opens: '00:00',
+    closes: '23:59',
   },
   address: {
     locality: 'Edmonton',
@@ -36,7 +44,7 @@ export const siteConfig = {
     value: 5.0,
     count: 8,
   },
-  /** Minutes the team promises to reply to a request during business hours. */
+  /** Minutes the team promises to reply to a request 24/7. */
   responseMinutes: 15,
   logoPath: '/logo.svg',
   ogImage: {

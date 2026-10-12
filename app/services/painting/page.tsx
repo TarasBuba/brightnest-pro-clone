@@ -533,7 +533,7 @@ export default function PaintingPage() {
           </h2>
 
           <p className="mx-auto max-w-2xl text-base text-slate-300 sm:text-lg">
-            Request your free in-home painting quote today. We will assess your walls or exterior deck and provide a clear, detailed estimate within 15 minutes during business hours.
+            Request your free in-home painting quote today. We will assess your walls or exterior deck and provide a clear, detailed estimate within 15 minutes, 24/7 Monday through Sunday.
           </p>
 
           <div className="pt-4 flex flex-col sm:flex-row justify-center gap-4">

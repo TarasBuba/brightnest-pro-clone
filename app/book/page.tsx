@@ -26,7 +26,7 @@ const TRUST_BADGES = [
   {
     icon: Zap,
     title: '15-Minute Response',
-    description: 'Fast callback during business hours',
+    description: 'Fast callback 24/7 (Mon–Sun)',
     iconColor: 'text-[var(--color-cta-primary)]',
     bgColor: 'bg-teal-50/70 border-teal-100',
   },

@@ -94,7 +94,7 @@ const HANDYMAN_FAQS = [
   {
     question: 'How quickly can Yuriy start my repair project?',
     answer:
-      'We respond to every booking or phone inquiry within 15 minutes during regular business hours. Most smaller handyman repairs are scheduled and completed within 24 to 48 hours, with same-day emergency slots frequently available.',
+      'We respond to every booking or phone inquiry within 15 minutes, 24/7 Monday through Sunday. Most smaller handyman repairs are scheduled and completed within 24 to 48 hours, with same-day emergency slots frequently available.',
   },
   {
     question: 'Do I need to provide tools and materials?',
@@ -472,7 +472,7 @@ export default function HandymanPage() {
           </h2>
 
           <p className="mx-auto max-w-2xl text-base text-slate-300 sm:text-lg">
-            Send us a quick description of your project or snap a photo. We will review your repair requirements and reply within 15 minutes with honest recommendations and upfront pricing.
+            Send us a quick description of your project or snap a photo. We will review your repair requirements and reply within 15 minutes, 24/7 Monday through Sunday, with honest recommendations and upfront pricing.
           </p>
 
           <div className="pt-4 flex flex-col sm:flex-row justify-center gap-4">
