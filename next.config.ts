@@ -6,13 +6,6 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  experimental: {
-    optimizePackageImports: [
-      'lucide-react',
-      '@tabler/icons-react',
-      '@icons-pack/react-simple-icons',
-    ],
-  },
 };
 
 export default nextConfig;

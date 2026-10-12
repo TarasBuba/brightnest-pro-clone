@@ -8,7 +8,7 @@ export function TrustStrip() {
       aria-label="Trust signals"
     >
       <span className="flex items-center gap-1">
-        <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
+        <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" aria-hidden="true" />
         {siteConfig.rating.value.toFixed(1)} Google Rating (
         {siteConfig.rating.count} reviews)
       </span>
@@ -16,19 +16,19 @@ export function TrustStrip() {
       {siteConfig.isLicensedInsured && (
         <>
           <span className="flex items-center gap-1">
-            <ShieldCheck className="h-3.5 w-3.5" />
+            <ShieldCheck className="h-3.5 w-3.5" aria-hidden="true" />
             Licensed &amp; Insured
           </span>
           <Divider />
         </>
       )}
       <span className="flex items-center gap-1">
-        <Clock className="h-3.5 w-3.5" />
+        <Clock className="h-3.5 w-3.5" aria-hidden="true" />
         {siteConfig.hours}
       </span>
       <Divider />
       <span className="flex items-center gap-1">
-        <MapPin className="h-3.5 w-3.5" />
+        <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
         {siteConfig.serviceArea}
       </span>
     </div>

@@ -1,8 +1,7 @@
-'use client';
-
 import Link from 'next/link';
 import { Clock, ArrowRight, Check } from 'lucide-react';
 import type { Service } from '@/src/entities/service/model';
+import { bookingHref } from '@/src/shared/config/navigation';
 
 export type ServiceAccordionItemProps = {
   service: Service;
@@ -69,7 +68,7 @@ export function ServiceAccordionItem({
         </div>
 
         <Link
-          href="/book"
+          href={bookingHref(service.id)}
           className="group/btn inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[var(--radius-md)] bg-[var(--color-cta-primary)] px-6 py-3 font-bold text-white shadow-sm transition-all hover:bg-[var(--color-cta-primary-hover)] hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-cta-primary)]"
         >
           <span>Book This Service</span>

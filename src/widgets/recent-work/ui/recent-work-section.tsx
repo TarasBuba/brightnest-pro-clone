@@ -22,7 +22,7 @@ export function RecentWorkSection() {
         {/* Section Header */}
         <div className="mx-auto max-w-3xl text-center">
           <div className="reveal-on-scroll reveal-up inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-1.5 text-xs font-semibold text-emerald-800 backdrop-blur-sm shadow-xs">
-            <Sparkles className="h-3.5 w-3.5 text-emerald-600" />
+            <Sparkles className="h-3.5 w-3.5 text-emerald-600" aria-hidden="true" />
             <span>Master Craftsmanship • Edmonton &amp; Surrounding Areas</span>
           </div>
 
@@ -44,15 +44,15 @@ export function RecentWorkSection() {
           {/* Quick Metrics Bar */}
           <div className="reveal-on-scroll reveal-up delay-300 mt-6 flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs sm:text-sm font-medium text-slate-600">
             <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-emerald-600" />
+              <CheckCircle2 className="h-4 w-4 text-emerald-600" aria-hidden="true" />
               <span>100% In-House Execution</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <Hammer className="h-4 w-4 text-emerald-600" />
+              <Hammer className="h-4 w-4 text-emerald-600" aria-hidden="true" />
               <span>Custom Joinery &amp; Decks</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <ShieldCheck className="h-4 w-4 text-emerald-600" />
+              <ShieldCheck className="h-4 w-4 text-emerald-600" aria-hidden="true" />
               <span>Alberta Climate Guaranteed</span>
             </div>
           </div>

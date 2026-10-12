@@ -1,8 +1,5 @@
-'use client';
-
 // src/widgets/service-section/ui/services-section.tsx
 import Image from 'next/image';
-import { useInView } from '@/src/shared/lib/hooks/use-in-view';
 import { ServiceAccordionItem } from './service-accordion-item';
 import { SERVICES } from '@/src/entities/service/model';
 

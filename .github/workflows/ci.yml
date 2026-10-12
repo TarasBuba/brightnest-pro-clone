@@ -22,13 +22,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Type Check
-        run: npm run type-check
-
-      - name: Lint
-        run: npm run lint
-
-      - name: Build
-        run: npm run build
+      - name: Verify
+        run: npm run verify
         env:
-          NEXT_PUBLIC_WEB3FORMS_KEY: ${{ secrets.NEXT_PUBLIC_WEB3FORMS_KEY || 'dummy_test_key' }}
+          NEXT_PUBLIC_WEB3FORMS_KEY: ${{ secrets.NEXT_PUBLIC_WEB3FORMS_KEY || 'ci_placeholder_key' }}

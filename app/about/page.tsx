@@ -1,15 +1,18 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
+import { ROUTES } from '@/src/shared/config/navigation';
+import { buildMetadata, buildBreadcrumbJsonLd, JsonLdScript } from '@/src/shared/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Our Story | BrightNest Pro Services Edmonton',
+export const metadata = buildMetadata({
+  title: 'About Our Family',
   description:
     'Meet Yuriy and Karina, the family behind BrightNest Pro Services. Learn how compassion, craftsmanship, and care shape our home services in Edmonton.',
-};
+  path: ROUTES.about,
+});
 
 export default function AboutPage() {
   return (
     <main id="main-content">
+      <JsonLdScript data={buildBreadcrumbJsonLd([{ name: 'About', path: ROUTES.about }])} />
       <section className="bg-[var(--color-bg-dark)] px-4 py-20 text-[var(--color-text-on-dark)] md:py-28">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--color-brand-teal)]">
@@ -93,7 +96,7 @@ export default function AboutPage() {
 
           <div className="mt-12">
             <Link
-              href="/book"
+              href={ROUTES.book}
               className="inline-flex min-h-11 items-center rounded-[var(--radius-md)] bg-[var(--color-cta-primary)] px-5 py-3 font-semibold text-white transition-colors hover:bg-[var(--color-cta-primary-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-cta-primary)]"
             >
               Request a Free Quote

@@ -19,9 +19,9 @@ export async function submitContactForm(data: ContactFormSchema): Promise<boolea
   formData.append('service', data.service);
   formData.append('subject', `New Quote Request: ${data.service} - ${data.firstName} ${data.lastName}`);
   
-  // Honeypot field for bot protection (if checked, reject immediately)
+  // Honeypot field for bot protection: Web3Forms expects botcheck sent only when present
   if (data.botcheck) {
-    return false;
+    formData.append('botcheck', 'true');
   }
 
   if (data.message) {

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Star, CheckCircle2, Phone, ArrowRight, ShieldCheck, MapPin } from 'lucide-react';
 import { siteConfig } from '@/src/shared/config/site';
+import { ROUTES } from '@/src/shared/config/navigation';
 
 const HERO_HIGHLIGHTS = [
   'Family-owned & operated by Yuriy & Karina',
@@ -63,7 +64,7 @@ export function HeroSection() {
                   key={item}
                   className="flex items-center gap-2 text-sm font-medium text-[var(--color-text-secondary)]"
                 >
-                  <CheckCircle2 className="h-4 w-4 shrink-0 text-[var(--color-success)]" />
+                  <CheckCircle2 className="h-4 w-4 shrink-0 text-[var(--color-success)]" aria-hidden="true" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -72,24 +73,24 @@ export function HeroSection() {
             {/* CTAs */}
             <div className="mt-8 flex flex-wrap items-center gap-3.5 sm:gap-4">
               <Link
-                href="/book"
+                href={ROUTES.book}
                 className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-[var(--radius-md)] bg-[var(--color-cta-primary)] px-7 text-base font-semibold text-white shadow-md shadow-[var(--color-cta-primary)]/20 transition-all duration-200 hover:bg-[var(--color-cta-primary-hover)] hover:shadow-lg hover:shadow-[var(--color-cta-primary)]/30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-cta-primary)] active:scale-[0.98]"
               >
                 <span>Get a Free Quote</span>
-                <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+                <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true" />
               </Link>
               <a
                 href={`tel:${siteConfig.phoneRaw}`}
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-[var(--radius-md)] border-2 border-slate-200 bg-white px-6 text-base font-semibold text-[var(--color-text-primary)] shadow-sm transition-all duration-200 hover:border-[var(--color-brand-teal)] hover:bg-[var(--color-bg-secondary)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-brand-teal)] active:scale-[0.98]"
               >
-                <Phone className="h-4 w-4 text-[var(--color-cta-primary)]" />
+                <Phone className="h-4 w-4 text-[var(--color-cta-primary)]" aria-hidden="true" />
                 <span>Call {siteConfig.phoneDisplay}</span>
               </a>
             </div>
 
             {/* Guarantee note */}
             <div className="mt-5 flex items-center gap-2 text-xs font-medium text-[var(--color-text-secondary)]">
-              <ShieldCheck className="h-4 w-4 shrink-0 text-[var(--color-success)]" />
+              <ShieldCheck className="h-4 w-4 shrink-0 text-[var(--color-success)]" aria-hidden="true" />
               <span>100% Satisfaction Guarantee • Direct communication with the owners</span>
             </div>
           </div>
@@ -189,7 +190,7 @@ export function HeroSection() {
               {/* Floating Verified Local Family Badge */}
               <div className="absolute -bottom-2 sm:-bottom-3 left-1/2 -translate-x-1/2 w-[94%] sm:w-auto max-w-md z-10">
                 <div className="flex items-center justify-center gap-2 rounded-full border border-slate-200/80 bg-white/95 px-4 py-2 text-center text-xs sm:text-sm font-semibold text-slate-800 shadow-xl backdrop-blur-md">
-                  <MapPin className="h-4 w-4 shrink-0 text-emerald-600" />
+                  <MapPin className="h-4 w-4 shrink-0 text-emerald-600" aria-hidden="true" />
                   <span className="truncate">Handyman &amp; Painting • Local Edmonton Family Team</span>
                 </div>
               </div>

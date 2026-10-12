@@ -4,6 +4,11 @@ import { useEffect } from 'react';
 
 export function RevealObserver() {
   useEffect(() => {
+    // Add reveal-ready class to document element on mount for progressive enhancement
+    if (typeof document !== 'undefined') {
+      document.documentElement.classList.add('reveal-ready');
+    }
+
     // Graceful fallback for ancient browsers
     if (typeof window === 'undefined' || !('IntersectionObserver' in window)) {
       document.querySelectorAll('.reveal-on-scroll').forEach((el) => {

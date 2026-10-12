@@ -1,3 +1,5 @@
+import { bookingHref } from '@/src/shared/config/navigation';
+
 export type ProjectCategory = 'all' | 'deck' | 'painting' | 'handyman';
 
 export interface BentoProject {
@@ -49,7 +51,7 @@ export const RECENT_WORK_PROJECTS: BentoProject[] = [
       'Flawless perimeter borders',
     ],
     tags: ['Deck Rebuild', 'Custom Cedar', 'Winter Weatherproof'],
-    ctaLink: '/book',
+    ctaLink: bookingHref('handyman'),
     ctaText: 'Request a Deck Quote',
     featured: true,
     gridClasses: {
@@ -77,7 +79,7 @@ export const RECENT_WORK_PROJECTS: BentoProject[] = [
       'Premium zero-splatter, washable paint',
     ],
     tags: ['Interior Paint', 'Sharp Edges', 'Low-VOC'],
-    ctaLink: '/book',
+    ctaLink: bookingHref('painting'),
     ctaText: 'Book Interior Painting',
     gridClasses: {
       container: 'col-span-1 md:col-span-1 lg:col-span-4',
@@ -104,7 +106,7 @@ export const RECENT_WORK_PROJECTS: BentoProject[] = [
       'Pressure-treated wood for maximum longevity',
     ],
     tags: ['Deck Stairs', 'Structural Repair', 'Carpentry'],
-    ctaLink: '/book',
+    ctaLink: bookingHref('handyman'),
     ctaText: 'Request Handyman Service',
     gridClasses: {
       container: 'col-span-1 md:col-span-1 lg:col-span-6',
@@ -131,7 +133,7 @@ export const RECENT_WORK_PROJECTS: BentoProject[] = [
       'Solid, rattle-free handle installation',
     ],
     tags: ['Door Repair', 'Hardware', 'Handyman'],
-    ctaLink: '/book',
+    ctaLink: bookingHref('handyman'),
     ctaText: 'Request Handyman Service',
     gridClasses: {
       container: 'col-span-1 md:col-span-1 lg:col-span-6',
@@ -158,7 +160,7 @@ export const RECENT_WORK_PROJECTS: BentoProject[] = [
       'Durable scuff-resistant enamel finish',
     ],
     tags: ['Trim Paint', 'Baseboards', 'Detail Work'],
-    ctaLink: '/book',
+    ctaLink: bookingHref('painting'),
     ctaText: 'Book Trim Painting',
     gridClasses: {
       container: 'col-span-1 md:col-span-1 lg:col-span-6',
@@ -185,7 +187,7 @@ export const RECENT_WORK_PROJECTS: BentoProject[] = [
       'Premium fade-resistant exterior paint',
     ],
     tags: ['Exterior Paint', 'Shed Revival', 'Weatherproof'],
-    ctaLink: '/book',
+    ctaLink: bookingHref('painting'),
     ctaText: 'Book Exterior Painting',
     gridClasses: {
       container: 'col-span-1 md:col-span-1 lg:col-span-6',

@@ -7,14 +7,34 @@ export const SECTION_IDS = {
   reviews: 'reviews',
 } as const;
 
-export const NAV_LINKS = [
+/**
+ * Site routes. Trailing slashes match `trailingSlash: true` in next.config.ts,
+ * so links, canonicals and the sitemap all point at the exact exported URL.
+ */
+export const ROUTES = {
+  home: '/',
+  about: '/about/',
+  book: '/book/',
+  handyman: '/services/handyman/',
+  painting: '/services/painting/',
+  servicesHandyman: '/services/handyman/',
+  servicesPainting: '/services/painting/',
+} as const;
+
+export const BOOK_PATH = ROUTES.book;
+
+export interface NavLink {
+  href: string;
+  label: string;
+}
+
+/** Primary navigation (header desktop + mobile drawer + footer). */
+export const NAV_LINKS: readonly NavLink[] = [
   { href: `/#${SECTION_IDS.services}`, label: 'Services' },
   { href: `/#${SECTION_IDS.work}`, label: 'Our Work' },
-  { href: '/about', label: 'About' },
+  { href: ROUTES.about, label: 'About' },
   { href: `/#${SECTION_IDS.reviews}`, label: 'Reviews' },
-] as const;
-
-export const BOOK_PATH = '/book';
+];
 
 /** Link to the booking page, optionally pre-selecting a service in the form. */
 export function bookingHref(service?: ServiceId): string {

@@ -1,7 +1,7 @@
 import { GoogleIcon, FacebookIcon } from '@/src/shared/ui/brand-icons';
 import { PLATFORM_ACCENT } from './icons';
 import { StarRating } from './star-rating';
-import { ShieldCheck, ThumbsUp, ExternalLink } from 'lucide-react';
+import { ThumbsUp, ExternalLink } from 'lucide-react';
 import { siteConfig } from '@/src/shared/config/site';
 
 interface PlatformTrustBarProps {
@@ -14,7 +14,7 @@ export function PlatformTrustBar({ className = '' }: PlatformTrustBarProps) {
       id: 'google',
       name: 'Google Reviews',
       badge: '5.0 (8 reviews)',
-      description: '100% 5-Star Verified Ratings',
+      description: '5-Star Ratings from Edmonton Homeowners',
       accent: PLATFORM_ACCENT.google,
       href: siteConfig.social.google,
       icon: <GoogleIcon width={26} height={26} color={PLATFORM_ACCENT.google} />,
@@ -37,7 +37,7 @@ export function PlatformTrustBar({ className = '' }: PlatformTrustBarProps) {
       icon: <FacebookIcon width={26} height={26} color={PLATFORM_ACCENT.facebook} />,
       customBadge: (
         <div className="flex items-center gap-1 text-xs font-semibold text-[#1877F2]">
-          <ThumbsUp className="h-3.5 w-3.5 text-[#1877F2]" />
+          <ThumbsUp className="h-3.5 w-3.5 text-[#1877F2]" aria-hidden="true" />
           <span>Community Rated</span>
         </div>
       ),
@@ -47,7 +47,7 @@ export function PlatformTrustBar({ className = '' }: PlatformTrustBarProps) {
   return (
     <div
       className={`grid grid-cols-1 gap-4 sm:grid-cols-2 max-w-2xl mx-auto ${className}`}
-      aria-label="Verified Review Platforms"
+      aria-label="Review Platforms"
     >
       {platforms.map((platform) => (
         <a
@@ -78,7 +78,7 @@ export function PlatformTrustBar({ className = '' }: PlatformTrustBarProps) {
                 </p>
               </div>
             </div>
-            <ExternalLink className="h-4 w-4 text-[var(--color-text-tertiary)] opacity-0 transition-all duration-200 group-hover:opacity-100 group-hover:text-[var(--color-text-primary)]" />
+            <ExternalLink className="h-4 w-4 text-[var(--color-text-tertiary)] opacity-0 transition-all duration-200 group-hover:opacity-100 group-hover:text-[var(--color-text-primary)]" aria-hidden="true" />
           </div>
 
           <div className="mt-3 flex items-center justify-between border-t border-[var(--color-border)]/40 pt-3">
@@ -87,7 +87,7 @@ export function PlatformTrustBar({ className = '' }: PlatformTrustBarProps) {
               className="text-xs font-medium transition-colors group-hover:underline"
               style={{ color: platform.accent }}
             >
-              Verify &rarr;
+              Read reviews &rarr;
             </span>
           </div>
         </a>

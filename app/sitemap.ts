@@ -1,23 +1,40 @@
-export const dynamic = 'force-static';
 import type { MetadataRoute } from 'next';
-import { siteConfig } from '@/src/shared/config/site';
+import { ROUTES } from '@/src/shared/config/navigation';
+import { absoluteUrl } from '@/src/shared/config/site';
+
+export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = siteConfig.url;
+  const buildDate = new Date();
 
   return [
     {
-      url: `${baseUrl}/`,
+      url: absoluteUrl(ROUTES.home),
+      lastModified: buildDate,
       changeFrequency: 'weekly',
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/book/`,
+      url: absoluteUrl(ROUTES.book),
+      lastModified: buildDate,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/about/`,
+      url: absoluteUrl(ROUTES.handyman),
+      lastModified: buildDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: absoluteUrl(ROUTES.painting),
+      lastModified: buildDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: absoluteUrl(ROUTES.about),
+      lastModified: buildDate,
       changeFrequency: 'monthly',
       priority: 0.8,
     },

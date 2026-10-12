@@ -11,9 +11,7 @@ import {
   ArrowRight,
   Eye,
   Hammer,
-  Layers,
   Check,
-  ShieldCheck,
 } from 'lucide-react';
 import { BentoProject } from '../model/recent-work-data';
 
@@ -117,7 +115,7 @@ export function BentoCard({ project, index = 0, priority = false }: BentoCardPro
           {/* Category Tag */}
           <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-slate-900/80 px-3 py-1 text-xs font-semibold text-white backdrop-blur-md shadow-sm">
-              <Sparkles className="h-3 w-3 text-emerald-400" />
+              <Sparkles className="h-3 w-3 text-emerald-400" aria-hidden="true" />
               <span>{project.categoryLabel}</span>
             </span>
 
@@ -141,12 +139,12 @@ export function BentoCard({ project, index = 0, priority = false }: BentoCardPro
             >
               {isRevealed ? (
                 <>
-                  <CheckCircle2 className="h-3.5 w-3.5 text-white" />
+                  <CheckCircle2 className="h-3.5 w-3.5 text-white" aria-hidden="true" />
                   <span>AFTER</span>
                 </>
               ) : (
                 <>
-                  <Hammer className="h-3.5 w-3.5 text-slate-950" />
+                  <Hammer className="h-3.5 w-3.5 text-slate-950" aria-hidden="true" />
                   <span>BEFORE / PROCESS</span>
                 </>
               )}
@@ -161,15 +159,15 @@ export function BentoCard({ project, index = 0, priority = false }: BentoCardPro
         <div className="absolute inset-x-0 bottom-0 z-20 p-4 sm:p-5 text-white">
           <div className="flex flex-wrap items-center gap-2 text-[11px] font-medium text-slate-200">
             <span className="inline-flex items-center gap-1 rounded-md bg-white/15 px-2 py-0.5 backdrop-blur-md">
-              <MapPin className="h-3 w-3 text-emerald-400" />
+              <MapPin className="h-3 w-3 text-emerald-400" aria-hidden="true" />
               <span>{project.location}</span>
             </span>
             <span className="inline-flex items-center gap-1 rounded-md bg-white/15 px-2 py-0.5 backdrop-blur-md">
-              <Clock className="h-3 w-3 text-amber-300" />
+              <Clock className="h-3 w-3 text-amber-300" aria-hidden="true" />
               <span>{project.duration}</span>
             </span>
             <span className="inline-flex items-center gap-1 rounded-md bg-emerald-500/30 px-2 py-0.5 font-semibold text-emerald-200 backdrop-blur-md border border-emerald-400/30">
-              <CheckCircle2 className="h-3 w-3 text-emerald-400" />
+              <CheckCircle2 className="h-3 w-3 text-emerald-400" aria-hidden="true" />
               <span>{project.satisfaction}</span>
             </span>
           </div>
@@ -180,7 +178,7 @@ export function BentoCard({ project, index = 0, priority = false }: BentoCardPro
 
           {/* Quick status label */}
           <div className="mt-1 flex items-center gap-1.5 text-xs text-slate-300">
-            <Eye className="h-3.5 w-3.5 text-emerald-400 shrink-0" />
+            <Eye className="h-3.5 w-3.5 text-emerald-400 shrink-0" aria-hidden="true" />
             <span className="truncate">
               {isRevealed
                 ? project.afterLabel || 'Viewing Finished Craftsmanship'
@@ -216,7 +214,7 @@ export function BentoCard({ project, index = 0, priority = false }: BentoCardPro
                   key={idx}
                   className="flex items-start gap-2 text-xs text-slate-700"
                 >
-                  <Check className="h-3.5 w-3.5 shrink-0 text-emerald-600 mt-0.5" />
+                  <Check className="h-3.5 w-3.5 shrink-0 text-emerald-600 mt-0.5" aria-hidden="true" />
                   <span className="leading-snug">{highlight}</span>
                 </li>
               ))}
@@ -242,7 +240,7 @@ export function BentoCard({ project, index = 0, priority = false }: BentoCardPro
               className="inline-flex items-center gap-1.5 rounded-xl bg-[var(--color-cta-primary)] px-3.5 py-2 text-xs font-semibold text-white shadow-sm transition-all hover:bg-[var(--color-cta-primary-hover)] active:scale-95 whitespace-nowrap"
             >
               <span>{project.ctaText}</span>
-              <ArrowRight className="h-3.5 w-3.5" />
+              <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
             </Link>
           </div>
         </div>

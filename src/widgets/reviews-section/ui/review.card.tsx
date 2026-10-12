@@ -63,7 +63,7 @@ export function ReviewCard({ review, isPaused = false, onClick }: ReviewCardProp
           {/* Platform Badge */}
           <div
             className="flex items-center gap-1 rounded-md bg-[var(--color-bg-secondary)] px-2 py-1 text-[11px] font-medium text-[var(--color-text-secondary)] shrink-0"
-            title="Verified Google Review"
+            title="Google Review"
           >
             <GoogleIcon width={12} height={12} color={PLATFORM_ACCENT.google} />
             <span>Google</span>
@@ -84,10 +84,10 @@ export function ReviewCard({ review, isPaused = false, onClick }: ReviewCardProp
         </p>
       </div>
 
-      {/* Card Footer: Verified Homeowner & Pause note */}
+      {/* Card Footer: Homeowner & Pause note */}
       <div className="mt-5 flex items-center justify-between border-t border-[var(--color-border)]/40 pt-3 text-[11px] text-[var(--color-text-tertiary)]">
         <span className="flex items-center gap-1 text-emerald-600 font-medium">
-          <CheckCircle2 className="h-3.5 w-3.5" />
+          <CheckCircle2 className="h-3.5 w-3.5" aria-hidden="true" />
           Local Edmonton Resident
         </span>
         <span className="opacity-60 group-hover:opacity-100 transition-opacity">

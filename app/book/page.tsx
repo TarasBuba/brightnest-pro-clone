@@ -1,5 +1,4 @@
 import { Suspense } from 'react';
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
   ShieldCheck,
@@ -14,12 +13,14 @@ import {
 } from 'lucide-react';
 import { ContactForm } from '@/src/widgets/contact-section';
 import { siteConfig } from '@/src/shared/config/site';
+import { ROUTES } from '@/src/shared/config/navigation';
+import { buildMetadata, buildBreadcrumbJsonLd, JsonLdScript } from '@/src/shared/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Book Handyman & Painting Services | BrightNest Pro Edmonton',
-  description:
-    'Book your handyman or painting service in Edmonton in under 60 seconds. Rapid 15-minute response, fair upfront pricing, and 100% satisfaction guaranteed.',
-};
+export const metadata = buildMetadata({
+  title: 'Book Handyman or Painting Service',
+  description: `Book your handyman or painting service in Edmonton in under 60 seconds. Rapid ${siteConfig.responseMinutes}-minute response, fair upfront pricing, and 100% satisfaction guaranteed.`,
+  path: ROUTES.book,
+});
 
 const TRUST_BADGES = [
   {
@@ -55,6 +56,7 @@ const TRUST_BADGES = [
 export default function BookPage() {
   return (
     <main id="main-content" className="min-h-screen bg-[var(--color-bg-primary)]">
+      <JsonLdScript data={buildBreadcrumbJsonLd([{ name: 'Book Online', path: ROUTES.book }])} />
       {/* Top Hero Header */}
       <section className="bg-gradient-to-b from-[var(--color-bg-secondary)] via-[var(--color-bg-primary)]/80 to-[var(--color-bg-primary)] px-4 pt-12 pb-8 sm:pt-16 sm:pb-12 text-center">
         <div className="mx-auto max-w-4xl">

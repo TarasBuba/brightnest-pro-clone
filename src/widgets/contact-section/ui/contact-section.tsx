@@ -16,14 +16,14 @@ export function ContactForm() {
 
   return (
     <div className="mx-auto max-w-3xl rounded-2xl border border-slate-200 bg-white p-6 shadow-lg sm:p-8">
-      <h2 className="mb-2 text-center text-2xl font-bold text-[var(--color-text-primary)] sm:text-3xl">
+      <h2 id="contact-form-heading" className="mb-2 text-center text-2xl font-bold text-[var(--color-text-primary)] sm:text-3xl">
         Get in Touch
       </h2>
       <p className="mb-8 text-center text-sm text-[var(--color-text-secondary)]">
         Have a question or need a quote? Send us a message and we will respond within {siteConfig.responseMinutes} minutes.
       </p>
 
-      <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-4">
+      <form onSubmit={handleSubmit(onSubmit)} noValidate aria-labelledby="contact-form-heading" className="space-y-4">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <TextField
             name="firstName"
@@ -49,7 +49,7 @@ export function ContactForm() {
             label="Phone Number"
             type="tel"
             autoComplete="tel"
-            placeholder="(780) 984-0190"
+            placeholder={siteConfig.phoneDisplay}
             register={register}
             error={errors.phone}
           />

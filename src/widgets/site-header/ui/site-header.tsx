@@ -1,44 +1,20 @@
-'use client';
-
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import { MobileNavToggle } from '@/src/widgets/site-header/ui/mobile-nav';
 import { siteConfig } from '@/src/shared/config/site';
+import { NAV_LINKS, ROUTES } from '@/src/shared/config/navigation';
 import { Phone } from '../lib/icons';
 import { TrustStrip } from './trust-strip';
-
-import Image from 'next/image';
-
-const NAV_LINKS = [
-  { href: '/#services', label: 'Services' },
-  { href: '/#work', label: 'Our Work' },
-  { href: '/about', label: 'About' },
-  { href: '/#reviews', label: 'Reviews' },
-  { href: '/book', label: 'Book Online' },
-];
+import { HeaderShell } from './header-shell';
 
 export function SiteHeader() {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
     <header className="sticky top-0 z-50 w-full">
       <TrustStrip />
-      <div
-        className={`w-full transition-shadow duration-300 ${
-          isScrolled
-            ? 'bg-white shadow-md'
-            : 'bg-white/95 backdrop-blur-sm'
-        }`}
-      >
+      <HeaderShell>
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <Link
-            href="/"
+            href={ROUTES.home}
             className="flex items-center gap-2 group"
             aria-label="BrightNest Pro Services home"
           >
@@ -77,7 +53,7 @@ export function SiteHeader() {
               className="flex flex-col items-end leading-tight hover:text-[var(--color-cta-primary)]"
             >
               <span className="flex items-center gap-1.5 text-sm font-semibold text-[var(--color-text-primary)]">
-                <Phone />
+                <Phone aria-hidden="true" />
                 {siteConfig.phoneDisplay}
               </span>
               <span className="text-xs text-[var(--color-text-secondary)]">
@@ -86,7 +62,7 @@ export function SiteHeader() {
             </a>
 
             <Link
-              href="/book"
+              href={ROUTES.book}
               className="inline-flex min-h-11 items-center rounded-[var(--radius-md)] bg-[var(--color-cta-primary)] px-5 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-cta-primary-hover)]"
             >
               Book Online
@@ -98,7 +74,7 @@ export function SiteHeader() {
             phoneNumber={siteConfig.phoneRaw}
           />
         </div>
-      </div>
+      </HeaderShell>
     </header>
   );
 }
