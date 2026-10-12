@@ -119,6 +119,11 @@ export function HeroSection() {
                       sizes="(min-width: 1024px) 25vw, (min-width: 640px) 40vw, 50vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
+                    <div className="absolute top-2 right-2 sm:top-2.5 sm:right-2.5">
+                      <span className="inline-flex items-center gap-1 rounded-full bg-emerald-600/90 px-2 py-0.5 text-[9px] sm:text-[11px] font-semibold text-white shadow-sm backdrop-blur-sm">
+                        &#10004; Board Assembly
+                      </span>
+                    </div>
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-2.5 sm:p-3">
                       <span className="inline-block rounded-md bg-black/50 px-2 py-0.5 text-[10px] sm:text-xs font-medium text-white backdrop-blur-sm">
                         Board Assembly • Yuriy
@@ -136,6 +141,11 @@ export function HeroSection() {
                       sizes="(min-width: 1024px) 25vw, (min-width: 640px) 40vw, 50vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
+                    <div className="absolute top-2 right-2 sm:top-2.5 sm:right-2.5">
+                      <span className="inline-flex items-center gap-1 rounded-full bg-emerald-600/90 px-2 py-0.5 text-[9px] sm:text-[11px] font-semibold text-white shadow-sm backdrop-blur-sm">
+                        &#10004; Protective Sealing
+                      </span>
+                    </div>
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-2.5 sm:p-3">
                       <span className="inline-block rounded-md bg-black/50 px-2 py-0.5 text-[10px] sm:text-xs font-medium text-white backdrop-blur-sm">
                         Protective Sealing • Karina
@@ -151,14 +161,15 @@ export function HeroSection() {
                     <Image
                       src="/images/hero/collage/hero-1.webp"
                       priority
-                      alt="Yuriy relaxing on the completed custom cedar deck with hanging swing chair in Edmonton"
+                      alt="Yuriy inspecting the custom cedar deck with hanging swing chair in Edmonton"
                       fill
                       
                       sizes="(min-width: 1024px) 25vw, (min-width: 640px) 40vw, 50vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute top-2 right-2 sm:top-2.5 sm:right-2.5">
-                      <span className="inline-flex items-center gap-1 rounded-full bg-emerald-600/90 px-2 py-0.5 text-[9px] sm:text-[11px] font-semibold text-white shadow-sm backdrop-blur-sm">&#10004; Deck Staining
+                      <span className="inline-flex items-center gap-1 rounded-full bg-emerald-600/90 px-2 py-0.5 text-[9px] sm:text-[11px] font-semibold text-white shadow-sm backdrop-blur-sm">
+                        &#10004; Deck Staining
                       </span>
                     </div>
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-2.5 sm:p-3">
@@ -178,6 +189,11 @@ export function HeroSection() {
                       sizes="(min-width: 1024px) 25vw, (min-width: 640px) 40vw, 50vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
+                    <div className="absolute top-2 right-2 sm:top-2.5 sm:right-2.5">
+                      <span className="inline-flex items-center gap-1 rounded-full bg-emerald-600/90 px-2 py-0.5 text-[9px] sm:text-[11px] font-semibold text-white shadow-sm backdrop-blur-sm">
+                        &#10004; Structural Coating
+                      </span>
+                    </div>
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-2.5 sm:p-3">
                       <span className="inline-block rounded-md bg-black/50 px-2 py-0.5 text-[10px] sm:text-xs font-medium text-white backdrop-blur-sm">
                         Structural Coating • Karina
