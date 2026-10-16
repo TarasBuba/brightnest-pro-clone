@@ -38,10 +38,10 @@ export const RECENT_WORK_PROJECTS: BentoProject[] = [
     location: 'Southwest Edmonton',
     duration: '2 Days',
     satisfaction: '100% Satisfaction',
-    beforeImage: '/images/projects/deck-staining-before.webp',
+    beforeImage: '/images/projects/bench-restoration-before.webp',
     beforeAlt: 'Before: Weathered wood and worn deck boards in Southwest Edmonton',
     beforeLabel: 'BEFORE: Weathered Wood & Worn Boards',
-    afterImage: '/images/projects/deck-staining-after.webp',
+    afterImage: '/images/projects/bench-restoration-after.webp',
     afterAlt: 'After: Completely restored custom cedar deck with swing chair',
     afterLabel: 'AFTER: Custom Cedar Finish & Restoration',
     description:

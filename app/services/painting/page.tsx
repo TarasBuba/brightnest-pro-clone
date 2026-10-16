@@ -378,7 +378,7 @@ export default function PaintingPage() {
             <div className="lg:col-span-5 space-y-4">
               <div className="relative aspect-[43/24] w-full overflow-hidden rounded-2xl border border-slate-800 bg-slate-800 shadow-2xl">
                 <Image
-                  src="/images/projects/deck-staining-split.webp"
+                  src="/images/projects/bench-restoration-split.webp"
                   alt="Exterior deck sanding and staining before and after in Edmonton"
                   fill
                   sizes="(max-width: 768px) 100vw, 40vw"
