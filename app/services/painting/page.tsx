@@ -256,7 +256,7 @@ export default function PaintingPage() {
 
             <div className="lg:col-span-5">
               <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-2 shadow-xl">
-                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-slate-100">
+                <div className="relative aspect-[43/24] w-full overflow-hidden rounded-xl bg-slate-100">
                   <Image
                     src="/images/projects/painting-interior-split.webp"
                     alt="Interior living room wall painting before and after in an Edmonton home"
@@ -376,7 +376,7 @@ export default function PaintingPage() {
             </div>
 
             <div className="lg:col-span-5 space-y-4">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-slate-800 bg-slate-800 shadow-2xl">
+              <div className="relative aspect-[43/24] w-full overflow-hidden rounded-2xl border border-slate-800 bg-slate-800 shadow-2xl">
                 <Image
                   src="/images/projects/deck-staining-split.webp"
                   alt="Exterior deck sanding and staining before and after in Edmonton"
@@ -407,7 +407,7 @@ export default function PaintingPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm">
-              <div className="relative aspect-[4/3] w-full">
+              <div className="relative aspect-[43/24] w-full">
                 <Image
                   src="/images/projects/painting-trim-split.webp"
                   alt="Baseboard, trim, and doorway painting detail"
@@ -422,7 +422,7 @@ export default function PaintingPage() {
             </div>
 
             <div className="rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm">
-              <div className="relative aspect-[4/3] w-full">
+              <div className="relative aspect-[43/24] w-full">
                 <Image
                   src="/images/projects/painting-shed-split.webp"
                   alt="Exterior shed painting transformation before and after"
@@ -437,13 +437,13 @@ export default function PaintingPage() {
             </div>
 
             <div className="rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm sm:col-span-2 lg:col-span-1">
-              <div className="relative aspect-[4/3] w-full">
+              <div className="relative aspect-[43/24] w-full">
                 <Image
-                  src="/images/projects/deck-after.webp"
-                  alt="Completed deck staining and weather protection"
+                  src="/images/hero/collage/hero-1.webp"
+                  alt="Yuriy standing on the completed warm stained cedar deck in Edmonton"
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover"
+                  className="object-cover object-[center_35%]"
                 />
               </div>
               <div className="p-3 text-xs font-semibold text-[var(--color-text-primary)]">

@@ -256,7 +256,7 @@ export default function HandymanPage() {
 
             <div className="lg:col-span-5">
               <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-2 shadow-xl">
-                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-slate-100">
+                <div className="relative aspect-[43/24] w-full overflow-hidden rounded-xl bg-slate-100">
                   <Image
                     src="/images/projects/handyman-door-split.webp"
                     alt="Precision door alignment and frame repair before and after in an Edmonton home"
@@ -376,7 +376,7 @@ export default function HandymanPage() {
             </div>
 
             <div className="lg:col-span-5 space-y-4">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-slate-800 bg-slate-800 shadow-2xl">
+              <div className="relative aspect-[43/24] w-full overflow-hidden rounded-2xl border border-slate-800 bg-slate-800 shadow-2xl">
                 <Image
                   src="/images/projects/handyman-stairs-split.webp"
                   alt="Stair tread repair and structural reinforcement in Edmonton"
