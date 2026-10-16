@@ -167,10 +167,10 @@ export const RECENT_WORK_PROJECTS: BentoProject[] = [
     location: 'St. Albert',
     duration: '1 Day',
     satisfaction: 'Crisp & Clean',
-    beforeImage: '/images/projects/trim-restoration-before.webp',
+    beforeImage: '/images/projects/baseboard-trim-before.webp',
     beforeAlt: 'Before: Yellowed baseboard trim with scratches',
     beforeLabel: 'BEFORE: Yellowed, Chipped Baseboards',
-    afterImage: '/images/projects/trim-restoration-after.webp',
+    afterImage: '/images/projects/baseboard-trim-after.webp',
     afterAlt: 'After: Pristine white semi-gloss baseboard trim',
     afterLabel: 'AFTER: Crisp White Trim Finish',
     description:

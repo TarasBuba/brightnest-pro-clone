@@ -409,7 +409,7 @@ export default function PaintingPage() {
             <div className="rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm">
               <div className="relative aspect-[43/24] w-full">
                 <Image
-                  src="/images/projects/trim-restoration-split.webp"
+                  src="/images/projects/baseboard-trim-split.webp"
                   alt="Baseboard, trim, and doorway painting detail"
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
