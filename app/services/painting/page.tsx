@@ -23,7 +23,7 @@ import { buildMetadata, buildBreadcrumbJsonLd, JsonLdScript } from '@/src/shared
 export const metadata = buildMetadata({
   title: 'Interior & Exterior House Painting Edmonton',
   description:
-    'Expert interior & exterior house painting, cabinet refinishing, and deck staining in Edmonton. Flawless finishes, durable coats, and rapid 15-minute callbacks.',
+    `Expert interior & exterior house painting, cabinet refinishing, and deck staining in Edmonton. Flawless finishes, durable coats, and rapid ${siteConfig.responseMinutes}-minute callbacks.`,
   path: ROUTES.painting,
 });
 
@@ -113,23 +113,6 @@ const PAINTING_FAQS = [
   },
 ];
 
-const NEIGHBORHOODS = [
-  'Glenora',
-  'Strathcona',
-  'Windermere',
-  'Terwillegar',
-  'Riverbend',
-  'Summerside',
-  'Crestwood',
-  'Oliver',
-  'Highlands',
-  'Griesbach',
-  'Sherwood Park',
-  'St. Albert',
-  'Spruce Grove',
-  'Leduc',
-];
-
 export default function PaintingPage() {
   const breadcrumbData = buildBreadcrumbJsonLd([
     { name: 'Services', path: '/#services' },
@@ -140,6 +123,7 @@ export default function PaintingPage() {
     '@context': 'https://schema.org',
     '@type': 'Service',
     '@id': absoluteUrl('/services/painting/#service'),
+    url: absoluteUrl(ROUTES.painting),
     name: 'Interior & Exterior Painting Services in Edmonton',
     serviceType: 'Residential Painting & Staining',
     description:
@@ -177,10 +161,8 @@ export default function PaintingPage() {
       <JsonLdScript data={serviceData} />
       <JsonLdScript data={faqData} />
 
-      {/* Hero Header */}
       <section className="relative overflow-hidden bg-gradient-to-b from-[var(--color-bg-secondary)] via-white to-[var(--color-bg-primary)] px-4 pt-10 pb-16 sm:px-6 sm:pt-14 sm:pb-20 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          {/* Breadcrumb Navigation */}
           <nav aria-label="Breadcrumb" className="mb-6">
             <ol className="flex flex-wrap items-center gap-2 text-sm text-[var(--color-text-secondary)]">
               <li>
@@ -207,7 +189,6 @@ export default function PaintingPage() {
 
           <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-8">
             <div className="lg:col-span-7">
-              {/* Badges Bar */}
               <div className="flex flex-wrap items-center gap-3">
                 <div className="inline-flex items-center gap-1.5 rounded-full border border-amber-200/90 bg-amber-50 px-3.5 py-1 text-xs font-semibold text-amber-900 shadow-sm">
                   <div className="flex items-center text-amber-500" aria-hidden="true">
@@ -222,21 +203,18 @@ export default function PaintingPage() {
 
                 <div className="inline-flex items-center gap-1.5 rounded-full bg-[var(--color-brand-teal-light)] px-3.5 py-1 text-xs font-semibold text-[var(--color-brand-navy)] shadow-sm">
                   <Clock className="h-3.5 w-3.5 text-[var(--color-cta-primary)]" aria-hidden="true" />
-                  <span>15-Minute Callback Promise</span>
+                  <span>{siteConfig.responseMinutes}-Minute Callback Promise</span>
                 </div>
               </div>
 
-              {/* Main H1 */}
               <h1 className="mt-5 font-heading text-4xl font-extrabold tracking-tight text-[var(--color-text-primary)] sm:text-5xl lg:text-6xl leading-[1.12]">
                 Interior &amp; Exterior Painting Services in Edmonton
               </h1>
 
-              {/* Subtitle / Intro */}
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--color-text-secondary)]">
                 Experience the difference that meticulous prep and craftsman precision bring to your home. From crisp interior accent walls to resilient exterior deck staining, Yuriy &amp; Karina deliver stunning, durable finishes across Edmonton.
               </p>
 
-              {/* Trust highlights */}
               <ul className="mt-6 grid grid-cols-1 gap-2.5 sm:grid-cols-2 text-sm text-[var(--color-text-secondary)]">
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 text-[var(--color-success)] shrink-0" aria-hidden="true" />
@@ -256,7 +234,6 @@ export default function PaintingPage() {
                 </li>
               </ul>
 
-              {/* CTAs */}
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <Link
                   href={bookingHref('painting')}
@@ -277,7 +254,6 @@ export default function PaintingPage() {
               </div>
             </div>
 
-            {/* Hero Image Showcase */}
             <div className="lg:col-span-5">
               <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-2 shadow-xl">
                 <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-slate-100">
@@ -300,7 +276,6 @@ export default function PaintingPage() {
         </div>
       </section>
 
-      {/* Services Grid Section */}
       <section className="px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="text-center max-w-3xl mx-auto">
@@ -361,7 +336,6 @@ export default function PaintingPage() {
         </div>
       </section>
 
-      {/* Edmonton Local Climate & Deck Staining Section */}
       <section className="bg-slate-900 text-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
@@ -389,7 +363,7 @@ export default function PaintingPage() {
                   Neighborhoods &amp; Communities We Proudly Serve
                 </h3>
                 <div className="flex flex-wrap gap-2">
-                  {NEIGHBORHOODS.map((area) => (
+                  {siteConfig.neighborhoods.map((area) => (
                     <span
                       key={area}
                       className="rounded-lg bg-slate-800/90 border border-slate-700/80 px-2.5 py-1 text-xs text-slate-300"
@@ -420,7 +394,6 @@ export default function PaintingPage() {
         </div>
       </section>
 
-      {/* Visual Showcase Gallery */}
       <section className="px-4 py-16 sm:px-6 lg:px-8 bg-slate-50 border-y border-slate-200/80">
         <div className="mx-auto max-w-7xl">
           <div className="text-center max-w-2xl mx-auto mb-10">
@@ -481,7 +454,6 @@ export default function PaintingPage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
       <section className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <div className="text-center mb-12">
@@ -520,7 +492,6 @@ export default function PaintingPage() {
         </div>
       </section>
 
-      {/* Bottom Conversion CTA Banner */}
       <section className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8 text-center">
         <div className="mx-auto max-w-4xl space-y-6">
           <div className="inline-flex items-center gap-2 rounded-full bg-teal-500/20 border border-teal-500/30 px-3.5 py-1 text-xs font-semibold text-teal-300">
@@ -533,7 +504,7 @@ export default function PaintingPage() {
           </h2>
 
           <p className="mx-auto max-w-2xl text-base text-slate-300 sm:text-lg">
-            Request your free in-home painting quote today. We will assess your walls or exterior deck and provide a clear, detailed estimate within 15 minutes, 24/7 Monday through Sunday.
+            Request your free in-home painting quote today. We will assess your walls or exterior deck and provide a clear, detailed estimate within {siteConfig.responseMinutes} minutes, 24/7 Monday through Sunday.
           </p>
 
           <div className="pt-4 flex flex-col sm:flex-row justify-center gap-4">

@@ -1,6 +1,9 @@
 @import 'tailwindcss';
 
 @theme {
+  --font-heading: var(--font-jakarta), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+
   --color-brand-teal: oklch(72% 0.13 195);
   --color-brand-teal-hover: oklch(65% 0.15 195);
   --color-brand-teal-light: oklch(92% 0.06 195);
@@ -33,9 +36,6 @@
   --radius-md: 12px;
   --radius-lg: 20px;
   --radius-xl: 32px;
-
-  
-  
 }
 
 @layer base {
@@ -53,12 +53,6 @@
     font-family: var(--font-heading, sans-serif);
   }
 }
-/* ==========================================================================
-   Global Scroll Animations (Progressive Enhancement Pattern)
-   Content is fully visible by default (no-JS / before hydration).
-   Only when scripting is enabled AND html has .reveal-ready do we apply
-   initial hidden states and scroll-driven reveal transforms.
-   ========================================================================== */
 
 @media (scripting: enabled) {
   html.reveal-ready .reveal-on-scroll {
@@ -68,7 +62,6 @@
                 transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  /* Base Transform Directions */
   html.reveal-ready .reveal-on-scroll.reveal-left {
     transform: translate3d(-40px, 0, 0);
   }
@@ -82,21 +75,18 @@
     transform: scale(0.95);
   }
 
-  /* Staggering delays for lists and grids */
   html.reveal-ready .reveal-on-scroll.delay-100 { transition-delay: 100ms; }
   html.reveal-ready .reveal-on-scroll.delay-200 { transition-delay: 200ms; }
   html.reveal-ready .reveal-on-scroll.delay-300 { transition-delay: 300ms; }
   html.reveal-ready .reveal-on-scroll.delay-400 { transition-delay: 400ms; }
   html.reveal-ready .reveal-on-scroll.delay-500 { transition-delay: 500ms; }
 
-  /* Trigger State */
   html.reveal-ready .reveal-on-scroll[data-revealed="true"] {
     opacity: 1;
     transform: translate3d(0, 0, 0) scale(1);
   }
 }
 
-/* Accessibility: Respect prefers-reduced-motion (reduced motion => never hidden) */
 @media (prefers-reduced-motion: reduce) {
   html.reveal-ready .reveal-on-scroll,
   .reveal-on-scroll {
@@ -106,9 +96,6 @@
   }
 }
 
-/* ==========================================================================
-   Details / Accordion Animation support
-   ========================================================================== */
 @supports (interpolate-size: allow-keywords) {
   :root {
     interpolate-size: allow-keywords;

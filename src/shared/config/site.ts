@@ -1,15 +1,8 @@
-/**
- * Single source of truth for business facts used across the site
- * (header, footer, booking page, SEO metadata, JSON-LD).
- * Change a value here and every consumer stays in sync.
- */
 export const siteConfig = {
   name: 'BrightNest Pro Services',
   shortName: 'BrightNest Pro',
-  /** Canonical origin. No trailing slash, no `www`. */
   url: 'https://brightnestpro.ca',
   locale: 'en_CA',
-  /** BCP-47 language tag for `<html lang>`. */
   language: 'en-CA',
   description:
     'Family-owned handyman, carpentry, deck repair, and interior & exterior painting services in Edmonton, Alberta. Free quotes, fair pricing, satisfaction guaranteed.',
@@ -17,7 +10,6 @@ export const siteConfig = {
   phoneDisplay: '(780) 984-0190',
   email: 'info@brightnestpro.ca',
   hours: 'Mon–Sun 24/7',
-  /** Schema.org opening hours equivalent of `hours`. */
   openingHours: {
     days: [
       'Monday',
@@ -38,13 +30,28 @@ export const siteConfig = {
   },
   serviceArea: 'Edmonton & surrounding communities',
   serviceAreaCities: ['Edmonton', 'Sherwood Park', 'St. Albert', 'Leduc', 'Spruce Grove'],
+  neighborhoods: [
+    'Glenora',
+    'Strathcona',
+    'Windermere',
+    'Terwillegar',
+    'Riverbend',
+    'Summerside',
+    'Crestwood',
+    'Oliver',
+    'Highlands',
+    'Griesbach',
+    'Sherwood Park',
+    'St. Albert',
+    'Spruce Grove',
+    'Leduc',
+  ],
   geo: { latitude: 53.5461, longitude: -113.4938 },
   isLicensedInsured: true,
   rating: {
     value: 5.0,
     count: 8,
   },
-  /** Minutes the team promises to reply to a request 24/7. */
   responseMinutes: 15,
   logoPath: '/logo.svg',
   ogImage: {
@@ -56,13 +63,8 @@ export const siteConfig = {
   social: {
     facebook: 'https://www.facebook.com/BrightNestProServices',
     instagram: 'https://www.instagram.com/brightnestproservices',
-    /** Public Google Maps search link (UI only — NOT a profile URL, so never used in `sameAs`). */
     google: 'https://www.google.com/maps/search/?api=1&query=BrightNest+Pro+Services+Edmonton',
   },
-  /**
-   * Official profile URLs used for schema.org `sameAs`.
-   * Add the Google Business Profile URL (https://g.page/... or maps place URL) here once available.
-   */
   profiles: [
     'https://www.facebook.com/BrightNestProServices',
     'https://www.instagram.com/brightnestproservices',
@@ -71,7 +73,6 @@ export const siteConfig = {
 
 export type SiteConfig = typeof siteConfig;
 
-/** Builds an absolute URL from a site-relative path. */
 export function absoluteUrl(path = '/'): string {
   return new URL(path, siteConfig.url).toString();
 }

@@ -1,21 +1,35 @@
 'use client';
 
 import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 export function RevealObserver() {
-  useEffect(() => {
-    // Add reveal-ready class to document element on mount for progressive enhancement
-    if (typeof document !== 'undefined') {
-      document.documentElement.classList.add('reveal-ready');
-    }
+  const pathname = usePathname();
 
-    // Graceful fallback for ancient browsers
-    if (typeof window === 'undefined' || !('IntersectionObserver' in window)) {
-      document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
-        el.setAttribute('data-revealed', 'true');
-      });
+  useEffect(() => {
+    if (typeof window === 'undefined' || typeof document === 'undefined') {
       return;
     }
+
+    const elements = document.querySelectorAll('.reveal-on-scroll:not([data-revealed="true"])');
+
+    if (!('IntersectionObserver' in window)) {
+      elements.forEach((el) => {
+        el.setAttribute('data-revealed', 'true');
+      });
+      document.documentElement.classList.add('reveal-ready');
+      return;
+    }
+
+    const viewportLimit = window.innerHeight * 0.92;
+    elements.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < viewportLimit && rect.bottom > 0) {
+        el.setAttribute('data-revealed', 'true');
+      }
+    });
+
+    document.documentElement.classList.add('reveal-ready');
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -33,30 +47,14 @@ export function RevealObserver() {
       }
     );
 
-    // Initial observation
-    const observeElements = () => {
-      document.querySelectorAll('.reveal-on-scroll:not([data-revealed="true"])').forEach((el) => {
-        observer.observe(el);
-      });
-    };
-
-    observeElements();
-
-    // Re-run if DOM changes (e.g. Next.js soft navigation)
-    const mutationObserver = new MutationObserver(() => {
-      observeElements();
-    });
-
-    mutationObserver.observe(document.body, {
-      childList: true,
-      subtree: true,
+    document.querySelectorAll('.reveal-on-scroll:not([data-revealed="true"])').forEach((el) => {
+      observer.observe(el);
     });
 
     return () => {
       observer.disconnect();
-      mutationObserver.disconnect();
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 }

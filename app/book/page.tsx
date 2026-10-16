@@ -1,4 +1,3 @@
-import { Suspense } from 'react';
 import Link from 'next/link';
 import {
   ShieldCheck,
@@ -10,6 +9,7 @@ import {
   CheckCircle2,
   Wrench,
   Paintbrush,
+  ArrowRight,
 } from 'lucide-react';
 import { ContactForm } from '@/src/widgets/contact-section';
 import { siteConfig } from '@/src/shared/config/site';
@@ -25,7 +25,7 @@ export const metadata = buildMetadata({
 const TRUST_BADGES = [
   {
     icon: Zap,
-    title: '15-Minute Response',
+    title: `${siteConfig.responseMinutes}-Minute Response`,
     description: 'Fast callback 24/7 (Mon–Sun)',
     iconColor: 'text-[var(--color-cta-primary)]',
     bgColor: 'bg-teal-50/70 border-teal-100',
@@ -33,7 +33,7 @@ const TRUST_BADGES = [
   {
     icon: Star,
     title: '5.0 Rated in Edmonton',
-    description: 'Verified reviews from local homeowners',
+    description: '5-star reviews from local homeowners',
     iconColor: 'text-amber-500 fill-amber-500',
     bgColor: 'bg-amber-50/70 border-amber-100',
   },
@@ -57,7 +57,6 @@ export default function BookPage() {
   return (
     <main id="main-content" className="min-h-screen bg-[var(--color-bg-primary)]">
       <JsonLdScript data={buildBreadcrumbJsonLd([{ name: 'Book Online', path: ROUTES.book }])} />
-      {/* Top Hero Header */}
       <section className="bg-gradient-to-b from-[var(--color-bg-secondary)] via-[var(--color-bg-primary)]/80 to-[var(--color-bg-primary)] px-4 pt-12 pb-8 sm:pt-16 sm:pb-12 text-center">
         <div className="mx-auto max-w-4xl">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-[var(--color-brand-teal-light)] px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-[var(--color-brand-navy)] mb-4">
@@ -70,10 +69,9 @@ export default function BookPage() {
 
           <p className="mx-auto mt-4 max-w-2xl text-base text-[var(--color-text-secondary)] sm:text-lg">
             Tell us about your home project below. Our local Edmonton team will get back to you within{' '}
-            <strong className="text-[var(--color-text-primary)]">15 minutes</strong> with transparent pricing and scheduling.
+            <strong className="text-[var(--color-text-primary)]">{siteConfig.responseMinutes} minutes</strong> with transparent pricing and scheduling.
           </p>
 
-          {/* Trust Badges Bar */}
           <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {TRUST_BADGES.map((badge) => {
               const Icon = badge.icon;
@@ -83,7 +81,7 @@ export default function BookPage() {
                   className={`flex items-center gap-3 rounded-xl border p-3.5 text-left shadow-sm bg-white ${badge.bgColor}`}
                 >
                   <div className="shrink-0">
-                    <Icon className={`h-6 w-6 ${badge.iconColor}`} />
+                    <Icon className={`h-6 w-6 ${badge.iconColor}`} aria-hidden="true" />
                   </div>
                   <div>
                     <p className="text-xs font-bold text-[var(--color-text-primary)]">
@@ -100,23 +98,17 @@ export default function BookPage() {
         </div>
       </section>
 
-      {/* Main Content: Booking Form & Contact Sidebar */}
       <section className="px-4 pb-20 pt-2">
         <div className="mx-auto max-w-5xl">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
-            {/* Form Column */}
             <div className="lg:col-span-8">
-              <Suspense fallback={<div className="h-96 w-full animate-pulse rounded-2xl bg-slate-100"></div>}>
-                <ContactForm />
-              </Suspense>
+              <ContactForm />
             </div>
 
-            {/* Quick Contact & Info Sidebar */}
             <aside aria-label="Direct Contact Information" className="space-y-6 lg:col-span-4">
-              {/* Direct Phone Card */}
               <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-md">
                 <h3 className="font-heading text-lg font-bold text-[var(--color-text-primary)] mb-2 flex items-center gap-2">
-                  <Phone className="h-5 w-5 text-[var(--color-cta-primary)]" />
+                  <Phone className="h-5 w-5 text-[var(--color-cta-primary)]" aria-hidden="true" />
                   Prefer to Talk?
                 </h3>
                 <p className="text-xs text-[var(--color-text-secondary)] mb-4">
@@ -126,52 +118,62 @@ export default function BookPage() {
                   href={`tel:${siteConfig.phoneRaw}`}
                   className="flex items-center justify-center gap-2 rounded-[var(--radius-md)] bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-slate-800"
                 >
-                  <Phone className="h-4 w-4 text-[var(--color-brand-teal)]" />
+                  <Phone className="h-4 w-4 text-[var(--color-brand-teal)]" aria-hidden="true" />
                   <span>{siteConfig.phoneDisplay}</span>
                 </a>
               </div>
 
-              {/* Service Highlights Card */}
               <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-md space-y-4">
                 <h3 className="font-heading text-sm font-bold uppercase tracking-wider text-[var(--color-text-primary)]">
                   What We Specialize In
                 </h3>
 
                 <div className="space-y-3 text-sm">
-                  <div className="flex items-start gap-3 rounded-xl bg-slate-50 p-3">
-                    <Wrench className="h-5 w-5 text-[var(--color-cta-primary)] shrink-0 mt-0.5" />
-                    <div>
-                      <h4 className="font-semibold text-[var(--color-text-primary)] text-xs">
-                        Handyman &amp; Repairs
-                      </h4>
-                      <p className="text-[11px] text-[var(--color-text-secondary)] mt-0.5">
-                        Doors, drywalls, decks, fences, fixtures, and general home repairs.
-                      </p>
+                  <Link
+                    href={ROUTES.handyman}
+                    className="group flex items-start justify-between gap-3 rounded-xl bg-slate-50 p-3 transition-colors hover:bg-slate-100"
+                  >
+                    <div className="flex items-start gap-3">
+                      <Wrench className="h-5 w-5 text-[var(--color-cta-primary)] shrink-0 mt-0.5" aria-hidden="true" />
+                      <div>
+                        <h4 className="font-semibold text-[var(--color-text-primary)] text-xs group-hover:text-[var(--color-cta-primary)]">
+                          Handyman &amp; Repairs
+                        </h4>
+                        <p className="text-[11px] text-[var(--color-text-secondary)] mt-0.5">
+                          Doors, drywalls, decks, fences, fixtures, and general home repairs.
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                    <ArrowRight className="h-4 w-4 text-slate-400 shrink-0 mt-0.5 transition-transform group-hover:translate-x-0.5 group-hover:text-[var(--color-cta-primary)]" aria-hidden="true" />
+                  </Link>
 
-                  <div className="flex items-start gap-3 rounded-xl bg-slate-50 p-3">
-                    <Paintbrush className="h-5 w-5 text-[var(--color-cta-primary)] shrink-0 mt-0.5" />
-                    <div>
-                      <h4 className="font-semibold text-[var(--color-text-primary)] text-xs">
-                        Painting Services
-                      </h4>
-                      <p className="text-[11px] text-[var(--color-text-secondary)] mt-0.5">
-                        Clean, professional interior walls, exterior fences, trim, and refinishing.
-                      </p>
+                  <Link
+                    href={ROUTES.painting}
+                    className="group flex items-start justify-between gap-3 rounded-xl bg-slate-50 p-3 transition-colors hover:bg-slate-100"
+                  >
+                    <div className="flex items-start gap-3">
+                      <Paintbrush className="h-5 w-5 text-[var(--color-cta-primary)] shrink-0 mt-0.5" aria-hidden="true" />
+                      <div>
+                        <h4 className="font-semibold text-[var(--color-text-primary)] text-xs group-hover:text-[var(--color-cta-primary)]">
+                          Painting Services
+                        </h4>
+                        <p className="text-[11px] text-[var(--color-text-secondary)] mt-0.5">
+                          Clean, professional interior walls, exterior fences, trim, and refinishing.
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                    <ArrowRight className="h-4 w-4 text-slate-400 shrink-0 mt-0.5 transition-transform group-hover:translate-x-0.5 group-hover:text-[var(--color-cta-primary)]" aria-hidden="true" />
+                  </Link>
                 </div>
               </div>
 
-              {/* Business Details */}
               <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-6 text-xs text-[var(--color-text-secondary)] space-y-3">
                 <div className="flex items-center gap-2">
-                  <Clock className="h-4 w-4 text-slate-500 shrink-0" />
+                  <Clock className="h-4 w-4 text-slate-500 shrink-0" aria-hidden="true" />
                   <span>Hours: {siteConfig.hours}</span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <MapPin className="h-4 w-4 text-slate-500 shrink-0 mt-0.5" />
+                  <MapPin className="h-4 w-4 text-slate-500 shrink-0 mt-0.5" aria-hidden="true" />
                   <span>Service Area: {siteConfig.serviceArea}</span>
                 </div>
                 <div className="pt-2 border-t border-slate-200/80">

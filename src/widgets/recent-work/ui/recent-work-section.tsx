@@ -8,7 +8,6 @@ export function RecentWorkSection() {
       aria-labelledby="recent-work-heading"
       className="relative overflow-hidden bg-slate-50/80 py-12 md:py-16"
     >
-      {/* Background ambient lighting accents */}
       <div
         className="pointer-events-none absolute top-12 left-1/2 h-96 w-[700px] -translate-x-1/2 rounded-full bg-gradient-to-tr from-emerald-100/40 via-[var(--color-brand-teal)]/10 to-transparent blur-3xl"
         aria-hidden="true"
@@ -19,7 +18,6 @@ export function RecentWorkSection() {
       />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <div className="mx-auto max-w-3xl text-center">
           <div className="reveal-on-scroll reveal-up inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-1.5 text-xs font-semibold text-emerald-800 backdrop-blur-sm shadow-xs">
             <Sparkles className="h-3.5 w-3.5 text-emerald-600" aria-hidden="true" />
@@ -41,7 +39,6 @@ export function RecentWorkSection() {
             build, and beautify homes across Edmonton with dedicated family care.
           </p>
 
-          {/* Quick Metrics Bar */}
           <div className="reveal-on-scroll reveal-up delay-300 mt-6 flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs sm:text-sm font-medium text-slate-600">
             <div className="flex items-center gap-1.5">
               <CheckCircle2 className="h-4 w-4 text-emerald-600" aria-hidden="true" />
@@ -58,7 +55,6 @@ export function RecentWorkSection() {
           </div>
         </div>
 
-        {/* Bento Grid Portfolio */}
         <div className="mt-12 lg:mt-16">
           <BentoGrid />
         </div>

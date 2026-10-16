@@ -15,7 +15,6 @@ export function ServiceAccordionItem({
   className = '',
 }: ServiceAccordionItemProps) {
   const IconComponent = service.icon;
-
   const delayClass = index % 2 === 0 ? 'delay-100' : 'delay-300';
 
   return (
@@ -29,7 +28,12 @@ export function ServiceAccordionItem({
           </span>
           <div>
             <h3 className="font-heading text-2xl font-bold text-[var(--color-text-primary)] leading-tight">
-              {service.title}
+              <Link
+                href={service.href}
+                className="transition-colors hover:text-[var(--color-cta-primary)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-cta-primary)]"
+              >
+                {service.title}
+              </Link>
             </h3>
             <p className="mt-1 text-sm font-medium text-[var(--color-brand-teal)]">
               {service.summary}
@@ -67,13 +71,21 @@ export function ServiceAccordionItem({
           <span>{service.timeline}</span>
         </div>
 
-        <Link
-          href={bookingHref(service.id)}
-          className="group/btn inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[var(--radius-md)] bg-[var(--color-cta-primary)] px-6 py-3 font-bold text-white shadow-sm transition-all hover:bg-[var(--color-cta-primary-hover)] hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-cta-primary)]"
-        >
-          <span>Book This Service</span>
-          <ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
-        </Link>
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <Link
+            href={bookingHref(service.id)}
+            className="group/btn inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[var(--radius-md)] bg-[var(--color-cta-primary)] px-5 py-3 text-sm font-bold text-white shadow-sm transition-all hover:bg-[var(--color-cta-primary-hover)] hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-cta-primary)]"
+          >
+            <span>Book This Service</span>
+            <ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
+          </Link>
+          <Link
+            href={service.href}
+            className="inline-flex min-h-12 w-full items-center justify-center gap-1.5 rounded-[var(--radius-md)] border border-slate-200 bg-slate-50 px-5 py-3 text-sm font-semibold text-[var(--color-text-primary)] transition-all hover:border-[var(--color-brand-teal)] hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-brand-teal)]"
+          >
+            <span>Explore Service Details</span>
+          </Link>
+        </div>
       </div>
     </div>
   );

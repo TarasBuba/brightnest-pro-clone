@@ -18,7 +18,6 @@ export function HeroSection() {
       aria-labelledby="hero-title"
       className="relative overflow-hidden bg-[var(--color-bg-primary)] py-10 sm:py-12 lg:py-16"
     >
-      {/* Background ambient lighting */}
       <div
         className="pointer-events-none absolute -top-24 left-1/2 h-96 w-[700px] -translate-x-1/2 rounded-full bg-gradient-to-tr from-[var(--color-brand-teal)]/10 via-sky-100/10 to-transparent blur-3xl"
         aria-hidden="true"
@@ -26,7 +25,6 @@ export function HeroSection() {
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-8">
-          {/* Left Column: Value Proposition & CTAs */}
           <div className="lg:col-span-6 xl:col-span-6">
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-amber-200/80 bg-amber-50/80 px-3.5 py-1.5 text-xs font-semibold text-amber-900 backdrop-blur-sm">
               <div className="flex items-center text-amber-500" aria-hidden="true">
@@ -42,7 +40,6 @@ export function HeroSection() {
               </span>
             </div>
 
-            {/* Main Headline */}
             <h1
               id="hero-title"
               className="font-heading text-4xl font-extrabold tracking-tight text-[var(--color-text-primary)] sm:text-5xl lg:text-5xl xl:text-6xl leading-[1.12]"
@@ -51,13 +48,11 @@ export function HeroSection() {
               <span className="text-[var(--color-cta-primary)]">Not a Job Site</span>
             </h1>
 
-            {/* Subtitle */}
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[var(--color-text-secondary)]">
               From custom carpentry, deck restoration, and home repairs to flawless interior and exterior painting —
               Yuriy &amp; Karina handle every project across Edmonton with personal craftsmanship and honest care.
             </p>
 
-            {/* Checklist of highlights */}
             <ul className="mt-6 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
               {HERO_HIGHLIGHTS.map((item) => (
                 <li
@@ -70,7 +65,6 @@ export function HeroSection() {
               ))}
             </ul>
 
-            {/* CTAs */}
             <div className="mt-8 flex flex-wrap items-center gap-3.5 sm:gap-4">
               <Link
                 href={ROUTES.book}
@@ -88,34 +82,27 @@ export function HeroSection() {
               </a>
             </div>
 
-            {/* Guarantee note */}
             <div className="mt-5 flex items-center gap-2 text-xs font-medium text-[var(--color-text-secondary)]">
               <ShieldCheck className="h-4 w-4 shrink-0 text-[var(--color-success)]" aria-hidden="true" />
               <span>100% Satisfaction Guarantee • Direct communication with the owners</span>
             </div>
           </div>
 
-          {/* Right Column: 4-Photo Collage / Mosaic Grid */}
           <div className="lg:col-span-6 xl:col-span-6">
             <div className="relative mx-auto max-w-xl pb-6 sm:pb-8 lg:max-w-none">
-              {/* Soft decorative backdrop glow */}
               <div
                 className="pointer-events-none absolute -inset-3 rounded-3xl bg-gradient-to-tr from-[var(--color-brand-teal)]/20 via-sky-100/10 to-transparent blur-2xl -z-10"
                 aria-hidden="true"
               />
 
-              {/* Mosaic 2-Column Grid */}
               <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                {/* Column 1 */}
                 <div className="flex flex-col gap-3 sm:gap-4">
-                  {/* Photo 2: Yuriy drilling boards */}
                   <div className="group relative aspect-[3/4] overflow-hidden rounded-2xl border border-white/80 bg-slate-100 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5">
                     <Image
                       src="/images/hero/collage/hero-2.webp"
                       priority
                       alt="Yuriy securing deck boards with a power drill during an Edmonton deck build"
                       fill
-                      
                       sizes="(min-width: 1024px) 25vw, (min-width: 640px) 40vw, 50vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
@@ -131,13 +118,11 @@ export function HeroSection() {
                     </div>
                   </div>
 
-                  {/* Photo 3: Karina staining deck */}
                   <div className="group relative aspect-[3/4] overflow-hidden rounded-2xl border border-white/80 bg-slate-100 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5">
                     <Image
                       src="/images/hero/collage/hero-3.webp"
                       alt="Karina applying protective deck stain with a roller in Edmonton"
                       fill
-                      
                       sizes="(min-width: 1024px) 25vw, (min-width: 640px) 40vw, 50vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
@@ -154,16 +139,13 @@ export function HeroSection() {
                   </div>
                 </div>
 
-                {/* Column 2 (offset downwards on desktop for dynamic rhythm) */}
                 <div className="flex flex-col gap-3 sm:gap-4 pt-3 sm:pt-6">
-                  {/* Photo 1: Yuriy on completed deck with swing chair */}
                   <div className="group relative aspect-[3/4] overflow-hidden rounded-2xl border-2 border-emerald-400/40 bg-slate-100 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5">
                     <Image
                       src="/images/hero/collage/hero-1.webp"
                       priority
                       alt="Yuriy inspecting the custom cedar deck with hanging swing chair in Edmonton"
                       fill
-                      
                       sizes="(min-width: 1024px) 25vw, (min-width: 640px) 40vw, 50vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
@@ -179,13 +161,11 @@ export function HeroSection() {
                     </div>
                   </div>
 
-                  {/* Photo 4: Karina painting frame */}
                   <div className="group relative aspect-[3/4] overflow-hidden rounded-2xl border border-white/80 bg-slate-100 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5">
                     <Image
                       src="/images/hero/collage/hero-4.webp"
                       alt="Karina painting the deck support framework in Edmonton"
                       fill
-                      
                       sizes="(min-width: 1024px) 25vw, (min-width: 640px) 40vw, 50vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
@@ -203,7 +183,6 @@ export function HeroSection() {
                 </div>
               </div>
 
-              {/* Floating Verified Local Family Badge */}
               <div className="absolute -bottom-2 sm:-bottom-3 left-1/2 -translate-x-1/2 w-[94%] sm:w-auto max-w-md z-10">
                 <div className="flex items-center justify-center gap-2 rounded-full border border-slate-200/80 bg-white/95 px-4 py-2 text-center text-xs sm:text-sm font-semibold text-slate-800 shadow-xl backdrop-blur-md">
                   <MapPin className="h-4 w-4 shrink-0 text-emerald-600" aria-hidden="true" />

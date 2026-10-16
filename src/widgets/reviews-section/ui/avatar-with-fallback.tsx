@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { getInitials } from '@/src/shared/lib/utils/avatar';
 
 interface AvatarWithFallbackProps {
@@ -17,7 +18,6 @@ export function AvatarWithFallback({
   className = '',
 }: AvatarWithFallbackProps) {
   const [hasError, setHasError] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
   const initials = getInitials(name);
 
   if (!src || hasError) {
@@ -38,30 +38,17 @@ export function AvatarWithFallback({
 
   return (
     <div
-      className={`relative shrink-0 overflow-hidden rounded-full ring-2 ring-[var(--color-brand-teal)]/30 shadow-sm ${className}`}
+      className={`relative shrink-0 overflow-hidden rounded-full bg-teal-50 ring-2 ring-[var(--color-brand-teal)]/30 shadow-sm ${className}`}
       style={{ width: size, height: size }}
     >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
+      <Image
         src={src}
         alt={name}
-        loading="lazy"
-        decoding="async"
-        referrerPolicy="no-referrer"
+        width={size}
+        height={size}
         onError={() => setHasError(true)}
-        onLoad={() => setIsLoaded(true)}
-        className={`h-full w-full object-cover transition-opacity duration-300 ${
-          isLoaded ? 'opacity-100' : 'opacity-0'
-        }`}
+        className="h-full w-full object-cover"
       />
-      {!isLoaded && (
-        <div
-          className="absolute inset-0 flex items-center justify-center bg-teal-50 text-xs font-semibold text-[var(--color-brand-teal)]"
-          aria-hidden="true"
-        >
-          {initials}
-        </div>
-      )}
     </div>
   );
 }

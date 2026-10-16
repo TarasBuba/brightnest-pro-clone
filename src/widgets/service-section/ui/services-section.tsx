@@ -1,4 +1,3 @@
-// src/widgets/service-section/ui/services-section.tsx
 import Image from 'next/image';
 import { ServiceAccordionItem } from './service-accordion-item';
 import { SERVICES } from '@/src/entities/service/model';
@@ -10,7 +9,6 @@ export function ServicesSection() {
       aria-labelledby="services-title"
       className="relative overflow-hidden py-[var(--spacing-section)] px-4"
     >
-      {/* High-quality background image with elegant, aesthetic brand overlay */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <Image
           src="/images/services/services-bg.webp"
@@ -19,9 +17,7 @@ export function ServicesSection() {
           fill
           sizes="100vw"
           className="object-cover object-center scale-105 transition-transform duration-1000"
-          quality={85}
         />
-        {/* Semi-transparent brand gradient oklch(22% 0.06 240 / 88%) and backdrop-blur-sm for 100% contrast & premium depth */}
         <div
           className="absolute inset-0 backdrop-blur-sm"
           style={{
@@ -32,7 +28,6 @@ export function ServicesSection() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-6xl">
-        {/* Section Header with reveal-on-scroll */}
         <div className="reveal-on-scroll reveal-up flex flex-col items-center">
           <p className="text-center text-sm font-bold uppercase tracking-[0.16em] text-cyan-300 drop-shadow-sm">
             Core Specializations
@@ -51,7 +46,6 @@ export function ServicesSection() {
           </p>
         </div>
 
-        {/* Guaranteed alternating fly-in animated cards on scroll */}
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
           {SERVICES.map((service, index) => (
             <ServiceAccordionItem

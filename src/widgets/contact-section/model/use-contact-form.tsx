@@ -31,6 +31,7 @@ export function useContactForm() {
   }, [form]);
 
   async function onSubmit(data: ContactFormSchema) {
+    setResult(null);
     startTransition(async () => {
       try {
         const success = await submitContactForm(data);

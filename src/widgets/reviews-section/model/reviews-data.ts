@@ -6,7 +6,7 @@ export interface ExtendedReview {
   avatarUrl: string;
   role: string;
   service: string;
-  platform: 'google' | 'homestars' | 'facebook';
+  platform: 'google' | 'facebook';
 }
 
 export const EXTENDED_REVIEWS: ExtendedReview[] = [
@@ -15,7 +15,7 @@ export const EXTENDED_REVIEWS: ExtendedReview[] = [
     name: 'Adria Lee',
     rating: 5,
     role: 'Google Review',
-    service: 'Yard & Deck Care',
+    service: 'Deck & Exterior Care',
     avatarUrl: '/images/avatars/adria-lee.webp',
     review: 'We are so pleased with the work Yuriy and Karina did with our very large yard and two back decks. Not only did they take great care to make sure everything looked fantastic but they also priced their work very reasonably. As new immigrants, English is not their first language but that does not stop them from communicating (using a translator) and getting out there to make a concerted effort in building a business for themselves. We will 100% use them again and recommend to anyone looking for honest hard working helpers.',
     platform: 'google',
@@ -45,9 +45,9 @@ export const EXTENDED_REVIEWS: ExtendedReview[] = [
     name: 'Salina Halabi',
     rating: 5,
     role: 'Google Review',
-    service: 'Home Cleaning',
+    service: 'Home Maintenance',
     avatarUrl: '/images/avatars/salina-halabi.webp',
-    review: 'Wonderful team and great work! Highly recommend for both outdoor and indoor home maintenance/cleaning services. Thank you!',
+    review: 'Wonderful team and great work! Highly recommend for both outdoor and indoor home maintenance and repair services. Thank you!',
     platform: 'google',
   },
   {
@@ -55,9 +55,9 @@ export const EXTENDED_REVIEWS: ExtendedReview[] = [
     name: 'Yvonne Reitsma',
     rating: 5,
     role: 'Google Review',
-    service: 'Exterior Cleaning',
+    service: 'Exterior Maintenance',
     avatarUrl: '/images/avatars/yvonne-reitsma.webp',
-    review: 'This team came to clean my windows and siding! Excellent, thorough job. Early, efficient and very polite. Would definitely use them for other jobs needed around the house.',
+    review: 'This team came to refresh our windows and siding! Excellent, thorough job. Early, efficient and very polite. Would definitely use them for other jobs needed around the house.',
     platform: 'google',
   },
   {
@@ -75,9 +75,9 @@ export const EXTENDED_REVIEWS: ExtendedReview[] = [
     name: 'Oleksii Chubko',
     rating: 5,
     role: 'Google Review',
-    service: 'Cleaning & Painting',
+    service: 'Interior Painting',
     avatarUrl: '/images/avatars/oleksii-chubko.webp',
-    review: 'Great couple! They did cleaning and painting for us when we were moving. We’re very happy with their work and would definitely recommend them. We’ll be happy to use their services again!',
+    review: 'Great couple! They did repairs and painting for us when we were moving. We’re very happy with their work and would definitely recommend them. We’ll be happy to use their services again!',
     platform: 'google',
   },
   {

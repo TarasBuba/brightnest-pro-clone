@@ -10,7 +10,7 @@ import {
 import { FacebookIcon as IconBrandFacebook, InstagramIcon as IconBrandInstagram } from '@/src/shared/ui/brand-icons';
 import Image from 'next/image';
 import { siteConfig } from '@/src/shared/config/site';
-import { NAV_LINKS, ROUTES, bookingHref } from '@/src/shared/config/navigation';
+import { NAV_LINKS, ROUTES } from '@/src/shared/config/navigation';
 
 export const SiteFooter = () => {
   const currentYear = new Date().getFullYear();
@@ -19,7 +19,6 @@ export const SiteFooter = () => {
     <footer className="bg-[var(--color-bg-dark)] text-[var(--color-text-on-dark)] pt-14 pb-8 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-white/10">
-          {/* Brand & Mission */}
           <div className="space-y-3">
             <Link href={ROUTES.home} className="inline-flex items-center gap-2" aria-label="BrightNest Pro Services Home">
               <Image src="/logo-white.svg" alt="BrightNest Pro Services Logo" width={160} height={120} className="h-9 w-auto" />
@@ -38,7 +37,6 @@ export const SiteFooter = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div className="space-y-3">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
               Navigation
@@ -78,26 +76,24 @@ export const SiteFooter = () => {
             </ul>
           </div>
 
-          {/* Services */}
           <div className="space-y-3">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
               Services
             </h3>
             <ul className="space-y-2 text-sm text-white/75">
               <li>
-                <Link href={bookingHref('handyman')} className="hover:text-[var(--color-brand-teal)] transition-colors">
+                <Link href={ROUTES.handyman} className="hover:text-[var(--color-brand-teal)] transition-colors">
                   Handyman &amp; Minor Repairs
                 </Link>
               </li>
               <li>
-                <Link href={bookingHref('painting')} className="hover:text-[var(--color-brand-teal)] transition-colors">
+                <Link href={ROUTES.painting} className="hover:text-[var(--color-brand-teal)] transition-colors">
                   Interior &amp; Exterior Painting
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Contact Details & Direct Booking Action */}
           <div className="space-y-3">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
               Get in Touch
@@ -166,7 +162,6 @@ export const SiteFooter = () => {
           </div>
         </div>
 
-        {/* Bottom copyright bar with all primary routes */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/60">
           <p>
             &copy; {currentYear} BrightNest Pro Services. All rights reserved.

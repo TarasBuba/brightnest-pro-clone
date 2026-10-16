@@ -1,7 +1,5 @@
 import { bookingHref } from '@/src/shared/config/navigation';
 
-export type ProjectCategory = 'all' | 'deck' | 'painting' | 'handyman';
-
 export interface BentoProject {
   id: string;
   category: 'deck' | 'painting' | 'handyman';

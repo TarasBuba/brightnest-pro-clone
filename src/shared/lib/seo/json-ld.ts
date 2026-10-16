@@ -44,11 +44,9 @@ function businessNode(): JsonLd {
       name: `${siteConfig.name} Services`,
       itemListElement: SERVICES.map((service) => ({
         '@type': 'Offer',
-        itemOffered: { '@id': absoluteUrl(`/#service-${service.id}`) },
+        itemOffered: { '@id': absoluteUrl(`${service.href}#service`) },
       })),
     },
-    // NOTE: no `aggregateRating` — Google ignores self-serving LocalBusiness ratings
-    // and unverifiable rating markup is a structured-data policy risk.
   };
 }
 
@@ -66,7 +64,8 @@ function websiteNode(): JsonLd {
 function serviceNodes(): JsonLd[] {
   return SERVICES.map((service) => ({
     '@type': 'Service',
-    '@id': absoluteUrl(`/#service-${service.id}`),
+    '@id': absoluteUrl(`${service.href}#service`),
+    url: absoluteUrl(service.href),
     name: service.title,
     serviceType: service.shortTitle,
     description: service.summary,
@@ -75,7 +74,6 @@ function serviceNodes(): JsonLd[] {
   }));
 }
 
-/** Site-wide graph rendered once in the root layout. */
 export function buildSiteJsonLd(): JsonLd {
   return {
     '@context': 'https://schema.org',
@@ -83,7 +81,6 @@ export function buildSiteJsonLd(): JsonLd {
   };
 }
 
-/** Breadcrumbs for sub-pages, e.g. `[{ name: 'About', path: '/about/' }]`. */
 export function buildBreadcrumbJsonLd(items: readonly { name: string; path: string }[]): JsonLd {
   const all = [{ name: 'Home', path: '/' }, ...items];
   return {
@@ -98,7 +95,6 @@ export function buildBreadcrumbJsonLd(items: readonly { name: string; path: stri
   };
 }
 
-/** Safe serialisation for `<script type="application/ld+json">` (escapes `<`). */
 export function serializeJsonLd(data: JsonLd): string {
   return JSON.stringify(data).replace(/</g, '\\u003c');
 }

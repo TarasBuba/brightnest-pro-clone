@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, useSyncExternalStore } from 'react';
+import { useState, useEffect, useRef, useCallback, useSyncExternalStore } from 'react';
 import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
@@ -20,37 +20,67 @@ export function MobileNavToggle({ links, phoneNumber }: MobileNavToggleProps) {
     () => false
   );
   const triggerRef = useRef<HTMLButtonElement | null>(null);
+  const closeBtnRef = useRef<HTMLButtonElement | null>(null);
+  const drawerRef = useRef<HTMLDivElement | null>(null);
 
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     setIsOpen(false);
     triggerRef.current?.focus();
-  };
+  }, []);
 
-  // Prevent background scrolling when menu is open
   useEffect(() => {
+    const mainEl = document.getElementById('main-content');
     if (isOpen) {
       document.body.style.overflow = 'hidden';
+      mainEl?.setAttribute('inert', '');
+      requestAnimationFrame(() => {
+        closeBtnRef.current?.focus();
+      });
     } else {
       document.body.style.overflow = 'unset';
+      mainEl?.removeAttribute('inert');
     }
     return () => {
       document.body.style.overflow = 'unset';
+      mainEl?.removeAttribute('inert');
     };
   }, [isOpen]);
 
   useEffect(() => {
+    if (!isOpen) return;
+
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (isOpen && e.key === 'Escape') {
+      if (e.key === 'Escape') {
+        e.preventDefault();
         handleClose();
+        return;
+      }
+
+      if (e.key === 'Tab' && drawerRef.current) {
+        const focusables = drawerRef.current.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        );
+        if (focusables.length === 0) return;
+
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
       }
     };
+
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen]);
+  }, [isOpen, handleClose]);
 
   const drawerContent = mounted ? (
     <>
-      {/* Backdrop */}
       <div
         className={`fixed inset-0 z-[100] bg-slate-900/60 backdrop-blur-sm transition-opacity duration-300 ${
           isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
@@ -59,8 +89,8 @@ export function MobileNavToggle({ links, phoneNumber }: MobileNavToggleProps) {
         aria-hidden="true"
       />
 
-      {/* Drawer */}
       <div
+        ref={drawerRef}
         role="dialog"
         aria-modal="true"
         aria-label="Mobile navigation"
@@ -77,9 +107,11 @@ export function MobileNavToggle({ links, phoneNumber }: MobileNavToggleProps) {
             </span>
           </div>
           <button
+            ref={closeBtnRef}
+            type="button"
             onClick={handleClose}
             aria-label="Close menu"
-            className="flex h-11 w-11 items-center justify-center text-[var(--color-text-secondary)] transition-colors hover:text-[var(--color-cta-primary)]"
+            className="flex h-11 w-11 items-center justify-center rounded-md text-[var(--color-text-secondary)] transition-colors hover:text-[var(--color-cta-primary)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-cta-primary)]"
           >
             <X className="h-6 w-6" aria-hidden="true" />
           </button>
@@ -101,7 +133,7 @@ export function MobileNavToggle({ links, phoneNumber }: MobileNavToggleProps) {
                 {link.label}
               </Link>
             ))}
-            
+
           <div className="mt-6 flex flex-col gap-3">
             <Link
               href={ROUTES.book}
@@ -126,10 +158,11 @@ export function MobileNavToggle({ links, phoneNumber }: MobileNavToggleProps) {
     <div className="lg:hidden">
       <button
         ref={triggerRef}
+        type="button"
         onClick={() => setIsOpen(true)}
         aria-label="Open menu"
         aria-expanded={isOpen}
-        className="flex h-11 w-11 items-center justify-center text-[var(--color-text-primary)] transition-colors hover:text-[var(--color-cta-primary)]"
+        className="flex h-11 w-11 items-center justify-center rounded-md text-[var(--color-text-primary)] transition-colors hover:text-[var(--color-cta-primary)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-cta-primary)]"
       >
         <Menu className="h-6 w-6" aria-hidden="true" />
       </button>

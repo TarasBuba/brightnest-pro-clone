@@ -12,7 +12,6 @@ export function ReviewsSection() {
       className="bg-[var(--color-bg-secondary)] px-4 py-[var(--spacing-section)]"
     >
       <div className="mx-auto max-w-6xl">
-        {/* Section Header */}
         <div className="mb-8 flex flex-col items-center text-center">
           <div className="reveal-on-scroll reveal-up inline-flex items-center gap-1.5 rounded-full bg-[var(--color-brand-teal)]/10 px-3 py-1 text-xs font-semibold text-[var(--color-brand-teal)] mb-3">
             <span>Reviews from Edmonton homeowners</span>
@@ -28,13 +27,10 @@ export function ReviewsSection() {
           </p>
         </div>
 
-        {/* Horizontal Trust Block with 3 Platforms: Google, HomeStars, Facebook */}
         <PlatformTrustBar className="mb-10" />
 
-        {/* Interactive Auto-Carousel with Pause on Hover/Click and Real Avatars */}
         <ReviewsCarousel />
 
-        {/* Local Guarantee Bar */}
         <div className="reveal-on-scroll reveal-up mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-xl border border-[var(--color-border)]/60 bg-[var(--color-bg-card)] p-5 shadow-xs">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">

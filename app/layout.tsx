@@ -20,7 +20,7 @@ const inter = Inter({
 });
 
 export const viewport: Viewport = {
-  themeColor: '#0a192f', // Brand Navy Deep
+  themeColor: '#0a192f',
   width: 'device-width',
   initialScale: 1,
 };
@@ -90,4 +90,3 @@ export default function RootLayout({
     </html>
   );
 }
-

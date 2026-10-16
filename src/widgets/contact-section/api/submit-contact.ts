@@ -18,8 +18,7 @@ export async function submitContactForm(data: ContactFormSchema): Promise<boolea
   formData.append('phone', data.phone);
   formData.append('service', data.service);
   formData.append('subject', `New Quote Request: ${data.service} - ${data.firstName} ${data.lastName}`);
-  
-  // Honeypot field for bot protection: Web3Forms expects botcheck sent only when present
+
   if (data.botcheck) {
     formData.append('botcheck', 'true');
   }
@@ -35,6 +34,7 @@ export async function submitContactForm(data: ContactFormSchema): Promise<boolea
         Accept: 'application/json',
       },
       body: formData,
+      signal: AbortSignal.timeout(10000),
     });
 
     let json;
@@ -43,7 +43,7 @@ export async function submitContactForm(data: ContactFormSchema): Promise<boolea
     } catch {
       return false;
     }
-    
+
     if (!res.ok || json.success !== true) {
       console.error('Web3Forms submission error:', json?.message || res.statusText);
       return false;

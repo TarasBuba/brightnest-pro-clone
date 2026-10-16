@@ -4,9 +4,8 @@ export type ServiceId = 'handyman' | 'painting';
 
 export interface Service {
   id: ServiceId;
-  /** Full title shown on the services section. */
+  href: string;
   title: string;
-  /** Short label used in forms, footer and structured data. */
   shortTitle: string;
   icon: LucideIcon;
   summary: string;
@@ -19,6 +18,7 @@ export interface Service {
 export const SERVICES: readonly Service[] = [
   {
     id: 'handyman',
+    href: '/services/handyman/',
     title: 'Handyman & Home Repairs',
     shortTitle: 'Handyman & Minor Repairs',
     icon: Wrench,
@@ -39,6 +39,7 @@ export const SERVICES: readonly Service[] = [
   },
   {
     id: 'painting',
+    href: '/services/painting/',
     title: 'Professional Painting',
     shortTitle: 'Interior & Exterior Painting',
     icon: Paintbrush,
@@ -62,10 +63,4 @@ export const SERVICE_IDS = SERVICES.map((s) => s.id) as ServiceId[];
 
 export function isServiceId(value: unknown): value is ServiceId {
   return typeof value === 'string' && (SERVICE_IDS as string[]).includes(value);
-}
-
-export function getService(id: ServiceId): Service {
-  const service = SERVICES.find((s) => s.id === id);
-  if (!service) throw new Error(`Unknown service: ${id}`);
-  return service;
 }

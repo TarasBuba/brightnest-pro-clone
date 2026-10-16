@@ -57,7 +57,6 @@ export function PlatformTrustBar({ className = '' }: PlatformTrustBarProps) {
           rel="noopener noreferrer"
           className="group relative flex flex-col justify-between overflow-hidden rounded-[var(--radius-lg)] border border-[var(--color-border)]/60 bg-[var(--color-bg-card)] p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-transparent hover:shadow-md"
         >
-          {/* Accent top stripe */}
           <span
             className="absolute inset-x-0 top-0 h-1 transition-all duration-300 group-hover:h-1.5"
             style={{ backgroundColor: platform.accent }}
