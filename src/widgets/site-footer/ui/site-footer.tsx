@@ -144,7 +144,7 @@ export const SiteFooter = () => {
                 href={siteConfig.social.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="BrightNest Pro on Facebook"
+                aria-label="BrightNest Pro Services on Facebook"
                 className="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-white/80 hover:text-white transition-colors"
               >
                 <IconBrandFacebook width={20} height={20} />
@@ -153,7 +153,7 @@ export const SiteFooter = () => {
                 href={siteConfig.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="BrightNest Pro on Instagram"
+                aria-label="BrightNest Pro Services on Instagram"
                 className="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-white/80 hover:text-white transition-colors"
               >
                 <IconBrandInstagram width={20} height={20} />

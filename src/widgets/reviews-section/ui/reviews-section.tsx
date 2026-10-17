@@ -23,7 +23,7 @@ export function ReviewsSection() {
             What Our Customers Say
           </h2>
           <p className="reveal-on-scroll reveal-up delay-200 mt-2 text-base text-[var(--color-text-secondary)] max-w-2xl mx-auto">
-            Real experiences from Edmonton homeowners who trust BrightNest Pro for quality repairs, painting, and home care.
+            Real experiences from Edmonton homeowners who trust BrightNest Pro Services for quality repairs, painting, and home care.
           </p>
         </div>
 
@@ -41,7 +41,7 @@ export function ReviewsSection() {
                 100% Satisfaction &amp; Quality Guarantee
               </p>
               <p className="text-xs text-[var(--color-text-secondary)]">
-                Locally owned in Edmonton &middot; Licensed &amp; Insured in Alberta &middot; Free estimates
+                Locally owned in Edmonton &middot; Licensed &amp; Insured in Alberta &middot; Free photo estimates
               </p>
             </div>
           </div>

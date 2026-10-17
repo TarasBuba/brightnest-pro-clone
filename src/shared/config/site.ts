@@ -8,7 +8,7 @@ export const siteConfig = {
     'Family-owned handyman, carpentry, deck repair, and interior & exterior painting services in Edmonton, Alberta. Free quotes, fair pricing, satisfaction guaranteed.',
   phoneRaw: '+17809840190',
   phoneDisplay: '(780) 984-0190',
-  email: 'info@brightnestpro.ca',
+  email: 'brightnestproservices@gmail.com',
   hours: 'Mon–Sun 24/7',
   openingHours: {
     days: [
@@ -52,7 +52,7 @@ export const siteConfig = {
     value: 5.0,
     count: 8,
   },
-  responseMinutes: 15,
+  responseMinutes: 30,
   logoPath: '/logo.svg',
   ogImage: {
     path: '/og/og-default.jpg',

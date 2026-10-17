@@ -89,17 +89,17 @@ const HANDYMAN_FAQS = [
   {
     question: 'How do you price handyman projects in Edmonton?',
     answer:
-      'We believe in absolute pricing transparency. For small defined repairs, we provide upfront flat-rate quotes; for multi-item punch lists, we offer transparent time-and-materials estimates. There are never surprise fees or hidden travel charges within the Edmonton capital region.',
+      'We believe in absolute pricing transparency. For small defined repairs, we provide upfront flat-rate quotes; for multi-item punch lists, we offer clear time-and-materials estimates for homeowners across the Edmonton capital region.',
   },
   {
     question: 'How quickly can Yuriy start my repair project?',
     answer:
-      `We respond to every booking or phone inquiry within ${siteConfig.responseMinutes} minutes, 24/7 Monday through Sunday. Most smaller handyman repairs are scheduled and completed within 24 to 48 hours, with same-day emergency slots frequently available.`,
+      `We respond to every booking or phone inquiry within ${siteConfig.responseMinutes} minutes, 24/7 Monday through Sunday. Most repairs are scheduled and completed within 24 to 48 hours. For urgent or emergency repairs requiring immediate same-day attention, an additional emergency service fee applies.`,
   },
   {
     question: 'Do I need to provide tools and materials?',
     answer:
-      'Yuriy arrives fully equipped with commercial-grade professional tools, ladders, fasteners, shims, caulking, and adhesives. For fixtures (doors, locks, shelves, light fixtures), you can supply your preferred style or we can source matching materials for you.',
+      'Yuriy arrives fully equipped with commercial-grade professional tools, ladders, fasteners, shims, caulking, and adhesives. For fixtures (doors, locks, shelves), you can supply your preferred style or we can source matching materials for you.',
   },
   {
     question: 'Do you offer a warranty on repairs?',
@@ -107,9 +107,9 @@ const HANDYMAN_FAQS = [
       'Yes, 100%. We back every repair with our BrightNest satisfaction guarantee. If any adjustment or repair is not performing properly, Yuriy returns promptly to correct it at no additional cost. We are also fully insured with comprehensive liability coverage across Alberta.',
   },
   {
-    question: 'Is my repair job too small for BrightNest Pro?',
+    question: 'Is my repair job too small for BrightNest Pro Services?',
     answer:
-      'Never. No project is too small. Whether you need a single sticking exterior deadbolt fixed before winter or an entire punch list of odd jobs knocked out, we treat your home with the same family-level attentiveness.',
+      'Never. No project is too small. Whether you need a single sticking exterior deadbolt fixed before winter or an entire punch list of odd jobs knocked out, BrightNest Pro Services treats your home with the same family-level attentiveness.',
   },
 ];
 
@@ -222,7 +222,7 @@ export default function HandymanPage() {
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 text-[var(--color-success)] shrink-0" aria-hidden="true" />
-                  <span>Transparent upfront estimates — no surprise fees</span>
+                  <span>Transparent upfront estimates — clear pricing</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 text-[var(--color-success)] shrink-0" aria-hidden="true" />

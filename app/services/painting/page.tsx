@@ -89,12 +89,12 @@ const PAINTING_FAQS = [
   {
     question: 'How much does interior or exterior painting cost in Edmonton?',
     answer:
-      'We provide detailed, transparent quotes based on square footage, prep requirements, and paint choice. You receive an itemized estimate outlining prep work, primer, finish coats, and cleanup before any work begins. There are zero surprise add-ons.',
+      'We provide an itemized quote following a preliminary project evaluation. Please note that on-site in-person assessments require an inspection fee, whereas preliminary estimates based on submitted photos are completely free.',
   },
   {
     question: 'How long does a typical painting project take?',
     answer:
-      'A single bedroom or office is usually finished in one day. Multi-room or complete home interior updates typically take 2 to 4 days. Exterior deck staining is usually completed across 1 to 3 days, depending on wood moisture levels and weather conditions.',
+      'Project duration depends entirely on the unique scope and characteristics of each individual project. Factors such as room size, surface condition, required drywall patching or sanding, architectural trim details, and paint curing times all influence the timeline. Following our project evaluation, we provide a clear, realistic schedule tailored to your space.',
   },
   {
     question: 'What paint brands and products do you use?',
@@ -104,7 +104,7 @@ const PAINTING_FAQS = [
   {
     question: 'Do I need to move all my furniture before you arrive?',
     answer:
-      'We help move larger furniture pieces into room centers and carefully drape them with clean plastic sheeting. All flooring is fully protected with heavy-duty canvas drop cloths from edge to edge. We leave your space cleaner than we found it.',
+      'If needed, we can assist with moving and repositioning your furniture prior to painting; please note that heavy furniture moving is an additional billable service handled as a separate scope of work. All moved items are safely draped, and flooring is protected with heavy-duty canvas drop cloths.',
   },
   {
     question: 'Do you offer a satisfaction guarantee on your painting?',
@@ -504,7 +504,7 @@ export default function PaintingPage() {
           </h2>
 
           <p className="mx-auto max-w-2xl text-base text-slate-300 sm:text-lg">
-            Request your free in-home painting quote today. We will assess your walls or exterior deck and provide a clear, detailed estimate within {siteConfig.responseMinutes} minutes, 24/7 Monday through Sunday.
+            Request your free photo estimate today. We will review your project details and reply within {siteConfig.responseMinutes} minutes, 24/7 Monday through Sunday, with clear recommendations and pricing.
           </p>
 
           <div className="pt-4 flex flex-col sm:flex-row justify-center gap-4">
@@ -513,7 +513,7 @@ export default function PaintingPage() {
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded-[var(--radius-md)] bg-[var(--color-cta-primary)] px-8 py-4 text-base font-bold text-white shadow-lg transition-all hover:bg-[var(--color-cta-primary-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-cta-primary)]"
             >
               <Calendar className="h-5 w-5" aria-hidden="true" />
-              <span>Get Your Free Painting Estimate</span>
+              <span>Get Your Free Photo Estimate</span>
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
 

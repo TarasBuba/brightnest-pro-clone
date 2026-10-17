@@ -37,7 +37,7 @@ export function BentoGrid() {
             <div className="lg:col-span-8 space-y-3">
               <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-400">
                 <ShieldCheck className="h-3.5 w-3.5" aria-hidden="true" />
-                <span>The BrightNest Pro Standard</span>
+                <span>The BrightNest Pro Services Standard</span>
               </div>
               <h3 className="font-heading text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
                 Executed Personally by Yuriy &amp; Karina. Zero Subcontractors.
@@ -71,9 +71,6 @@ export function BentoGrid() {
                 <span>Book Your Project Quote</span>
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
-              <span className="text-xs text-slate-400">
-                Free in-person consultations in Edmonton &amp; surrounding areas
-              </span>
             </div>
           </div>
         </div>
