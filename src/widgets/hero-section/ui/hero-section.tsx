@@ -4,10 +4,17 @@ import { Star, CheckCircle2, Phone, ArrowRight, ShieldCheck, MapPin } from 'luci
 import { siteConfig } from '@/src/shared/config/site';
 import { ROUTES } from '@/src/shared/config/navigation';
 
+const POPULAR_SERVICES = [
+  'Custom Carpentry',
+  'Deck & Fence Repair',
+  'Interior Painting',
+  'Door & Trim Fitting',
+];
+
 const HERO_HIGHLIGHTS = [
   'Family-owned & operated by Yuriy & Karina',
-  'Free, no-obligation quotes',
-  '24/7 availability (Mon–Sun) in Edmonton',
+  'Free photo estimates & clear pricing',
+  `Rapid ${siteConfig.responseMinutes}-min response (Mon–Sun)`,
   'Licensed & insured in Alberta',
 ];
 
@@ -53,6 +60,22 @@ export function HeroSection() {
               Yuriy &amp; Karina handle every project across Edmonton with personal craftsmanship and honest care.
             </p>
 
+            <div className="mt-6">
+              <p className="text-xs font-bold uppercase tracking-wider text-[var(--color-text-secondary)]">
+                Popular Services in Edmonton:
+              </p>
+              <div className="mt-2.5 flex flex-wrap gap-2">
+                {POPULAR_SERVICES.map((service) => (
+                  <span
+                    key={service}
+                    className="inline-flex items-center rounded-full border border-slate-200/80 bg-slate-50/90 px-3 py-1 text-xs font-semibold text-slate-700 shadow-sm transition-colors hover:border-[var(--color-brand-teal)]/40 hover:bg-white"
+                  >
+                    {service}
+                  </span>
+                ))}
+              </div>
+            </div>
+
             <ul className="mt-6 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
               {HERO_HIGHLIGHTS.map((item) => (
                 <li
@@ -82,9 +105,20 @@ export function HeroSection() {
               </a>
             </div>
 
-            <div className="mt-5 flex items-center gap-2 text-xs font-medium text-[var(--color-text-secondary)]">
-              <ShieldCheck className="h-4 w-4 shrink-0 text-[var(--color-success)]" aria-hidden="true" />
-              <span>100% Satisfaction Guarantee • Direct communication with the owners</span>
+            <div className="mt-6 rounded-2xl border border-slate-200/90 bg-white/80 p-4 shadow-sm backdrop-blur-sm sm:p-4.5">
+              <div className="flex items-start gap-3">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-[var(--color-success)] ring-1 ring-emerald-200/60">
+                  <ShieldCheck className="h-5 w-5" aria-hidden="true" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <p className="text-sm font-bold text-[var(--color-text-primary)]">
+                    100% Satisfaction Guarantee &amp; Direct Owner Contact
+                  </p>
+                  <p className="mt-0.5 text-xs sm:text-sm leading-relaxed text-[var(--color-text-secondary)]">
+                    You always deal directly with Yuriy and Karina — from your initial consultation to the final walkthrough. If anything isn&apos;t right, we fix it for free.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -138,7 +172,7 @@ export function HeroSection() {
                     </div>
                   </div>
 
-                  <div className="group relative aspect-[16/9] overflow-hidden rounded-2xl border border-white/80 bg-slate-100 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5">
+                  <div className="group relative aspect-[3/4] overflow-hidden rounded-2xl border border-white/80 bg-slate-100 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5">
                     <Image
                       src="/images/hero/collage/hero-stairs-ba.webp"
                       alt="Before and after comparison of staircase structural reinforcement in Edmonton"
@@ -146,6 +180,11 @@ export function HeroSection() {
                       sizes="(min-width: 1024px) 25vw, (min-width: 640px) 40vw, 50vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
+                    <div className="absolute top-2 right-2 sm:top-2.5 sm:right-2.5">
+                      <span className="inline-flex items-center gap-1 rounded-full bg-emerald-600/90 px-2 py-0.5 text-[9px] sm:text-[11px] font-semibold text-white shadow-sm backdrop-blur-sm">
+                        &#10004; Stairs Repair
+                      </span>
+                    </div>
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-2.5 sm:p-3">
                       <span className="inline-block rounded-md bg-black/50 px-2 py-0.5 text-[10px] sm:text-xs font-medium text-white backdrop-blur-sm">
                         Stairs • Before &amp; After
@@ -196,7 +235,7 @@ export function HeroSection() {
                     </div>
                   </div>
 
-                  <div className="group relative aspect-[16/9] overflow-hidden rounded-2xl border border-white/80 bg-slate-100 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5">
+                  <div className="group relative aspect-[3/4] overflow-hidden rounded-2xl border border-white/80 bg-slate-100 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5">
                     <Image
                       src="/images/hero/collage/hero-door-ba.webp"
                       alt="Before and after comparison of door fitting and hardware restoration in Edmonton"
@@ -204,6 +243,11 @@ export function HeroSection() {
                       sizes="(min-width: 1024px) 25vw, (min-width: 640px) 40vw, 50vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
+                    <div className="absolute top-2 right-2 sm:top-2.5 sm:right-2.5">
+                      <span className="inline-flex items-center gap-1 rounded-full bg-emerald-600/90 px-2 py-0.5 text-[9px] sm:text-[11px] font-semibold text-white shadow-sm backdrop-blur-sm">
+                        &#10004; Door Fitting
+                      </span>
+                    </div>
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-2.5 sm:p-3">
                       <span className="inline-block rounded-md bg-black/50 px-2 py-0.5 text-[10px] sm:text-xs font-medium text-white backdrop-blur-sm">
                         Door • Before &amp; After
