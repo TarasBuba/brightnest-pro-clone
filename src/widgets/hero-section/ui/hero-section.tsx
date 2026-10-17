@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Star, CheckCircle2, Phone, ArrowRight, ShieldCheck, MapPin } from 'lucide-react';
+import { Star, CheckCircle2, Phone, ArrowRight, ShieldCheck } from 'lucide-react';
 import { siteConfig } from '@/src/shared/config/site';
 import { ROUTES } from '@/src/shared/config/navigation';
 
@@ -24,8 +24,8 @@ export function HeroSection() {
       />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-8">
-          <div className="lg:col-span-5 xl:col-span-5">
+        <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-8">
+          <div className="lg:col-span-6 xl:col-span-6">
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-amber-200/80 bg-amber-50/80 px-3.5 py-1.5 text-xs font-semibold text-amber-900 backdrop-blur-sm">
               <div className="flex items-center text-amber-500" aria-hidden="true">
                 <Star className="h-3.5 w-3.5 fill-current" />
@@ -88,8 +88,8 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="lg:col-span-7 xl:col-span-7">
-            <div className="relative mx-auto max-w-2xl pb-6 sm:pb-8 lg:max-w-none">
+          <div className="lg:col-span-6 xl:col-span-6">
+            <div className="relative mx-auto max-w-xl lg:max-w-none">
               <div
                 className="pointer-events-none absolute -inset-3 rounded-3xl bg-gradient-to-tr from-[var(--color-brand-teal)]/20 via-sky-100/10 to-transparent blur-2xl -z-10"
                 aria-hidden="true"
@@ -100,18 +100,11 @@ export function HeroSection() {
                   src="/images/hero/collage/hero-collage.webp"
                   priority
                   alt="BrightNest Pro Services craftsmanship collage: deck board assembly and protective sealing by Yuriy & Karina, high-ceiling painting prep, drywall archway finishing, and before-and-after staircase and door renovations in Edmonton"
-                  width={1256}
-                  height={642}
-                  sizes="(min-width: 1280px) 58vw, (min-width: 1024px) 55vw, 100vw"
+                  width={1056}
+                  height={936}
+                  sizes="(min-width: 1024px) 50vw, 100vw"
                   className="h-auto w-full rounded-xl object-contain"
                 />
-              </div>
-
-              <div className="absolute -bottom-2 sm:-bottom-3 left-1/2 -translate-x-1/2 w-[94%] sm:w-auto max-w-md z-10">
-                <div className="flex items-center justify-center gap-2 rounded-full border border-slate-200/80 bg-white/95 px-4 py-2 text-center text-xs sm:text-sm font-semibold text-slate-800 shadow-xl backdrop-blur-md">
-                  <MapPin className="h-4 w-4 shrink-0 text-emerald-600" aria-hidden="true" />
-                  <span className="truncate">Handyman &amp; Painting • Local Edmonton Family Team</span>
-                </div>
               </div>
             </div>
           </div>
