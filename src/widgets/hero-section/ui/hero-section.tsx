@@ -120,7 +120,45 @@ export function HeroSection() {
 
                   <div className="group relative aspect-[3/4] overflow-hidden rounded-2xl border border-white/80 bg-slate-100 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5">
                     <Image
+                      src="/images/hero/collage/hero-ladder.webp"
+                      alt="Yuriy applying precision masking tape to high-ceiling fixtures in an Edmonton home"
+                      fill
+                      sizes="(min-width: 1024px) 25vw, (min-width: 640px) 40vw, 50vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute top-2 right-2 sm:top-2.5 sm:right-2.5">
+                      <span className="inline-flex items-center gap-1 rounded-full bg-emerald-600/90 px-2 py-0.5 text-[9px] sm:text-[11px] font-semibold text-white shadow-sm backdrop-blur-sm">
+                        &#10004; High-Ceiling Prep
+                      </span>
+                    </div>
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-2.5 sm:p-3">
+                      <span className="inline-block rounded-md bg-black/50 px-2 py-0.5 text-[10px] sm:text-xs font-medium text-white backdrop-blur-sm">
+                        High-Ceiling Detailing • Yuriy
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="group relative aspect-[16/9] overflow-hidden rounded-2xl border border-white/80 bg-slate-100 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5">
+                    <Image
+                      src="/images/hero/collage/hero-stairs-ba.webp"
+                      alt="Before and after comparison of staircase structural reinforcement in Edmonton"
+                      fill
+                      sizes="(min-width: 1024px) 25vw, (min-width: 640px) 40vw, 50vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-2.5 sm:p-3">
+                      <span className="inline-block rounded-md bg-black/50 px-2 py-0.5 text-[10px] sm:text-xs font-medium text-white backdrop-blur-sm">
+                        Stairs • Before &amp; After
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-3 sm:gap-4 pt-3 sm:pt-6">
+                  <div className="group relative aspect-[3/4] overflow-hidden rounded-2xl border border-white/80 bg-slate-100 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5">
+                    <Image
                       src="/images/hero/collage/hero-3.webp"
+                      priority
                       alt="Karina applying protective deck stain with a roller in Edmonton"
                       fill
                       sizes="(min-width: 1024px) 25vw, (min-width: 640px) 40vw, 50vw"
@@ -137,46 +175,38 @@ export function HeroSection() {
                       </span>
                     </div>
                   </div>
-                </div>
 
-                <div className="flex flex-col gap-3 sm:gap-4 pt-3 sm:pt-6">
-                  <div className="group relative aspect-[3/4] overflow-hidden rounded-2xl border-2 border-emerald-400/40 bg-slate-100 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5">
+                  <div className="group relative aspect-[3/4] overflow-hidden rounded-2xl border border-white/80 bg-slate-100 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5">
                     <Image
-                      src="/images/hero/collage/hero-1.webp"
-                      priority
-                      alt="Yuriy inspecting the custom cedar deck with hanging swing chair in Edmonton"
+                      src="/images/hero/collage/hero-archway.webp"
+                      alt="Yuriy preparing and smoothing drywall archway joints wearing BrightNest Pro Services shirt"
                       fill
                       sizes="(min-width: 1024px) 25vw, (min-width: 640px) 40vw, 50vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute top-2 right-2 sm:top-2.5 sm:right-2.5">
                       <span className="inline-flex items-center gap-1 rounded-full bg-emerald-600/90 px-2 py-0.5 text-[9px] sm:text-[11px] font-semibold text-white shadow-sm backdrop-blur-sm">
-                        &#10004; Deck Staining
+                        &#10004; Surface Priming
                       </span>
                     </div>
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-2.5 sm:p-3">
                       <span className="inline-block rounded-md bg-black/50 px-2 py-0.5 text-[10px] sm:text-xs font-medium text-white backdrop-blur-sm">
-                        Finished Project • Yuriy
+                        Drywall &amp; Archway • Yuriy
                       </span>
                     </div>
                   </div>
 
-                  <div className="group relative aspect-[3/4] overflow-hidden rounded-2xl border border-white/80 bg-slate-100 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5">
+                  <div className="group relative aspect-[16/9] overflow-hidden rounded-2xl border border-white/80 bg-slate-100 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5">
                     <Image
-                      src="/images/hero/collage/hero-4.webp"
-                      alt="Karina painting the deck support framework in Edmonton"
+                      src="/images/hero/collage/hero-door-ba.webp"
+                      alt="Before and after comparison of door fitting and hardware restoration in Edmonton"
                       fill
                       sizes="(min-width: 1024px) 25vw, (min-width: 640px) 40vw, 50vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute top-2 right-2 sm:top-2.5 sm:right-2.5">
-                      <span className="inline-flex items-center gap-1 rounded-full bg-emerald-600/90 px-2 py-0.5 text-[9px] sm:text-[11px] font-semibold text-white shadow-sm backdrop-blur-sm">
-                        &#10004; Structural Coating
-                      </span>
-                    </div>
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-2.5 sm:p-3">
                       <span className="inline-block rounded-md bg-black/50 px-2 py-0.5 text-[10px] sm:text-xs font-medium text-white backdrop-blur-sm">
-                        Structural Coating • Karina
+                        Door • Before &amp; After
                       </span>
                     </div>
                   </div>
