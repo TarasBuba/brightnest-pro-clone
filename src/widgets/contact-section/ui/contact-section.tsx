@@ -1,10 +1,12 @@
 'use client';
 
+import Link from 'next/link';
 import { useContactForm } from '../model/use-contact-form';
 import { TextField } from './text-field';
 import { SelectFields } from './service-select-field';
 import { FormField } from './form-field';
 import { siteConfig } from '@/src/shared/config/site';
+import { ROUTES } from '@/src/shared/config/navigation';
 
 export function ContactForm() {
   const { form, isPending, result, onSubmit } = useContactForm();
@@ -92,6 +94,24 @@ export function ContactForm() {
         >
           {isPending ? 'Sending...' : 'Send Message'}
         </button>
+
+        <p className="pt-1 text-center text-xs leading-relaxed text-[var(--color-text-secondary)]">
+          By clicking &ldquo;Send Message&rdquo;, you automatically agree to our{' '}
+          <Link
+            href={ROUTES.privacy}
+            className="font-medium text-[var(--color-cta-primary)] underline underline-offset-2 transition-colors hover:text-[var(--color-cta-primary-hover)]"
+          >
+            Privacy &amp; Cookie Policy
+          </Link>{' '}
+          and{' '}
+          <Link
+            href={ROUTES.terms}
+            className="font-medium text-[var(--color-cta-primary)] underline underline-offset-2 transition-colors hover:text-[var(--color-cta-primary-hover)]"
+          >
+            Terms of Service
+          </Link>
+          .
+        </p>
 
         {result === 'success' && (
           <p role="status" aria-live="polite" className="rounded-lg bg-emerald-50 p-3 text-center text-sm font-medium text-emerald-700">
