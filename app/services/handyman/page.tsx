@@ -89,7 +89,7 @@ const HANDYMAN_FAQS = [
   {
     question: 'How do you price handyman projects in Edmonton?',
     answer:
-      'We believe in absolute pricing transparency. For small defined repairs, we provide upfront flat-rate quotes; for multi-item punch lists, we offer clear time-and-materials estimates for homeowners across the Edmonton capital region.',
+      'We determine pricing based on a thorough evaluation of each specific project scope. Because every home and repair is unique, we do not provide preliminary sight-unseen estimates—ensuring your final price is accurate, transparent, and free of unexpected surprises.',
   },
   {
     question: 'How quickly can Yuriy start my repair project?',
@@ -102,9 +102,9 @@ const HANDYMAN_FAQS = [
       'Yuriy arrives fully equipped with commercial-grade professional tools, ladders, fasteners, shims, caulking, and adhesives. For fixtures (doors, locks, shelves), you can supply your preferred style or we can source matching materials for you.',
   },
   {
-    question: 'Do you offer a warranty on repairs?',
+    question: 'Are you licensed and insured in Alberta?',
     answer:
-      'Yes, 100%. We back every repair with our BrightNest satisfaction guarantee. If any adjustment or repair is not performing properly, Yuriy returns promptly to correct it at no additional cost. We are also fully insured with comprehensive liability coverage across Alberta.',
+      'Yes, absolutely. BrightNest Pro Services is fully licensed and carries comprehensive commercial general liability insurance in Alberta. You can have complete confidence and peace of mind knowing your property is protected while we work.',
   },
   {
     question: 'Is my repair job too small for BrightNest Pro Services?',
