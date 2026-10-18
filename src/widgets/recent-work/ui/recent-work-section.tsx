@@ -46,7 +46,7 @@ export function RecentWorkSection() {
             </div>
             <div className="flex items-center gap-1.5">
               <Hammer className="h-4 w-4 text-emerald-600" aria-hidden="true" />
-              <span>Custom Joinery &amp; Decks</span>
+              <span>Handyman &amp; Home Repairs</span>
             </div>
             <div className="flex items-center gap-1.5">
               <ShieldCheck className="h-4 w-4 text-emerald-600" aria-hidden="true" />
