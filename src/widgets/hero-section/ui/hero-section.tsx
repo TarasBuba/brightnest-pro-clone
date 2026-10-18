@@ -100,10 +100,10 @@ export function HeroSection() {
               <div className="relative flex-1 flex flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white/60 p-2 shadow-xl backdrop-blur-sm sm:p-2.5 transition-all duration-300 hover:shadow-2xl">
                 <div className="relative w-full aspect-[1068/1000] lg:aspect-auto lg:flex-1">
                   <Image
-                    src="/images/hero/collage/hero-collage-v5.webp"
+                    src="/images/hero/collage/hero-collage-v6.webp"
                     priority
                     fetchPriority="high"
-                    alt="BrightNest Pro Services craftsmanship collage: deck board assembly and protective sealing by Yuriy & Karina, before-and-after staircase and bathtub access panel repairs, high-ceiling painting prep, and drywall archway finishing in Edmonton"
+                    alt="BrightNest Pro Services craftsmanship collage: deck board assembly and protective sealing by Yuriy & Karina, before-and-after interior door and bathtub access panel repairs, high-ceiling painting prep, and drywall archway finishing in Edmonton"
                     fill
                     sizes="(min-width: 1024px) 50vw, 100vw"
                     className="rounded-xl object-fill"
