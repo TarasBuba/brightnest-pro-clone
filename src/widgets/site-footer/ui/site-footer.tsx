@@ -166,17 +166,9 @@ export const SiteFooter = () => {
           <p>
             &copy; {currentYear} BrightNest Pro Services. All rights reserved.
           </p>
-          <div className="flex flex-wrap items-center gap-5 sm:gap-6">
-            <Link href={ROUTES.book} className="hover:text-white transition-colors font-medium text-[var(--color-brand-teal)]">
-              Book Online / Get Quote
-            </Link>
-            {NAV_LINKS.map((link) => (
-              <Link key={link.href} href={link.href} className="hover:text-white transition-colors">
-                {link.label}
-              </Link>
-            ))}
-            <span>Edmonton, Alberta</span>
-          </div>
+          <p>
+            Edmonton, Alberta
+          </p>
         </div>
       </div>
     </footer>
