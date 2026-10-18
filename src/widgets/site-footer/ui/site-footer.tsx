@@ -59,14 +59,6 @@ export const SiteFooter = () => {
               <li>
                 <Link
                   href={ROUTES.book}
-                  className="hover:text-[var(--color-brand-teal)] transition-colors"
-                >
-                  Get a Free Quote
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={ROUTES.book}
                   className="text-[var(--color-brand-teal)] font-semibold hover:underline transition-colors flex items-center gap-1.5"
                 >
                   <span>Book Online</span>
