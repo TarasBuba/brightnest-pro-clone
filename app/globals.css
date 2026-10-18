@@ -84,6 +84,7 @@
   html.reveal-ready .reveal-on-scroll[data-revealed="true"] {
     opacity: 1;
     transform: translate3d(0, 0, 0) scale(1);
+    will-change: auto;
   }
 }
 

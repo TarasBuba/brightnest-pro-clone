@@ -39,6 +39,17 @@ function businessNode(): JsonLd {
       },
     ],
     sameAs: siteConfig.profiles,
+    founder: [
+      { '@type': 'Person', name: 'Yuriy' },
+      { '@type': 'Person', name: 'Karina' },
+    ],
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: siteConfig.rating.value,
+      reviewCount: siteConfig.rating.count,
+      bestRating: 5,
+      worstRating: 1,
+    },
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: `${siteConfig.name} Services`,
@@ -91,6 +102,52 @@ export function buildBreadcrumbJsonLd(items: readonly { name: string; path: stri
       position: index + 1,
       name: item.name,
       item: absoluteUrl(item.path),
+    })),
+  };
+}
+
+export interface ServicePageJsonLdInput {
+  path: string;
+  name: string;
+  serviceType: string;
+  description: string;
+}
+
+export function buildServicePageJsonLd(input: ServicePageJsonLdInput): JsonLd {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': absoluteUrl(`${input.path}#service`),
+    url: absoluteUrl(input.path),
+    name: input.name,
+    serviceType: input.serviceType,
+    description: input.description,
+    provider: {
+      '@id': BUSINESS_ID,
+    },
+    areaServed: siteConfig.serviceAreaCities.map((cityName) => ({
+      '@type': 'City',
+      name: cityName,
+    })),
+    availableChannel: {
+      '@type': 'ServiceChannel',
+      serviceUrl: absoluteUrl(input.path),
+      servicePhone: siteConfig.phoneRaw,
+    },
+  };
+}
+
+export function buildFaqJsonLd(faqs: readonly { question: string; answer: string }[]): JsonLd {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
     })),
   };
 }
