@@ -97,9 +97,9 @@ const PAINTING_FAQS = [
       'Project duration depends entirely on the unique scope and characteristics of each individual project. Factors such as room size, surface condition, required drywall patching or sanding, architectural trim details, and paint curing times all influence the timeline. Following our project evaluation, we provide a clear, realistic schedule tailored to your space.',
   },
   {
-    question: 'What paint brands and products do you use?',
+    question: 'What type of paint and products do you use?',
     answer:
-      'We use top-tier, contractor-grade paints from trusted manufacturers including Benjamin Moore (Regal Select, Aura) and Sherwin-Williams (Emerald, Duration). These paints offer unmatched washability, fade resistance, and low-VOC emissions that are safe for your children and pets.',
+      'We exclusively use premium, eco-friendly, low-VOC paints and high-grade professional finishes. These formulations deliver exceptional coverage, rich color depth, and superior washability while ensuring an odorless, healthy environment that is completely safe for your children and pets.',
   },
   {
     question: 'Do I need to move all my furniture before you arrive?',
