@@ -100,7 +100,7 @@ export function HeroSection() {
               <div className="relative flex-1 flex flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white/60 p-2 shadow-xl backdrop-blur-sm sm:p-2.5 transition-all duration-300 hover:shadow-2xl">
                 <div className="relative w-full aspect-[1068/1000] lg:aspect-auto lg:flex-1">
                   <Image
-                    src="/images/hero/collage/hero-collage-v2.webp"
+                    src="/images/hero/collage/hero-collage-v3.webp"
                     priority
                     alt="BrightNest Pro Services craftsmanship collage: deck board assembly and protective sealing by Yuriy & Karina, high-ceiling painting prep, drywall archway finishing, and before-and-after staircase and door renovations in Edmonton"
                     fill
