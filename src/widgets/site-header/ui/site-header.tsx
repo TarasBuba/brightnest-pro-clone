@@ -15,7 +15,7 @@ export function SiteHeader() {
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <Link
             href={ROUTES.home}
-            className="flex items-center gap-2 group"
+            className="flex items-center gap-2"
             aria-label="BrightNest Pro Services home"
           >
             <Image 
@@ -23,7 +23,7 @@ export function SiteHeader() {
               alt="BrightNest Pro Services Logo" 
               width={160} 
               height={120} 
-              className="h-10 sm:h-12 w-auto transition-transform group-hover:scale-105" 
+              className="h-10 sm:h-12 w-auto" 
               priority
             />
             <span className="text-xl sm:text-2xl font-heading font-extrabold text-[var(--color-brand-navy)] tracking-tight">
