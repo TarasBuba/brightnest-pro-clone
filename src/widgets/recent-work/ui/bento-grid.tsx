@@ -40,7 +40,8 @@ export function BentoGrid() {
                 <span>The BrightNest Pro Services Standard</span>
               </div>
               <h3 className="font-heading text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
-                Executed Personally by Yuriy &amp; Karina. Zero Subcontractors.
+                Executed Personally by Yuriy &amp; Karina.
+                <span className="block whitespace-nowrap">Zero Subcontractors.</span>
               </h3>
               <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl">
                 Every deck plank, paint cut-in, and joinery adjustment in this portfolio is completed
