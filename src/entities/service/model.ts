@@ -55,7 +55,7 @@ export const SERVICES: readonly Service[] = [
       'Spotless cleanup and detailed final walkthrough on every project',
     ],
     timeline:
-      'Single rooms typically completed in 1 day; exterior deck or full interior projects scheduled in 2–4 days.',
+      'Prompt, efficient turnaround. Exact project timelines and schedules are confirmed following our project evaluation.',
   },
 ];
 
