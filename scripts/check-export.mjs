@@ -31,6 +31,9 @@ function getFilesRecursively(dir) {
 }
 
 function hasCodeComments(source, ext) {
+  if (ext === '.svg') {
+    return /<!--[\s\S]*?-->/.test(source);
+  }
   if (ext === '.css') {
     return /\/\*[\s\S]*?\*\//.test(source);
   }
@@ -56,11 +59,12 @@ const sourceFilesToCheck = [
   ...getFilesRecursively(join(rootDir, 'app')),
   ...getFilesRecursively(join(rootDir, 'src')),
   ...getFilesRecursively(join(rootDir, 'scripts')),
+  ...getFilesRecursively(join(rootDir, 'public')),
   join(rootDir, 'next.config.ts'),
   join(rootDir, 'eslint.config.mjs'),
   join(rootDir, 'postcss.config.mjs'),
   join(rootDir, 'lighthouserc.js'),
-].filter((f) => /\.(ts|tsx|css|mjs|js)$/.test(f));
+].filter((f) => /\.(ts|tsx|css|mjs|js|svg)$/.test(f));
 
 const filesWithComments = [];
 for (const file of sourceFilesToCheck) {
