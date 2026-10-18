@@ -45,8 +45,9 @@ export function HeroSection() {
                 id="hero-title"
                 className="font-heading text-4xl font-extrabold tracking-tight text-[var(--color-text-primary)] sm:text-5xl lg:text-5xl xl:text-5xl leading-[1.12]"
               >
-                Handyman &amp; Painting That Feels Like Family,{' '}
-                <span className="text-[var(--color-cta-primary)]">Not a Job Site</span>
+                <span className="block">Handyman &amp; Painting</span>
+                <span className="block">That Feels Like Family,</span>
+                <span className="block text-[var(--color-cta-primary)]">Not a Job Site</span>
               </h1>
 
               <p className="mt-5 max-w-xl text-base sm:text-lg leading-relaxed text-[var(--color-text-secondary)]">
