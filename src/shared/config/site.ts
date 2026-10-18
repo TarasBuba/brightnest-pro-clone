@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: 'BrightNest Pro Services',
   shortName: 'BrightNest Pro',
-  url: 'https://brightnestpro.ca',
+  url: 'https://brightnestpro.com',
   locale: 'en_CA',
   language: 'en-CA',
   description:
