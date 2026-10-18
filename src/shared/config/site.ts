@@ -24,13 +24,16 @@ export const siteConfig = {
     closes: '23:59',
   },
   address: {
+    streetAddress: '85 St NW',
     locality: 'Edmonton',
     region: 'AB',
+    postalCode: 'T5E 2Z1',
     country: 'CA',
   },
   serviceArea: 'Edmonton & surrounding communities',
   serviceAreaCities: ['Edmonton', 'Sherwood Park', 'St. Albert', 'Leduc', 'Spruce Grove'],
   neighborhoods: [
+    'Killarney',
     'Glenora',
     'Strathcona',
     'Windermere',
@@ -46,7 +49,7 @@ export const siteConfig = {
     'Spruce Grove',
     'Leduc',
   ],
-  geo: { latitude: 53.5461, longitude: -113.4938 },
+  geo: { latitude: 53.5884, longitude: -113.4716 },
   isLicensedInsured: true,
   rating: {
     value: 5.0,

@@ -51,8 +51,10 @@ function businessNode(): JsonLd {
     paymentAccepted: 'Cash, Interac e-Transfer, Credit Card, Bank Transfer',
     address: {
       '@type': 'PostalAddress',
+      streetAddress: siteConfig.address.streetAddress,
       addressLocality: siteConfig.address.locality,
       addressRegion: siteConfig.address.region,
+      postalCode: siteConfig.address.postalCode,
       addressCountry: siteConfig.address.country,
     },
     geo: {
@@ -102,12 +104,14 @@ function businessNode(): JsonLd {
       },
     ],
     knowsAbout: [
+      'Property Maintenance',
       'Handyman Services',
       'Interior & Exterior Painting',
+      'Carpentry & Woodwork',
+      'Deck Building, Repair & Staining',
       'Drywall Patching & Repair',
       'Door Alignment & Weatherstripping',
-      'Deck & Fence Structural Repair',
-      'Deck Power-Washing & Staining',
+      'Fence Structural Repair',
       'Baseboard, Casing & Trim Carpentry',
       'Home Fixture & TV Mounting Installation',
     ],
