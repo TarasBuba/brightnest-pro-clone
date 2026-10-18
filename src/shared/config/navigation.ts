@@ -12,6 +12,8 @@ export const ROUTES = {
   book: '/book/',
   handyman: '/services/handyman/',
   painting: '/services/painting/',
+  privacy: '/privacy/',
+  terms: '/terms/',
 } as const;
 
 export const BOOK_PATH = ROUTES.book;

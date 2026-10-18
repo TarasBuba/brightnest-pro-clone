@@ -106,6 +106,8 @@ const requiredOutAssets = [
   'book/index.html',
   'services/handyman/index.html',
   'services/painting/index.html',
+  'privacy/index.html',
+  'terms/index.html',
   'sitemap.xml',
   'robots.txt',
   'manifest.webmanifest',

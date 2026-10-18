@@ -158,9 +158,24 @@ export const SiteFooter = () => {
           <p>
             &copy; {currentYear} BrightNest Pro Services. All rights reserved.
           </p>
-          <p>
-            Edmonton, Alberta
-          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+            <Link
+              href={ROUTES.privacy}
+              className="hover:text-white transition-colors"
+            >
+              Privacy &amp; Cookie Policy
+            </Link>
+            <Link
+              href={ROUTES.terms}
+              className="hover:text-white transition-colors"
+            >
+              Terms of Service
+            </Link>
+            <span className="text-white/40" aria-hidden="true">
+              &bull;
+            </span>
+            <span>Edmonton, Alberta</span>
+          </div>
         </div>
       </div>
     </footer>
