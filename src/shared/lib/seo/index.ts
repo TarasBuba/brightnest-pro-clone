@@ -1,6 +1,7 @@
 export { buildMetadata } from './metadata';
 export {
   buildSiteJsonLd,
+  buildAboutPageJsonLd,
   buildBreadcrumbJsonLd,
   buildServicePageJsonLd,
   buildFaqJsonLd,

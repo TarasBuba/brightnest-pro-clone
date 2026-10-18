@@ -1,23 +1,54 @@
 import { siteConfig, absoluteUrl } from '@/src/shared/config/site';
 import { SERVICES } from '@/src/entities/service/model';
+import { EXTENDED_REVIEWS } from '@/src/widgets/reviews-section/model/reviews-data';
+import { ROUTES } from '@/src/shared/config/navigation';
 
 const BUSINESS_ID = absoluteUrl('/#business');
 const WEBSITE_ID = absoluteUrl('/#website');
 
 type JsonLd = Record<string, unknown>;
 
+function buildAreaServedNodes(): JsonLd[] {
+  const citySet = new Set<string>(siteConfig.serviceAreaCities);
+  const edmontonNeighborhoods = siteConfig.neighborhoods.filter((n) => !citySet.has(n));
+
+  return [
+    {
+      '@type': 'AdministrativeArea',
+      name: 'Alberta',
+      sameAs: 'https://www.wikidata.org/wiki/Q1951',
+    },
+    ...siteConfig.serviceAreaCities.map((name) => ({
+      '@type': 'City',
+      name,
+      containedInPlace: {
+        '@type': 'AdministrativeArea',
+        name: 'Alberta',
+      },
+    })),
+    ...edmontonNeighborhoods.map((name) => ({
+      '@type': 'Place',
+      name: `${name}, Edmonton, AB`,
+    })),
+  ];
+}
+
 function businessNode(): JsonLd {
   return {
     '@type': ['HomeAndConstructionBusiness', 'HousePainter'],
     '@id': BUSINESS_ID,
     name: siteConfig.name,
+    alternateName: siteConfig.shortName,
     description: siteConfig.description,
+    slogan: 'Handyman & Painting That Feels Like Family, Not a Job Site',
     url: absoluteUrl('/'),
     logo: absoluteUrl(siteConfig.logoPath),
     image: absoluteUrl(siteConfig.ogImage.path),
     telephone: siteConfig.phoneRaw,
     email: siteConfig.email,
     priceRange: '$$',
+    currenciesAccepted: 'CAD',
+    paymentAccepted: 'Cash, Interac e-Transfer, Credit Card, Bank Transfer',
     address: {
       '@type': 'PostalAddress',
       addressLocality: siteConfig.address.locality,
@@ -29,7 +60,24 @@ function businessNode(): JsonLd {
       latitude: siteConfig.geo.latitude,
       longitude: siteConfig.geo.longitude,
     },
-    areaServed: siteConfig.serviceAreaCities.map((name) => ({ '@type': 'City', name })),
+    serviceArea: {
+      '@type': 'GeoCircle',
+      geoMidpoint: {
+        '@type': 'GeoCoordinates',
+        latitude: siteConfig.geo.latitude,
+        longitude: siteConfig.geo.longitude,
+      },
+      geoRadius: '40000',
+    },
+    areaServed: buildAreaServedNodes(),
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: siteConfig.phoneRaw,
+      email: siteConfig.email,
+      contactType: 'customer service',
+      areaServed: 'CA-AB',
+      availableLanguage: ['en-CA', 'uk'],
+    },
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
@@ -38,10 +86,30 @@ function businessNode(): JsonLd {
         closes: siteConfig.openingHours.closes,
       },
     ],
-    sameAs: siteConfig.profiles,
+    sameAs: [...siteConfig.profiles, siteConfig.social.google],
     founder: [
-      { '@type': 'Person', name: 'Yuriy' },
-      { '@type': 'Person', name: 'Karina' },
+      {
+        '@type': 'Person',
+        name: 'Yuriy',
+        jobTitle: 'Co-Founder & Lead Craftsman',
+        worksFor: { '@id': BUSINESS_ID },
+      },
+      {
+        '@type': 'Person',
+        name: 'Karina',
+        jobTitle: 'Co-Founder & Finishing Specialist',
+        worksFor: { '@id': BUSINESS_ID },
+      },
+    ],
+    knowsAbout: [
+      'Handyman Services',
+      'Interior & Exterior Painting',
+      'Drywall Patching & Repair',
+      'Door Alignment & Weatherstripping',
+      'Deck & Fence Structural Repair',
+      'Deck Power-Washing & Staining',
+      'Baseboard, Casing & Trim Carpentry',
+      'Home Fixture & TV Mounting Installation',
     ],
     aggregateRating: {
       '@type': 'AggregateRating',
@@ -50,6 +118,24 @@ function businessNode(): JsonLd {
       bestRating: 5,
       worstRating: 1,
     },
+    review: EXTENDED_REVIEWS.map((r) => ({
+      '@type': 'Review',
+      author: {
+        '@type': 'Person',
+        name: r.name,
+      },
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: r.rating,
+        bestRating: 5,
+        worstRating: 1,
+      },
+      reviewBody: r.review,
+      publisher: {
+        '@type': 'Organization',
+        name: 'Google',
+      },
+    })),
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: `${siteConfig.name} Services`,
@@ -89,6 +175,18 @@ export function buildSiteJsonLd(): JsonLd {
   return {
     '@context': 'https://schema.org',
     '@graph': [businessNode(), websiteNode(), ...serviceNodes()],
+  };
+}
+
+export function buildAboutPageJsonLd(): JsonLd {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    '@id': absoluteUrl(`${ROUTES.about}#aboutpage`),
+    url: absoluteUrl(ROUTES.about),
+    name: `About ${siteConfig.name} — Yuriy & Karina`,
+    inLanguage: siteConfig.language,
+    mainEntity: { '@id': BUSINESS_ID },
   };
 }
 

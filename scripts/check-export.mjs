@@ -156,20 +156,24 @@ if (existsSync(imagesDir)) {
   }
 }
 
+const siteConfigRaw = readFileSync(join(rootDir, 'src', 'shared', 'config', 'site.ts'), 'utf8');
+const siteUrlMatch = siteConfigRaw.match(/\burl:\s*['"]([^'"]+)['"]/);
+const siteBaseUrl = (siteUrlMatch ? siteUrlMatch[1] : 'https://brightnestpro.ca').replace(/\/+$/, '');
+
 function getExpectedCanonical(relPath) {
   const normalized = relPath.replace(/\\/g, '/');
   if (normalized === 'index.html') {
-    return 'https://brightnestpro.ca/';
+    return `${siteBaseUrl}/`;
   }
   if (normalized.endsWith('/index.html')) {
     const route = normalized.slice(0, -'index.html'.length);
-    return `https://brightnestpro.ca/${route}`;
+    return `${siteBaseUrl}/${route}`;
   }
   if (normalized.endsWith('.html')) {
     const route = normalized.slice(0, -'.html'.length);
-    return `https://brightnestpro.ca/${route}/`;
+    return `${siteBaseUrl}/${route}/`;
   }
-  return `https://brightnestpro.ca/${normalized}`;
+  return `${siteBaseUrl}/${normalized}`;
 }
 
 function getRouteFromRelPath(relPath) {

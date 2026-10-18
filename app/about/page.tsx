@@ -1,6 +1,11 @@
 import Link from 'next/link';
 import { ROUTES } from '@/src/shared/config/navigation';
-import { buildMetadata, buildBreadcrumbJsonLd, JsonLdScript } from '@/src/shared/lib/seo';
+import {
+  buildMetadata,
+  buildAboutPageJsonLd,
+  buildBreadcrumbJsonLd,
+  JsonLdScript,
+} from '@/src/shared/lib/seo';
 
 export const metadata = buildMetadata({
   title: 'About Our Family',
@@ -13,6 +18,7 @@ export default function AboutPage() {
   return (
     <main id="main-content">
       <JsonLdScript data={buildBreadcrumbJsonLd([{ name: 'About', path: ROUTES.about }])} />
+      <JsonLdScript data={buildAboutPageJsonLd()} />
       <section className="bg-[var(--color-bg-dark)] px-4 py-20 text-[var(--color-text-on-dark)] md:py-28">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--color-brand-teal)]">
