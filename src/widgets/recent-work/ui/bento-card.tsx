@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { BentoProject } from '../model/recent-work-data';
+import { BentoProject } from '@/src/shared/content';
 import { BentoCardMedia } from './bento-card-media';
 import { BentoCardDetails } from './bento-card-details';
 

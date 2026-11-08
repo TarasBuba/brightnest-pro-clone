@@ -1,6 +1,5 @@
 import { siteConfig, absoluteUrl } from '@/src/shared/config/site';
-import { SERVICES } from '@/src/entities/service/model';
-import { EXTENDED_REVIEWS } from '@/src/widgets/reviews-section/model/reviews-data';
+import { SERVICES, EXTENDED_REVIEWS } from '@/src/shared/content';
 import { ROUTES } from '@/src/shared/config/navigation';
 
 const BUSINESS_ID = absoluteUrl('/#business');

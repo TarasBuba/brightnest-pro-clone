@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { MapPin } from 'lucide-react';
 import { siteConfig } from '@/src/shared/config/site';
-import type { ServicePageConfig } from '../model/types';
+import type { ServicePageConfig } from '@/src/shared/content';
 
 interface ServiceClimateSectionProps {
   config: ServicePageConfig;

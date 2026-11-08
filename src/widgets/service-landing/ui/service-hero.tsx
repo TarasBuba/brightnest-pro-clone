@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ArrowRight, Calendar, CheckCircle2, Clock, Phone, Star } from 'lucide-react';
 import { siteConfig } from '@/src/shared/config/site';
 import { ROUTES, bookingHref } from '@/src/shared/config/navigation';
-import type { ServicePageConfig } from '../model/types';
+import type { ServicePageConfig } from '@/src/shared/content';
 
 interface ServiceHeroProps {
   config: ServicePageConfig;

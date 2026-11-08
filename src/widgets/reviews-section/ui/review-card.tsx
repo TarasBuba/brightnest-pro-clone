@@ -2,7 +2,7 @@
 
 import { StarRating } from './star-rating';
 import { AvatarWithFallback } from './avatar-with-fallback';
-import type { ExtendedReview } from '../model/reviews-data';
+import type { ExtendedReview } from '@/src/shared/content';
 import { CheckCircle2, Quote } from 'lucide-react';
 import { GoogleIcon } from '@/src/shared/ui/brand-icons';
 import { PLATFORM_ACCENT } from './icons';

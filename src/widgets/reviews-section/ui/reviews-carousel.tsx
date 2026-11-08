@@ -1,6 +1,6 @@
 'use client';
 
-import { EXTENDED_REVIEWS, type ExtendedReview } from '../model/reviews-data';
+import { EXTENDED_REVIEWS, type ExtendedReview } from '@/src/shared/content';
 import { useReviewsCarousel } from '../model/use-reviews-carousel';
 import { CarouselTopControls, CarouselPaginationDots } from './carousel-controls';
 import { ReviewCard } from './review-card';

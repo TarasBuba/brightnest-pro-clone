@@ -1,7 +1,7 @@
 import { useEffect, useState, useTransition } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { isServiceId } from '@/src/entities/service/model';
+import { isServiceId } from '@/src/shared/content';
 import { contactFormSchema, type ContactFormSchema } from '../model/schema';
 import { submitContactForm } from '../api/submit-contact';
 

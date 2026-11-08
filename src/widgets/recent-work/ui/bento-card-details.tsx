@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Check, ArrowRight } from 'lucide-react';
-import { BentoProject } from '../model/recent-work-data';
+import { BentoProject } from '@/src/shared/content';
 
 interface BentoCardDetailsProps {
   project: BentoProject;

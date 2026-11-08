@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Clock, ArrowRight, Check } from 'lucide-react';
-import type { Service } from '@/src/entities/service/model';
+import type { Service } from '@/src/shared/content';
 import { bookingHref } from '@/src/shared/config/navigation';
 
 export type ServiceAccordionItemProps = {

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { ArrowRight, Calendar, Phone, ShieldCheck } from 'lucide-react';
 import { siteConfig } from '@/src/shared/config/site';
 import { bookingHref } from '@/src/shared/config/navigation';
-import type { ServicePageConfig } from '../model/types';
+import type { ServicePageConfig } from '@/src/shared/content';
 
 interface ServiceCtaBannerProps {
   config: ServicePageConfig;

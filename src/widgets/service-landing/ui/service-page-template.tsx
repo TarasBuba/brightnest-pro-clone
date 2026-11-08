@@ -4,7 +4,7 @@ import {
   buildFaqJsonLd,
   JsonLdScript,
 } from '@/src/shared/lib/seo';
-import type { ServicePageConfig } from '../model/types';
+import type { ServicePageConfig } from '@/src/shared/content';
 import { ServiceHero } from './service-hero';
 import { ServiceOfferingsGrid } from './service-offerings-grid';
 import { ServiceClimateSection } from './service-climate-section';

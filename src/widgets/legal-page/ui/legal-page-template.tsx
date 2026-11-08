@@ -3,7 +3,7 @@ import { ShieldCheck, Scale, CheckCircle2, Phone, Mail, ArrowRight } from 'lucid
 import { siteConfig } from '@/src/shared/config/site';
 import { ROUTES } from '@/src/shared/config/navigation';
 import { buildBreadcrumbJsonLd, JsonLdScript } from '@/src/shared/lib/seo';
-import type { LegalDocumentConfig } from '../model/types';
+import type { LegalDocumentConfig } from '@/src/shared/content';
 
 interface LegalPageTemplateProps {
   config: LegalDocumentConfig;

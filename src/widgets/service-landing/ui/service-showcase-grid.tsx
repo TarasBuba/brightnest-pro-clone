@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import type { ServicePageConfig } from '../model/types';
+import type { ServicePageConfig } from '@/src/shared/content';
 
 interface ServiceShowcaseGridProps {
   config: ServicePageConfig;

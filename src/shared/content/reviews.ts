@@ -17,7 +17,8 @@ export const EXTENDED_REVIEWS: ExtendedReview[] = [
     role: 'Google Review',
     service: 'Deck & Exterior Care',
     avatarUrl: '/images/avatars/adria-lee.webp',
-    review: 'We are so pleased with the work Yuriy and Karina did with our very large yard and two back decks. Not only did they take great care to make sure everything looked fantastic but they also priced their work very reasonably. As new immigrants, English is not their first language but that does not stop them from communicating (using a translator) and getting out there to make a concerted effort in building a business for themselves. We will 100% use them again and recommend to anyone looking for honest hard working helpers.',
+    review:
+      'We are so pleased with the work Yuriy and Karina did with our very large yard and two back decks. Not only did they take great care to make sure everything looked fantastic but they also priced their work very reasonably. As new immigrants, English is not their first language but that does not stop them from communicating (using a translator) and getting out there to make a concerted effort in building a business for themselves. We will 100% use them again and recommend to anyone looking for honest hard working helpers.',
     platform: 'google',
   },
   {
@@ -27,7 +28,8 @@ export const EXTENDED_REVIEWS: ExtendedReview[] = [
     role: 'Google Review',
     service: 'Fence Construction',
     avatarUrl: '/images/avatars/jean-gagnon.webp',
-    review: 'We recently hired BrightNest Pro Services owned and operated by a lovely couple Yuriy and Karina to build a fence for us. They took great pride in doing a good job and definitely work to please the customer. Their work was done well and we would highly recommend their business.',
+    review:
+      'We recently hired BrightNest Pro Services owned and operated by a lovely couple Yuriy and Karina to build a fence for us. They took great pride in doing a good job and definitely work to please the customer. Their work was done well and we would highly recommend their business.',
     platform: 'google',
   },
   {
@@ -37,7 +39,8 @@ export const EXTENDED_REVIEWS: ExtendedReview[] = [
     role: 'Google Review',
     service: 'Home Maintenance',
     avatarUrl: '/images/avatars/roxana-lee.webp',
-    review: 'In the 43 yrs. that we had lived in this house, BrightNest Pro Services, are one of the most reliable, personable, friendly and consciously do a great job. We will definitely hire them again even for other jobs. Recommend to try their work.',
+    review:
+      'In the 43 yrs. that we had lived in this house, BrightNest Pro Services, are one of the most reliable, personable, friendly and consciously do a great job. We will definitely hire them again even for other jobs. Recommend to try their work.',
     platform: 'google',
   },
   {
@@ -47,7 +50,8 @@ export const EXTENDED_REVIEWS: ExtendedReview[] = [
     role: 'Google Review',
     service: 'Home Maintenance',
     avatarUrl: '/images/avatars/salina-halabi.webp',
-    review: 'Wonderful team and great work! Highly recommend for both outdoor and indoor home maintenance and repair services. Thank you!',
+    review:
+      'Wonderful team and great work! Highly recommend for both outdoor and indoor home maintenance and repair services. Thank you!',
     platform: 'google',
   },
   {
@@ -57,7 +61,8 @@ export const EXTENDED_REVIEWS: ExtendedReview[] = [
     role: 'Google Review',
     service: 'Exterior Maintenance',
     avatarUrl: '/images/avatars/yvonne-reitsma.webp',
-    review: 'This team came to refresh our windows and siding! Excellent, thorough job. Early, efficient and very polite. Would definitely use them for other jobs needed around the house.',
+    review:
+      'This team came to refresh our windows and siding! Excellent, thorough job. Early, efficient and very polite. Would definitely use them for other jobs needed around the house.',
     platform: 'google',
   },
   {
@@ -77,7 +82,8 @@ export const EXTENDED_REVIEWS: ExtendedReview[] = [
     role: 'Google Review',
     service: 'Interior Painting',
     avatarUrl: '/images/avatars/oleksii-chubko.webp',
-    review: 'Great couple! They did repairs and painting for us when we were moving. We’re very happy with their work and would definitely recommend them. We’ll be happy to use their services again!',
+    review:
+      'Great couple! They did repairs and painting for us when we were moving. We’re very happy with their work and would definitely recommend them. We’ll be happy to use their services again!',
     platform: 'google',
   },
   {
@@ -87,7 +93,8 @@ export const EXTENDED_REVIEWS: ExtendedReview[] = [
     role: 'Google Review',
     service: 'Custom Work',
     avatarUrl: '/images/avatars/p-l.webp',
-    review: 'Quality, customized work with attention paid to detail and per homeowner’s instructions - happy to support a local, family-run business.',
+    review:
+      'Quality, customized work with attention paid to detail and per homeowner’s instructions - happy to support a local, family-run business.',
     platform: 'google',
   },
 ];

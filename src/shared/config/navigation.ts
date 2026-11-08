@@ -1,4 +1,4 @@
-import type { ServiceId } from '@/src/entities/service/model';
+import type { ServiceId } from '@/src/shared/content/services';
 
 export const SECTION_IDS = {
   services: 'services',

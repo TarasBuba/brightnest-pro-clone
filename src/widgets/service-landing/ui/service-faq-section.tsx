@@ -1,5 +1,5 @@
 import { HelpCircle } from 'lucide-react';
-import type { ServicePageConfig } from '../model/types';
+import type { ServicePageConfig } from '@/src/shared/content';
 
 interface ServiceFaqSectionProps {
   config: ServicePageConfig;

@@ -9,7 +9,7 @@ import {
   Eye,
   Hammer,
 } from 'lucide-react';
-import { BentoProject } from '../model/recent-work-data';
+import { BentoProject } from '@/src/shared/content';
 
 interface BentoCardMediaProps {
   project: BentoProject;

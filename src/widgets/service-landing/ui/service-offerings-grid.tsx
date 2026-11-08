@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { bookingHref } from '@/src/shared/config/navigation';
-import type { ServicePageConfig } from '../model/types';
+import type { ServicePageConfig } from '@/src/shared/content';
 
 interface ServiceOfferingsGridProps {
   config: ServicePageConfig;

@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: 'BrightNest Pro Services',
   shortName: 'BrightNest Pro',
-  url: 'https://brightnestproservice.com',
+  url: 'https://brightnestproservices.com',
   locale: 'en_CA',
   language: 'en-CA',
   description:
@@ -58,15 +58,15 @@ export const siteConfig = {
   responseMinutes: 30,
   logoPath: '/logo.svg',
   ogImage: {
-    path: '/og/og-default.jpg',
+    path: '/og/og-default.jpg?v=2',
     width: 1200,
     height: 630,
-    alt: 'Yuriy and Karina of BrightNest Pro Services — handyman & painting in Edmonton',
+    alt: 'BrightNest Pro Services — Handyman & Painting Services in Edmonton, AB',
   },
   social: {
     facebook: 'https://www.facebook.com/BrightNestProServices',
     instagram: 'https://www.instagram.com/brightnestproservices',
-    google: 'https://www.google.com/maps/search/?api=1&query=BrightNest+Pro+Services+Edmonton',
+    google: 'https://g.page/r/CUwpqubxT56wEBM/review',
   },
   profiles: [
     'https://www.facebook.com/BrightNestProServices',

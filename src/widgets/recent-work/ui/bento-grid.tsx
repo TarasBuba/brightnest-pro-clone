@@ -8,7 +8,7 @@ import {
   CheckCircle,
 } from 'lucide-react';
 import { BentoCard } from './bento-card';
-import { RECENT_WORK_PROJECTS } from '../model/recent-work-data';
+import { RECENT_WORK_PROJECTS } from '@/src/shared/content';
 import { ROUTES } from '@/src/shared/config/navigation';
 
 export function BentoGrid() {

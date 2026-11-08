@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { ServiceAccordionItem } from './service-accordion-item';
-import { SERVICES } from '@/src/entities/service/model';
+import { SERVICES } from '@/src/shared/content';
 
 export function ServicesSection() {
   return (
