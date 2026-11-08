@@ -38,7 +38,7 @@ export function BookingSidebar() {
         <div className="space-y-3 text-sm">
           <Link
             href={ROUTES.handyman}
-            className="group flex items-start justify-between gap-3 rounded-xl bg-slate-50 p-3 transition-colors hover:bg-slate-100"
+            className="group flex items-center justify-between gap-3 rounded-xl bg-slate-50 p-3 transition-colors hover:bg-slate-100"
           >
             <div className="flex items-start gap-3">
               <Wrench className="h-5 w-5 text-[var(--color-cta-primary)] shrink-0 mt-0.5" aria-hidden="true" />
@@ -51,12 +51,12 @@ export function BookingSidebar() {
                 </p>
               </div>
             </div>
-            <ArrowRight className="h-4 w-4 text-slate-400 shrink-0 mt-0.5 transition-transform group-hover:translate-x-0.5 group-hover:text-[var(--color-cta-primary)]" aria-hidden="true" />
+            <ArrowRight className="h-4 w-4 text-slate-400 shrink-0 self-center transition-transform group-hover:translate-x-0.5 group-hover:text-[var(--color-cta-primary)]" aria-hidden="true" />
           </Link>
 
           <Link
             href={ROUTES.painting}
-            className="group flex items-start justify-between gap-3 rounded-xl bg-slate-50 p-3 transition-colors hover:bg-slate-100"
+            className="group flex items-center justify-between gap-3 rounded-xl bg-slate-50 p-3 transition-colors hover:bg-slate-100"
           >
             <div className="flex items-start gap-3">
               <Paintbrush className="h-5 w-5 text-[var(--color-cta-primary)] shrink-0 mt-0.5" aria-hidden="true" />
@@ -69,7 +69,7 @@ export function BookingSidebar() {
                 </p>
               </div>
             </div>
-            <ArrowRight className="h-4 w-4 text-slate-400 shrink-0 mt-0.5 transition-transform group-hover:translate-x-0.5 group-hover:text-[var(--color-cta-primary)]" aria-hidden="true" />
+            <ArrowRight className="h-4 w-4 text-slate-400 shrink-0 self-center transition-transform group-hover:translate-x-0.5 group-hover:text-[var(--color-cta-primary)]" aria-hidden="true" />
           </Link>
         </div>
       </div>
